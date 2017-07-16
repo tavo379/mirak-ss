@@ -11,7 +11,7 @@ const imgLogoStyle = {
 const agnesiStyle = {
   width:'20%'
 }
-export default class Slider extends Component{
+export default class AgnesiProject extends Component{
   render(){
     return(
     <main className="agnesi agnesi-project">

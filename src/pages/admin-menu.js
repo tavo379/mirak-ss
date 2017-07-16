@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
-import Headss from 'components/head'
 
-class AdminLogin extends Component {
+class AdminMenu extends Component {
 	render() {
 			return (
 				<div id="admin">
-		    <Headss/>
 					<div className="container">
 		        <div className="row">
 		          <div className="col-md-3 logo">
@@ -36,4 +34,4 @@ class AdminLogin extends Component {
 	}
 }
 
-export default AdminLogin;
+export default AdminMenu;

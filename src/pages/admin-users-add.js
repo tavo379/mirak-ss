@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Headss from '../components/head'
 import Header from '../components/home/header'
 import Footer from '../components/home/footer'
 import { Carousel } from 'react-responsive-carousel'
@@ -15,7 +14,7 @@ const imgLogoStyle = {
 const agnesiStyle = {
   width:'20%'
 }
-export default class Slider extends Component{
+export default class AdminUserAdd extends Component{
 
   state = {
     email: '',
@@ -34,7 +33,6 @@ export default class Slider extends Component{
   render(){
     return(
       <main id="admin-anuncios">
-        <Headss/>
         <div className="container">
   				<div className="row">
   					<div className="col-md-3 back-page">

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Headss from 'components/head'
 import Link from 'next/link'
 import { createAnuncio } from './api-admin.js'
 
@@ -27,7 +26,6 @@ export default class AnuncioForm extends Component{
   render(){
     return(
       <main id="admin-anuncios">
-        <Headss/>
         <div className="container">
           <div className="row">
             <div className="col-md-3 back-page">

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Headss from 'components/head'
 import { createSlider } from './api-admin.js'
 import Link from 'next/link'
 
@@ -32,7 +31,6 @@ export default class SliderForm extends Component{
   render(){
     return(
       <main id="admin-anuncios">
-        <Headss/>
         <div className="container">
          <div className="row">
             <div className="col-md-3 back-page">

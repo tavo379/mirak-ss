@@ -15,7 +15,7 @@ const imgLogoStyle = {
 const agnesiStyle = {
   width:'20%'
 }
-export default class Slider extends Component{
+export default class AdminCategory extends Component{
 
   constructor(props){
     super(props);
@@ -25,7 +25,7 @@ export default class Slider extends Component{
   };
   }
   image = ''
-  
+
 
   handleSubmit(ev){
     ev.preventDefault();
@@ -42,7 +42,7 @@ export default class Slider extends Component{
         });
     }
 
-    
+
 
   }
   handleImageChange(ev){

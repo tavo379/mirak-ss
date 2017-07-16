@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
-import Headss from 'components/head'
-
 
 export default class AdminUsers extends Component{
   constructor(props){
@@ -31,7 +29,6 @@ export default class AdminUsers extends Component{
   render(){
     return(
       <main id="admin-user">
-        <Headss/>
         <div className="container">
           <div className="row">
             <div className="col-md-3 back-page">
