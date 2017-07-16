@@ -1,0 +1,195 @@
+#admin,#admin-user{
+  img{
+    max-width: 100%;
+  }
+  input{
+    width: 100%;
+  }
+  .logo{
+    padding:55px 55px 0px 55px;
+  }
+}
+.form-admin-login{
+  display: flex;
+  justify-content: center;
+}
+.menu-admin{
+  margin:0 auto;
+}
+.title-admin-menu{
+  text-align: center;
+  font-size: 50px;
+  color:#000000;
+}
+.nav-admin{
+
+  ul{
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    li{
+      margin: 30px 0;
+      padding: 0 30px;
+      a{
+        font-size: 27px;
+        text-transform: uppercase;
+        color:#000000;
+      }
+      a:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}
+/*styles from admin-user page*/
+#admin-user{
+  .back-page{
+    padding:30px;
+    a{
+      color: #000000;
+      font-size: 30px;
+      text-decoration: none;
+    }
+    width: 50px;
+  }
+  .title-admin-menu{
+    font-size: 50px;
+    padding-left: 20px;
+    text-transform: uppercase;
+  }
+  .add-user{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #000000;
+     img{
+      padding-left: 5px;
+      width: 45px;
+    }
+  }
+  .nav-admin{
+    margin-top: 60px;
+    ul{
+      flex-direction: column;
+      align-items: center;
+      li{
+        margin:5px 0;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        .delete-icon{
+          padding-right: 10px;
+          visibility: hidden;
+        }
+        a{
+          font-size:25px;
+          text-transform: capitalize;
+          text-decoration: none;
+        }
+      }
+      li:hover{
+          .delete-icon{
+            visibility: visible;
+          }
+      }
+    }
+  }
+}
+/*css from admin-anuncios page*/
+#admin-anuncios{
+  .title-admin-menu{
+    font-size: 50px;
+    padding-left: 20px;
+    text-transform: uppercase;
+  }
+  .back-page{
+    padding:30px;
+    a{
+      color: #000000;
+      font-size: 30px;
+      text-decoration: none;
+    }
+    width: 50px;
+  }
+  .new-item-anuncio{
+    padding:60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2{
+      font-size: 20px;
+      text-transform: uppercase;
+      color: black;
+    }
+    .number-anuncio{
+      align-self: flex-start;
+      font-size: 23px;
+      font-weight: 700;
+      color:#000000;
+    }
+    button{
+      background: white;
+      border-style: none;
+      border: 2px solid black;
+      padding: 3px 40px;
+      color: #000000;
+    }
+    .size-description{
+      color:black;
+      padding-top: 10px;
+      font-weight: bold;
+    }
+  }
+  .save{
+    padding:3px 40px;
+    color:white;
+    background:black;
+    text-transform: uppercase;
+    border-style: none;
+    margin: 60px auto 60px;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+
+  }
+}
+.inputs{
+  padding-left:60px;
+  padding-top: 15px;
+  input{
+    border:2px solid black;
+    padding:3px 10px;
+  }
+  input:focus{
+    outline:none;
+  }
+  .inputs-title{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 500;
+  }
+  .inputs-group{
+    text-transform: uppercase;
+    font-weight: bold;
+    span{padding-left: 10px;}
+    margin-bottom: 20px;
+  }
+}
+.width-slider{
+  max-width: 800px;
+  margin:0 auto;
+}
+.number-anuncio{
+  align-self: flex-start;
+  font-size: 23px;
+  font-weight: 700;
+  color:#000000;
+}

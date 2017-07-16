@@ -1,0 +1,282 @@
+.icon-back-white{
+  position:absolute;
+  display: none;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .Modal{
+    width: 80%;
+    button{
+      margin: 15px 0;
+    }
+  }
+  .email-direction{
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .collapse{
+    transform: translate3d(0px, -64px, 0px); margin-left: -24px; margin-right: -24px;
+  }
+  .collapse-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .toggle{
+      width: 40px;
+  }
+  .toggle-x{
+    width: 45px;
+    height: 35px;
+    position:absolute;
+    top:15px;
+    right:10px;
+  }
+  img{
+    max-width: 100%;
+  }
+  .mobile-feed-page{
+    display: none;
+  }
+  .total-slider{
+    height: 280px;
+    width: 100%;
+  }
+  .carousel .control-dots{
+    display: none;
+  }
+  .social .icons{
+    height: 90px;
+  }
+  .ListMenu{
+    flex-direction: column;
+  }
+  .slider-mobil,.header-mobil,{
+    display: block;
+  }
+  .agnesi .header{
+    display: block;
+  }
+  .agnesi-header_mobile{
+    display: none;
+  }
+  .header-mobil{
+    .ListMenu li a{
+      color:#000000;
+    }
+  }
+  .slider{
+    height: 200px;
+    position:initial;
+    h1{
+      font-size: 30px;
+      text-align: end;
+    }
+  }
+  .opacity{
+    height:200px;
+   }
+  .slider-desktop{
+    display: none;
+
+  }
+  .agnesi-mobil{
+    display: block;
+    background:#e8e7e4;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom: 10px;
+    img{
+      width: 35%;
+    }
+  }
+  .Promo{
+    flex-direction: column-reverse;
+    margin-top:30px;
+    .email-promo {
+      span{text-align: end;
+      font-size: 12px;}
+      p{
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+  }
+  .banner-cotizacion{
+    background-size: inherit !important;
+    margin:30px 0 !important;
+    h1{
+      padding:0 !important;
+      font-size: 20px;
+    }
+  }
+  .recommended{
+    justify-content: center;
+    span{
+      border-right:2px solid #000000;
+      border-bottom: 0;
+      padding-right: 10px;
+      font-size: 20px;
+    }
+  }
+  .logo-footer{
+    display: none;
+  }
+  .footer-ss{
+    display: flex;
+    flex-direction: column-reverse;
+    padding:40px 10px 10px !important;
+    span{
+      font-size: 14px !important;
+    }
+    .ListMenu_footer li{
+      margin:0;
+      padding: 25px 5px 10px 5px;
+      font-size: 14px;
+    }
+    .title-email{
+      text-align: center;
+    }
+  }
+  .mobil-newsletter{
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    span{
+      margin:0 !important;
+      margin-left: 10px !important;
+    }
+  }
+  /*feed page*/
+  .products{
+    .header{
+      .syslogo, .agnesi{
+        display: none;
+      }
+    }
+    .header-products{
+      background-size: 656px;
+      height: 200px;
+      display: flex;
+      align-items: flex-end;
+      h1{
+        font-size: 30px;
+        padding: 20px;
+      }
+    }
+    .ListMenu{
+      display: none;
+    }
+    .product{
+      margin-top: 0;
+    }
+    .mobile-feed-page{
+      display: none;
+    }
+    .feed-single-redirection{
+      display: none;
+    }
+    .feed-box .feed-description span {
+      width:100%;
+      font-size: small;
+    }
+    .feed-description{
+      hr{
+        display: none;
+      }
+    }
+    .feed-box{
+      padding:15px;
+    }
+
+  }
+  .icon-back-white{
+    display: block;
+    img{width:45px;}
+  }
+  .carousel.carousel-slider{
+    height: 100%;
+  }
+  .carousel .slide img{
+    height: 100%;
+  }
+  .prueba-slider{
+    height: 100%;
+  }
+  .carousel .slider-wrapper.axis-horizontal .slider{
+    height: 100%;
+  }
+  .carousel .slider-wrapper{
+    height: 100%;
+  }
+
+  #single{
+    .single-desktop{
+      display: none;
+    }
+    .single-mobil{
+      display: flex;
+    }
+    .back-single-desktop{
+      display: none;
+    }
+    .header{
+      .syslogo, .agnesi{
+        display: none;
+      }
+    }
+    .ListMenu{
+      display: none;
+    }
+    .header-products{
+      display: none;
+    }
+    .icon-back-white{
+      display: none;
+    }
+    .back-single{
+      padding:15px;
+      display: flex;
+      align-items: center;
+      img{
+        width: 40px;
+      }
+      span{
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 18px;
+        color:black;
+      }
+    }
+    .product{
+      margin-top: 0;
+    }
+    .padding-sigle-description .description{
+      padding:0;
+      border:0;
+      h3{
+        font-size: 20px;
+      }
+    }
+    .feed-description{
+      padding-top: 30px;
+      h2{
+        padding-left: 10px;
+        font-size: 14px;
+      }
+      hr{
+        margin: 0 auto;
+        width:53%;
+      }
+    }
+    .order{
+      a,span{display:none;}
+    }
+    .title-single{
+      h1{
+        font-size: 30px;
+        color:black;
+      }
+    }
+  }
+}

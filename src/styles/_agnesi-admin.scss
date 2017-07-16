@@ -1,0 +1,39 @@
+.agnesi-admin-images{
+  align-items: flex-start !important;
+  button{
+    margin:10px 0;
+  }
+  padding-top: 0 !important;
+}
+.agnesi-menu{
+  margin-bottom: 40px;
+}
+.agnesi-description-area{
+  span,h3{font-size: 20px;margin:0;color:black;}
+  span{
+    align-self: flex-end;
+    color:black;
+    font-weight: 500;
+  }
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.subtitle{
+  font-size: 40px;
+}
+textarea{
+  width: 100%;
+}
+.agnesi-projects{
+  flex-direction: column;
+  padding-left: 20px;
+  span{
+    align-self:flex-start;
+    padding-left: 12px;
+  }
+}
+.projects-images{
+  padding-top: 25px;
+}

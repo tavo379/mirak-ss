@@ -1,0 +1,49 @@
+.header-products{
+    background-image: url("../images/headerfeed.png");
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding-top: 30px;
+    h1{
+      padding: 40px;
+      padding-left: 15%;
+      padding-bottom: 80px;
+      color: white;
+      font-size: 3.5rem;
+    }
+}
+.product{
+  margin-top:80px;
+  img{
+    max-width: 100%;
+    width:100%;
+  }
+}
+.feed-box{
+  padding:40px;
+  text-transform: uppercase;
+  .feed-description{
+    display: flex;
+    font-weight: bold;
+    padding-top: 20px;
+    span{
+      width:25%;
+      color:#000000;
+    }
+    hr{
+      width:75%;
+      border-top: 1px solid #000000;
+    }
+  }
+  .feed-single-redirection{
+    display: flex;
+    justify-content: flex-end;
+    width:100%;
+    a{
+      text-decoration: none;
+      color:#000000;
+      font-weight: bold;
+    }
+  }
+
+}

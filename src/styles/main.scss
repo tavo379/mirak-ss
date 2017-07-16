@@ -1,0 +1,123 @@
+
+@import 'bootstrap';
+@import 'home';
+@import 'category-feed';
+@import 'single';
+@import 'agnesi';
+@import 'responsive';
+@import 'responsive-tablet';
+@import 'admin';
+@import 'agnesi-admin';
+@import 'slick';
+@import 'slick-theme';
+@import 'agnesi-responsive';
+body{
+  background-color: #fff;
+
+}
+.syslogo, .agnesi{
+  cursor:pointer;
+}
+.header{
+  color:#fff;
+  padding:40px;
+  .agnesi{
+    margin-bottom: 15px;
+  }
+}
+.titulo{
+  text-decoration: underline;
+  color:green;
+}
+.banner-cotizacion{
+  background-image: url("../images/cotizacion.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color:#000000;
+  margin: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1{
+    padding: 19px 0;
+  }
+}
+.ListMenu{
+  list-style: none;
+  -webkit-padding-start:0;
+  border-top: 2px solid #fff;
+  display: flex;
+  width: 100%;
+  li{
+    padding:25px 10px 10px 15px;
+    flex: 1 1 100%;
+    a{
+      text-decoration: none;
+      text-transform: uppercase;
+      color:#fff;
+    }
+  }
+}
+.ListMenu_footer{
+  list-style: none;
+  -webkit-padding-start:0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  li{
+    padding:25px 10px 10px 15px;
+    margin-right:35px;
+  }
+}
+.email-footer{
+  display: flex;
+  flex-direction: column;
+  span{
+    margin:5px 0 15px 0;
+  }
+  input{
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+  }
+  input::placeholder {
+    color: #000000;
+  }
+}
+.mobil-newsletter{
+  display: flex;
+  flex-direction: column;
+}
+.footer-ss{
+  background:#000000;
+  color: #fff;
+  padding:40px;
+}
+.social{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px 0;
+  .col-md-5{
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .icons{
+    display: flex;
+    justify-content: space-around;
+    .facebook{
+      width: 11px;
+      height: 100%;
+    }
+    .instagram{
+      width: 23px;
+      height: 100%;
+    }
+    .correo{
+      width: 25px;
+      height: 100%;
+    }
+  }
+  hr{
+    border-top: 2px solid #000000;
+  }
+}

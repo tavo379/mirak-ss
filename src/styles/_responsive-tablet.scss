@@ -1,0 +1,129 @@
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  img{
+    max-width: 100%;
+  }
+  .header {
+    padding-top: 30px !important;
+    .syslogo img{
+      max-width: 20%;
+      position: asolute;
+      top:-63px;
+    }
+    .agnesi{
+      img{
+        width: 20% !important;
+        position: absolute;
+        top: -38px;
+        right: 30px;
+      }
+    }
+
+    .ListMenu{
+      li{
+        padding:15px 0 0 0;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+  }
+  .total-slider{
+    height: 400px;
+  }
+  .carousel-slider,.slider{
+    height: 100%;
+  }
+  .carousel .slider-wrapper{
+    height: 100%;
+  }
+  .carousel .slide img{
+    height: 100%
+  }
+  .prueba-slider{
+    height: 100%;
+  }
+  .project-link {
+    top:50%;
+    h1{
+      font-size: 35px;
+    }
+  }
+  .Promo .email-promo p{
+    text-align: center;
+    font-size: 18px;
+    padding-top: 15px;
+  }
+  .Promo .email-promo span{
+    text-align: right;
+  }
+  .text-md-right{
+    text-align: right;
+  }
+  .banner-cotizacion{
+    background-size: auto  !important;
+    h1{
+      padding:15px 0 !important;
+      font-size: 28px;
+    }
+  }
+  .recommended{
+    justify-content: center;
+    span{
+      font-size:28px;
+      line-height: initial;
+    }
+  }
+/*Footer*/
+  .logo-footer{
+      display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  img{
+    max-width: 100%;
+  }
+  .banner-cotizacion{
+    background-size: 100% 100% !important;
+  }
+  .total-slider{
+    height: 400px;
+  }
+  .carousel-slider,.slider{
+    height: 100%;
+  }
+  .carousel .slider-wrapper{
+    height: 100%;
+  }
+  .carousel .slide img{
+    height: 100%
+  }
+  .project-link{
+    width: 100%;
+    justify-content: center;
+    top:48%;
+    h1{
+      font-size: 50px;
+    }
+  }
+  .ListMenu{
+    li{
+      a{
+        font-size: 11px;
+      }
+    }
+  }
+  .Promo {
+    .email-promo{
+      p{
+        text-align: initial;
+        font-size: 20px;
+      }
+    }
+  }
+  .email-footer{
+    flex: 0 0 47% !important;
+    max-width: 42% !important;
+  }
+  .logo-footer{
+      display: none;
+  }
+}
