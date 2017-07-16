@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Headss from 'components/head'
 /*import laoyut components*/
 import Header from '../home//header'
 import SliderAgnesi from '../agnesi-casa/slider-agnesi'
@@ -13,7 +12,6 @@ import HeaderMobil from "../Mobile/header-mobil"
 function MobilAgnesi() {
 	return (
 		<main className="agnesi agnesi-mobil">
-			<Headss/>
       <div className="back-single"><img src="../static/back.svg"/><span>agnesi casa</span></div>
       <div className="col-md-12 title-single ">
         <h1>Proyecto n°4</h1>

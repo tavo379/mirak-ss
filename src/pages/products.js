@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
-import Headss from 'components/head'
 import fetch from 'isomorphic-fetch'
 /*import laoyut components*/
 import HeaderProducts from '../components/single-item/headerProducts'
@@ -27,7 +26,6 @@ class Products extends Component {
 		console.log(this.props);
 		return (
 			<main className="products">
-				<Headss />
 				<HeaderProducts/>
 				<ProductFeed products={this.props.products}/>
 				<Social />

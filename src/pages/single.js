@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Headss from 'components/head'
+
 
 
 /*import laoyut components*/
@@ -11,10 +11,9 @@ import Social from "../components/home/social"
 import Footer from "../components/home/footer"
 import Similar from "../components/single-item/similar"
 
-function HomePage() {
+function SinglePage() {
 	return (
 		<main id="single">
-			<Headss />
 			<HeaderProducts />
 			<div className="back-single"><img src="../static/back.svg"/><span>Mesas</span></div>
 			<div className="back-single-desktop">
@@ -30,4 +29,4 @@ function HomePage() {
 	);
 }
 
-export default HomePage;
+export default SinglePage;
