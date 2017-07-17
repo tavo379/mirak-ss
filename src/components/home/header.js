@@ -3,7 +3,7 @@
 import fetch from 'isomorphic-fetch'
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
 // import axios from 'axios'
 import logowhite from '../../images/syslogowhite.png';
 import agnesiproject from '../../images/agnesiwhiteh.png';
@@ -43,15 +43,15 @@ export default class Header extends Component{
     return(
       <div className="container-fluid mobile-feed-page">
         <div className="row header">
-          <div className="col-md-2 flex  syslogo"><Link href="/"><img style={imgLogoStyle} src={logowhite}/></Link></div>
+          <div className="col-md-2 flex syslogo"><Link to="/"><img style={imgLogoStyle} src={logowhite}/></Link></div>
           <div className="col-md-10">
             <div className="row">
-            <div className="col-md-12 col-xs-12 text-md-right agnesi"><Link href="../../agnesi-project"><img style={agnesiStyle} src={agnesiproject}/></Link></div>
+            <div className="col-md-12 col-xs-12 text-md-right agnesi"><Link to="/agnesi-project"><img style={agnesiStyle} src={agnesiproject}/></Link></div>
             <div className="col-md-12 col-xs-12">
               <ul className="ListMenu">
                 {this.state.data.map((categoria)=>
                   <li  key={categoria.id}>
-                   <Link  href={{ pathname: 'products', query: { id: `${categoria.id}`} }} >
+                  <Link to={{ pathname: '/products', search: '?id=' + categoria.id }}>
                       <a>
                         {categoria.name}
                       </a>

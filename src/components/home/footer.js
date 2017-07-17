@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-
+import logowhite from '../../images/syslogowhite.png'
 
 const imgLogoStyle = {
   width:'100%',
@@ -10,7 +10,7 @@ export default class Footer extends Component{
     return(
       <div className="container-fluid">
       <div className="row flex-items-md-middle footer-ss">
-        <div className="col-md-2 logo-footer"><img style={imgLogoStyle}src="static/syslogowhite.png" /></div>
+        <div className="col-md-2 logo-footer"><img style={imgLogoStyle} src= {logowhite } /></div>
         <div className="col-md-6 offset-md-1 ">
           <ul className="ListMenu_footer">
             <li>NOSOTROS</li>

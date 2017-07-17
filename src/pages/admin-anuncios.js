@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
+import Back from '../images/back.svg'
 import { createAnuncio } from './api-admin.js'
+
 
 export default class AnuncioForm extends Component{
   url1  = ''
@@ -29,7 +31,7 @@ export default class AnuncioForm extends Component{
         <div className="container">
           <div className="row">
             <div className="col-md-3 back-page">
-              <div className="back"><Link href="/admin-menu"><a><img src="../static/back.svg"/><span>atrás</span></a></Link></div>
+              <div className="back"><Link to="/admin-menu"><img src={ Back }/><span>atrás</span></Link></div>
             </div>
             <div className="col-md-12">
               <div className="row">

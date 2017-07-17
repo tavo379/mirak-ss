@@ -7,7 +7,8 @@ import { Carousel } from 'react-responsive-carousel'
 import MobilAgnesi from '../components/agnesi-casa/agnesi-project-mobil'
 import fetch from 'isomorphic-fetch'
 import { createCategory } from './api-admin.js'
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
+import Back from '../images/back.svg'
 
 const imgLogoStyle = {
   width:'100%',
@@ -89,7 +90,7 @@ export default class AdminCategory extends Component{
         <div className="container">
   				<div className="row">
   					<div className="col-md-3 back-page">
-  						<div className="back"><Link href="/admin-menu"><a><img src="../static/back.svg"/><span>atrás</span></a></Link></div>
+  						<div className="back"><Link to="/admin-menu"><img src={ Back }/><span>atrás</span></Link></div>
   					</div>
   					<div className="col-md-12">
   						<div className="row width-slider">
@@ -107,10 +108,10 @@ export default class AdminCategory extends Component{
                         <span className="inputs-title">Categoria</span><br/>
                         <div className="inputs-group">
                         <input type="radio" id="padre" name="gender" onClick={ this.subcategorieFunction } />
-                        <label for="padre">Padre</label>
+                        <label htmlFor="padre">Padre</label>
 
                         <input type="radio" id="hijo" name="gender" onClick={ this.subcategorieFunction }/>
-                        <label for="hijo">Hijo</label>
+                        <label htmlFor="hijo">Hijo</label>
                         <select id="select-padre"disabled name="select" required  onChange={ (res) => { this.setState( { subcategoria: res.target.value} ) }}>
                           <option selected hidden>Seleccionar categoría padre</option>
                           {this.state.data.map((categoria)=>

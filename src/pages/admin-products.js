@@ -5,7 +5,8 @@ import Header from '../components/home/header'
 import Footer from '../components/home/footer'
 import { Carousel } from 'react-responsive-carousel'
 import MobilAgnesi from '../components/agnesi-casa/agnesi-project-mobil'
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
+import Back from '../images/back.svg'
 
 import { createProduct } from './api-admin.js'
 
@@ -80,7 +81,7 @@ export default class ProductForm extends Component {
         <div className="container">
   				<div className="row">
   					<div className="col-md-3 back-page">
-  						<div className="back"><Link href="/admin-menu"><a><img src="../static/back.svg"/><span>atrás</span></a></Link></div>
+  						<div className="back"><Link to="/admin-menu"><img src={ Back }/><span>atrás</span></Link></div>
   					</div>
   					<div className="col-md-12">
   						<div className="row width-slider">

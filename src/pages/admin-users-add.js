@@ -6,7 +6,8 @@ import { Carousel } from 'react-responsive-carousel'
 import MobilAgnesi from '../components/agnesi-casa/agnesi-project-mobil'
 import fetch from 'isomorphic-fetch'
 import { createUser } from './api-admin.js'
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
+import Back from '../images/back.svg'
 
 const imgLogoStyle = {
   width:'100%',
@@ -36,7 +37,7 @@ export default class AdminUserAdd extends Component{
         <div className="container">
   				<div className="row">
   					<div className="col-md-3 back-page">
-  						<div className="back"><Link href="/admin-users"><a><img src="../static/back.svg"/><span>atrás</span></a></Link></div>
+  					  <div className="back"><Link to="/admin-menu"><img src={ Back }/><span>atrás</span></Link></div>
   					</div>
   					<div className="col-md-12">
   						<div className="row width-slider">

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
+import BlackSS from '../images/syslogoblack.png'
 
 class AdminMenu extends Component {
 	render() {
@@ -8,7 +9,7 @@ class AdminMenu extends Component {
 					<div className="container">
 		        <div className="row">
 		          <div className="col-md-3 logo">
-		            <img src="../static/syslogoblack.png"/>
+		            <img src={BlackSS}/>
 		          </div>
 		          <div className="col-md-12 ">
                 <div className="row">
@@ -16,12 +17,12 @@ class AdminMenu extends Component {
                     <h1 className="title-admin-menu">Menú</h1>
                     <nav className="nav-admin">
     		         			<ul>
-    										<li><Link href="/admin-users"><a>Usuarios</a></Link></li>
-    										<li><Link href="/admin-category"><a>Categorias</a></Link></li>
-    										<li><Link href="/admin-products"><a>Muebles</a></Link></li>
-    										<li><Link href="/admin-sliders"><a>Sliders</a></Link></li>
-    										<li><Link href="/admin-anuncios"><a>Anuncios</a></Link></li>
-    										<li><Link href="/agnesi-admin"><a>Agnesi casa</a></Link></li>
+    										<li><Link to="/admin-users">Usuarios</Link></li>
+    										<li><Link to="/admin-category">Categorias</Link></li>
+    										<li><Link to="/admin-products">Muebles</Link></li>
+    										<li><Link to="/admin-slider">Sliders</Link></li>
+    										<li><Link to="/admin-anuncios">Anuncios</Link></li>
+    										<li><Link to="/admin-agnesi">Agnesi casa</Link></li>
     									</ul>
                     </nav>
                   </div>
