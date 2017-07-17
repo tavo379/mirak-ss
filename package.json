@@ -5,6 +5,7 @@
   "dependencies": {
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.0.2",
+    "query-string": "^4.3.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-modal": "^2.2.2",

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Headss from '../components/head'
 import Header from '../components/home/header'
 import Footer from '../components/home/footer'
 import { Carousel } from 'react-responsive-carousel'
@@ -18,11 +17,9 @@ export default class AgnesiProject extends Component{
       <MobilAgnesi/>
       <div className="total-slider">
       <div>
-        <Headss/>
         <div className="opacity"></div>
           <Header/>
         <Carousel showArrows={true} showStatus={false} showThumbs={false} infiniteLoop={true}  emulateTouch={true}>
-
           <div className="prueba-slider">
             <img src="/static/main-image.png" />
             <div className="agnesi-project">

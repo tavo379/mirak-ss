@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import BlackSS from '../images/syslogoblack.png'
 
 class AdminMenu extends Component {
 	render() {
@@ -9,7 +8,7 @@ class AdminMenu extends Component {
 					<div className="container">
 		        <div className="row">
 		          <div className="col-md-3 logo">
-		            <img src={BlackSS}/>
+		            <img src="images/syslogoblack.png" />
 		          </div>
 		          <div className="col-md-12 ">
                 <div className="row">

@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 /*import laoyut components*/
 import Header from '../components/home//header'
 import SliderAgnesi from '../components/agnesi-casa/slider-agnesi'

@@ -1,7 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
-
-
 
 /*import laoyut components*/
 import HeaderProducts from '../components/single-item/headerProducts'
@@ -15,7 +12,7 @@ function SinglePage() {
 	return (
 		<main id="single">
 			<HeaderProducts />
-			<div className="back-single"><img src="../static/back.svg"/><span>Mesas</span></div>
+			<div className="back-single"><img src="back.svg" /><span>Mesas</span></div>
 			<div className="back-single-desktop">
 				<span>ATRÁS</span>
 				<span className="back-line"></span>

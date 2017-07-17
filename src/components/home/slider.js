@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Headss from '../head'
 import Header from './header'
 import { Carousel } from 'react-responsive-carousel'
 const imgLogoStyle = {
@@ -9,18 +8,17 @@ const imgLogoStyle = {
 const agnesiStyle = {
   width:'20%'
 }
+
 export default class Slider extends Component{
   render(){
     return(
       <div className="total-slider">
       <div>
-        <Headss/>
         <div className="opacity"></div>
           <Header/>
         <Carousel showArrows={false} showStatus={false} showThumbs={false} infiniteLoop={true}  emulateTouch={true}>
-
           <div className="prueba-slider">
-            <img src="../../images/main-image.png" />
+            <img src="images/main-image.png" />
             <div className="row project-link ">
               <div className="col-md-4 offset-md-7 col-xs-12">
                 <h1>New Arrivals</h1>
@@ -31,10 +29,9 @@ export default class Slider extends Component{
             </div>
           </div>
           <div>
-            <img src="../../images/agnesi.png" />
+            <img src="images/agnesi.png" />
             <p className="legend">Legend 6</p>
           </div>
-
         </Carousel>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Headss from '../components/head'
 import Header from '../components/home/header'
 import Footer from '../components/home/footer'
 import { Carousel } from 'react-responsive-carousel'
@@ -8,7 +7,6 @@ import MobilAgnesi from '../components/agnesi-casa/agnesi-project-mobil'
 import fetch from 'isomorphic-fetch'
 import { createCategory } from './api-admin.js'
 import { Link } from 'react-router-dom'
-import Back from '../images/back.svg'
 
 const imgLogoStyle = {
   width:'100%',
@@ -86,11 +84,10 @@ export default class AdminCategory extends Component{
   render(){
     return(
       <main id="admin-anuncios">
-        <Headss/>
         <div className="container">
   				<div className="row">
   					<div className="col-md-3 back-page">
-  						<div className="back"><Link to="/admin-menu"><img src={ Back }/><span>atrás</span></Link></div>
+  						<div className="back"><Link to="/admin-menu"><img src="images/back.svg"/><span>atrás</span></Link></div>
   					</div>
   					<div className="col-md-12">
   						<div className="row width-slider">

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { createSlider } from './api-admin.js'
 import { Link } from 'react-router-dom'
-import Back from '../images/back.svg'
 
 export default class SliderForm extends Component{
 
@@ -35,7 +34,7 @@ export default class SliderForm extends Component{
         <div className="container">
          <div className="row">
             <div className="col-md-3 back-page">
-                <div className="back"><Link to="/admin-menu"><img src={ Back }/><span>atrás</span></Link></div>
+                <div className="back"><Link to="/admin-menu"><img src="images/back.svg" /><span>atrás</span></Link></div>
             </div>
             <div className="col-md-12">
               <div className="row width-slider">

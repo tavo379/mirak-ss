@@ -5476,7 +5476,7 @@ input {
   z-index: 5; }
 
 .sliderd {
-  background-image: url("../images/main-image.png");
+  background-image: url("/images/main-image.png");
   background-size: 100% auto;
   position: relative;
   height: 758px;
@@ -5509,7 +5509,7 @@ input {
   display: none; }
 
 .header-products {
-  background-image: url("../images/headerfeed.png");
+  background-image: url("/images/headerfeed.png");
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
@@ -5663,7 +5663,7 @@ input {
   height: 400px;
   background-color: white;
   margin: 0 auto;
-  background-image: url("../images/fondo-form.png");
+  background-image: url("/images/fondo-form.png");
   background-position: center center; }
   .Modal input, .Modal textarea {
     margin-bottom: 30px;
@@ -5736,7 +5736,7 @@ input {
   padding-bottom: 10px; }
 
 .slider-agnesi {
-  background-image: url("../images/agnesi.png");
+  background-image: url("/images/agnesi.png");
   background-size: 100% auto;
   position: relative;
   height: 758px;
@@ -6743,7 +6743,7 @@ body {
   color: green; }
 
 .banner-cotizacion {
-  background-image: url("../images/cotizacion.png");
+  background-image: url("/images/cotizacion.png");
   background-repeat: no-repeat;
   background-size: 100%;
   color: #000000;

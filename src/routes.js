@@ -35,7 +35,6 @@ const AppRoutes = () =>
     <Route path="/agnesi-casa" component={ AgnesiCasa }/>
     <Route path="/agnesi-project" component={ AgnesiProject }/>
     <Route path="/" component={ HomePage }/>
-
   </Switch>
 
 export default AppRoutes;

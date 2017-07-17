@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Back from '../images/back.svg'
-import Delete from '../images/x-icon.svg'
-import Add from '../images/add.svg'
 
 export default class AdminUsers extends Component{
   constructor(props){
@@ -35,17 +32,17 @@ export default class AdminUsers extends Component{
         <div className="container">
           <div className="row">
             <div className="col-md-3 back-page">
-              <div className="back"><Link to="/admin-menu"><img src={ Back }/><span>atrás</span></Link></div>
+              <div className="back"><Link to="/admin-menu"><img src="images/back.svg" /><span>atrás</span></Link></div>
             </div>
             <div className="col-md-12">
               <div className="row">
                 <div className="col-md-10 menu-admin">
                   <h1 className="title-admin-menu">Usuarios</h1>
-                  <div className="add-user"><span className="add-user-icon">Agregar usuario</span><Link to="/admin-user-add"><img src={Add} /></Link></div>
+                  <div className="add-user"><span className="add-user-icon">Agregar usuario</span><Link to="/admin-user-add"><img src="images/add.svg" /></Link></div>
                   <nav className="nav-admin">
                     <ul>
                       {this.state.data.map((usuario)=>
-                        <li  key={usuario.id}><div className="delete-icon"><img src={Delete}/></div>{usuario.email}</li>
+                        <li  key={usuario.id}><div className="delete-icon"><img src="images/x-icon.svg" /></div>{usuario.email}</li>
                       )}
                     </ul>
                   </nav>
