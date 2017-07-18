@@ -12,10 +12,10 @@ export default class HeaderAgnesi extends Component{
     return(
       <div className="container-fluid">
         <div className="row header">
-          <div className="col-md-2 flex middle-md syslogo"><img style={imgLogoStyle} src="/static/syslogowhite.png"/></div>
+          <div className="col-md-2 flex middle-md syslogo"><img style={imgLogoStyle} src="/images/syslogowhite.png"/></div>
           <div className="col-md-10">
             <div className="row">
-            <div className="col-md-12 text-md-right agnesi"><img style={agnesiStyle} src="/static/agnesiwhiteh.png"/></div>
+            <div className="col-md-12 text-md-right agnesi"><img style={agnesiStyle} src="/images/agnesiwhiteh.png"/></div>
             <div className="col-md-12">
               <ul className="ListMenu">
                 <li><a href="/">Home</a></li>

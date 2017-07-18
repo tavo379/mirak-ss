@@ -1,6 +1,6 @@
 // Depedencias
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 // Componente
 
@@ -19,13 +19,28 @@ import AgnesiAdmin    from './pages/agnesi-admin';
 import AgnesiCasa     from './pages/agnesi-casa';
 import AgnesiProject  from './pages/agnesi-project';
 
+const loggedIn = () => !!localStorage.token;
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={props => (
+    loggedIn() ? (
+      <Component {...props}/>
+    ) : (
+      <Redirect to={{
+        pathname: '/admin-login',
+        state: { from: props.location }
+      }}/>
+    )
+  )}/>
+);
+
 const AppRoutes = () =>
   <Switch>
     <Route path="/products" component={ Products }/>
     <Route path="/single" component={ SinglePage }/>
-    <Route path="/admin-products" component={ ProductForm }/>
-    <Route path="/admin-category" component={ AdminCategory }/>
-    <Route path="/admin-anuncios" component={ AnuncioForm }/>
+    <PrivateRoute path="/admin-products" component={ ProductForm }/>
+    <PrivateRoute path="/admin-category" component={ AdminCategory }/>
+    <PrivateRoute path="/admin-anuncios" component={ AnuncioForm }/>
     <Route path="/admin-login" component={ AdminLogin }/>
     <Route path="/admin-menu" component={ AdminMenu }/>
     <Route path="/admin-slider" component={ SliderForm }/>

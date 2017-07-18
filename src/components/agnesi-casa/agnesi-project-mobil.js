@@ -11,7 +11,7 @@ import HeaderMobil from "../Mobile/header-mobil"
 function MobilAgnesi() {
 	return (
 		<main className="agnesi agnesi-mobil">
-      <div className="back-single"><img src="../static/back.svg"/><span>agnesi casa</span></div>
+      <div className="back-single"><img src="/images/back.svg"/><span>agnesi casa</span></div>
       <div className="col-md-12 title-single ">
         <h1>Proyecto n°4</h1>
       </div>

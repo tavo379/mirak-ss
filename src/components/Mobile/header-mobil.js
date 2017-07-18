@@ -39,13 +39,13 @@ export default class HeaderMobil extends Component{
       <div className="container-fluid header-mobil">
         <div className="row ">
           <div className={this.state.toggleHide}>
-            <img style={LogoToggle} src="/static/syslogoblack.png"/>
-            <img src="/static/toggle.svg" onClick={this.addClassName.bind(this)} className="toggle"/>
+            <img style={LogoToggle} src="/images/syslogoblack.png"/>
+            <img src="/images/toggle.svg" onClick={this.addClassName.bind(this)} className="toggle"/>
           </div>
         </div>
         <div className={this.state.categorie}>
-          <img src="/static/x-icon.svg" onClick={this.toggleClose.bind(this)} className="toggle-x"/>
-          <div className="col-md-2 flex middle-md"><img style={imgLogoStyle} src="/static/syslogoblack.png"/></div>
+          <img src="/images/x-icon.svg" onClick={this.toggleClose.bind(this)} className="toggle-x"/>
+          <div className="col-md-2 flex middle-md"><img style={imgLogoStyle} src="/images/syslogoblack.png"/></div>
           <div className="col-md-10">
             <div className="row">
 

@@ -20,7 +20,7 @@ export default class SliderAgnesi extends Component{
             <div className="container">
               <div className="row agnesi-hero-content">
                 <div className="col-md-12 col-xs-12 hero">
-                  <img style={agnesiStyle} src="/static/agnesiwhiteh.png"/>
+                  <img style={agnesiStyle} src="/images/agnesiwhiteh.png"/>
                 </div>
               </div>
             </div>

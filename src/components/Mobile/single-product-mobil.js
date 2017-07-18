@@ -59,10 +59,10 @@ export default class SingleProductMobil extends Component{
             <Carousel showArrows={false} showStatus={false} showThumbs={false} infiniteLoop={true}  emulateTouch={true}>
 
               <div className="prueba-slider">
-                <img src="/static/single-mesa-1.png" />
+                <img src="/images/single-mesa-1.png" />
               </div>
               <div>
-                <img src="/static/single-mesa-2.png" />
+                <img src="/images/single-mesa-2.png" />
               </div>
 
             </Carousel>
@@ -102,7 +102,7 @@ export default class SingleProductMobil extends Component{
                 >
                   <div className="container-fluid">
                   <div className="row modal-center">
-                    <div className="close-icon" onClick={this.closeModal}><img src="../static/x-icon.svg"/></div>
+                    <div className="close-icon" onClick={this.closeModal}><img src="/images/x-icon.svg"/></div>
                     <div className="col-md-12">
                       <h1>Contáctanos</h1>
                     </div>

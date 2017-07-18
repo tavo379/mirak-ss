@@ -26,7 +26,7 @@ class AdminLogin extends Component {
 					<div className="container">
 		        <div className="row">
 		          <div className="col-md-3 logo">
-		            <img src="../static/syslogoblack.png"/>
+		            <img src="/images/syslogoblack.png"/>
 		          </div>
 		          <div className="col-md-12 form-admin-login">
 		            <div className="form-login">

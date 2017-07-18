@@ -16,7 +16,7 @@ export default class HeaderProducts extends Component{
   render(){
     return(
       <div className="container-fluid">
-        <span className="icon-back-white"><img src="../static/back-icon-white.svg"/></span>
+        <span className="icon-back-white"><img src="/images/back-icon-white.svg"/></span>
         <div className="row header-products">
           <div className="col-md-12">
             <Header handleCategory={ this.props.handleCategory } />
