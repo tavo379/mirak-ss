@@ -75,10 +75,10 @@ export default class SingleProduct extends Component{
           <div className="col-md-8 col-xs-12 padding-sigle">
             <div className="row">
               <div className="col-md-3 most-images">
-                <div className="margin-item-img"><img src="static/single-mesa-1.png"/></div>
-                <div><img src="static/single-mesa-2.png"/></div>
+                <div className="margin-item-img"><img src="images/single-mesa-1.png"/></div>
+                <div><img src="images/single-mesa-2.png"/></div>
               </div>
-              <div className="col-md-9"><img src="static/mesa1.png"/></div>
+              <div className="col-md-9"><img src="images/mesa1.png"/></div>
             </div>
           </div>
           <div className="col-md-4 col-xs-12 padding-sigle-description ">
