@@ -4,6 +4,14 @@ const URL = `http://localhost:1337`;
 
 var cabecezaras = new Headers();
 
+function fetchStatusHandler(response) {
+  if (response.status === 200) {
+    return response.json();
+  } else {
+    throw new Error(response.statusText);
+  }
+}
+
   // CREAR PRODUCTO
 const createProduct = (data, archivos) => {
   console.log(archivos);
@@ -135,7 +143,7 @@ const login = (data, history) => {
     headers: cabecezaras,
     body: JSON.stringify(data)
   })
-  .then(res => res.json())
+  .then(fetchStatusHandler)
   .then((r) => {
     localStorage.setItem('token', r.token);
     history.push('/admin-menu');
