@@ -21,6 +21,7 @@ class Products extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
+      this.setState({ products: [] });
       this.handleProducts();
     }
   }

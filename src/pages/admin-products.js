@@ -4,40 +4,21 @@ import { Link } from 'react-router-dom';
 import { createProduct } from './api-admin.js';
 
 export default class ProductForm extends Component {
+  files = [];
   constructor(props) {
     super(props);
-    this.state = { data: [] };
+    this.state = {
+      category_name: '',
+      nombre: '',
+      color: '',
+      descripcion: '',
+      medidas: '',
+      url: '',
+      user_id: '1',
+      data: []
+    };
   }
-  image = '';
-  state = {
-    name: '',
-    subcategorie: []
-  };
 
-  url = '';
-  archivos = [];
-  state = {
-    category_name: '',
-    nombre: '',
-    color: '',
-    descripcion: '',
-    medidas: '',
-    url: '',
-    images: [],
-    user_id: '1'
-  };
-
-  handleSubmit(ev) {
-    ev.preventDefault();
-    createProduct(this.state, this.archivos).then(r => {
-      console.log(r);
-    });
-  }
-  handleImageChange(ev) {
-    ev.preventDefault;
-    let files = ev.target.files;
-    this.archivos = files;
-  }
   componentDidMount() {
     fetch('http://localhost:1337/category')
       .then(response => {
@@ -57,6 +38,19 @@ export default class ProductForm extends Component {
       .catch(err => {
         console.log('Fetch Error :-S', err);
       });
+  }
+
+  handleSubmit = (ev) => {
+    ev.preventDefault();
+    createProduct(this.state, this.files).then(r => {
+      console.log(r);
+    });
+  }
+
+  handleImageChange = (ev) => {
+    ev.preventDefault;
+    const file = ev.target.files[0];
+    this.files.push(file);
   }
 
   render() {
@@ -157,17 +151,18 @@ export default class ProductForm extends Component {
                           />
                         </div>
                         <h2>Imagen </h2>
-                        <button
-                          onClick={res => {
-                            this.handleFiles(res);
-                          }}
-                        >
+                        <button>
                           Seleccionar archivo
                         </button>
                         {/* <span className="size-description">El tamaño debe ser de 1280 x 580px</span>*/}
                         <input
                           type="file"
-                          multiple
+                          onChange={res => {
+                            this.handleImageChange(res);
+                          }}
+                        />
+                        <input
+                          type="file"
                           onChange={res => {
                             this.handleImageChange(res);
                           }}
