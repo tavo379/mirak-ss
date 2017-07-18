@@ -114,9 +114,7 @@ const createCategory = (data, sub) => {
 }
 //CREAR USUARIO
 const createUser = (data) => {
-
   let formData = new FormData();
-
       formData.append('email', data.email);
       formData.append('password', data.password);
 
@@ -125,25 +123,24 @@ const createUser = (data) => {
     headers: cabecezaras,
     body: formData
   })
-  .then( (r) => {
-    // console.log(r);
-    return r.json();
-  })
+  .then((r) => r.json())
   .catch( (err) => {
     console.log(err);
   })
 }
 // LOGIN
-const login = (data) => {
+const login = (data, history) => {
   return fetch(`${URL}/login`, {
     method: "POST",
     headers: cabecezaras,
     body: JSON.stringify(data)
   })
-  .then( (r) => {
-    console.log(r);
+  .then(res => res.json())
+  .then((r) => {
+    localStorage.setItem('token', r.token);
+    history.push('/admin-menu');
   })
-  .catch( (err) =>{
+  .catch((err) =>{
     console.log(err);
   })
 }

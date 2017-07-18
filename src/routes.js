@@ -42,7 +42,7 @@ const AppRoutes = () =>
     <PrivateRoute path="/admin-category" component={ AdminCategory }/>
     <PrivateRoute path="/admin-anuncios" component={ AnuncioForm }/>
     <Route path="/admin-login" component={ AdminLogin }/>
-    <Route path="/admin-menu" component={ AdminMenu }/>
+    <PrivateRoute path="/admin-menu" component={ AdminMenu }/>
     <Route path="/admin-slider" component={ SliderForm }/>
     <Route path="/admin-user-add" component={ AdminUserAdd }/>
     <Route path="/admin-users" component={ AdminUsers }/>

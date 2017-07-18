@@ -8,16 +8,9 @@ class AdminLogin extends Component {
 		password: ''
 	}
 
-	handleSubmit(ev){
+	handleSubmit = (ev) => {
 		ev.preventDefault();
-
-		login( this.state )
-		.then( (r) => {
-			console.log(r);
-		})
-		.catch( (err) => {
-			console.log(err);
-		})
+		login(this.state, this.props.history);
 	}
 
 	render(){
@@ -34,11 +27,11 @@ class AdminLogin extends Component {
 		              <form onSubmit={ (ev) => this.handleSubmit(ev) }>
 		                <div>
 		                  <span>Correo</span><br/>
-		                  <input type="text" onChange={ (email) => { this.setState({ email })}} ></input>
+		                  <input type="text" onChange={e => this.setState({email: e.target.value})} />
 		                </div>
 		                <div>
 		                  <span>Contraseña</span><br/>
-		                  <input type="password" onChange={ (password) => { this.setState({ password })}} ></input>
+		                  <input type="password" onChange={e => this.setState({password: e.target.value})} />
 		                </div>
 		                <button>Entrar</button>
 		              </form>
