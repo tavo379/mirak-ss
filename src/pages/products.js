@@ -20,7 +20,7 @@ class Products extends Component {
 		getProductsByCategory(id)
 			.then(products => {
 				console.log(products);
-				// this.setState(products)
+				this.setState({products});
 			});
 	}
 
