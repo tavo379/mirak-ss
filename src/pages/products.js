@@ -16,15 +16,24 @@ class Products extends Component {
 	}
 
 	componentDidMount() {
-		const { id } = queryString.parse(this.props.location.search);
+    this.handleProducts();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      this.handleProducts();
+    }
+  }
+  
+  handleProducts = () => {
+    const { id } = queryString.parse(this.props.location.search);
 		getProductsByCategory(id)
 			.then(products => {
 				this.setState({products});
 			});
-	}
+  }
 
   render() {
-		console.log(this.state);
     return (
       <main className="products">
         <HeaderProducts />
