@@ -23,7 +23,7 @@ const createProduct = (data, archivos) => {
       formData.append('user_id', '1');
       formData.append('medidas', data.medidas);
 
-  Array.prototype.forEach.call(archivos, function(f) {
+  archivos.map((f) => {
     formData.append('archivos', f);
   });
 
