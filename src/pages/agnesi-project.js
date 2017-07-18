@@ -26,9 +26,9 @@ export default class AgnesiProject extends Component{
               <button>cotiza tu proyecto</button>
               <hr/>
               <div className="icons" >
-                <img className="facebook"src="static/icon1.svg"/>
-                <img className="instagram"src="static/icon2.svg"/>
-                <img className="correo"src="static/icon3.svg"/>
+                <img className="facebook"src="images/icon1.svg"/>
+                <img className="instagram"src="images/icon2.svg"/>
+                <img className="correo"src="images/icon3.svg"/>
               </div>
 
             </div>

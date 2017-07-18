@@ -43,10 +43,10 @@ const AppRoutes = () =>
     <PrivateRoute path="/admin-anuncios" component={ AnuncioForm }/>
     <Route path="/admin-login" component={ AdminLogin }/>
     <PrivateRoute path="/admin-menu" component={ AdminMenu }/>
-    <Route path="/admin-slider" component={ SliderForm }/>
-    <Route path="/admin-user-add" component={ AdminUserAdd }/>
-    <Route path="/admin-users" component={ AdminUsers }/>
-    <Route path="/admin-agnesi" component={ AgnesiAdmin }/>
+    <PrivateRoute path="/admin-slider" component={ SliderForm }/>
+    <PrivateRoute path="/admin-user-add" component={ AdminUserAdd }/>
+    <PrivateRoute path="/admin-users" component={ AdminUsers }/>
+    <PrivateRoute path="/admin-agnesi" component={ AgnesiAdmin }/>
     <Route path="/agnesi-casa" component={ AgnesiCasa }/>
     <Route path="/agnesi-project" component={ AgnesiProject }/>
     <Route path="/" component={ HomePage }/>
