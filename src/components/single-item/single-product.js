@@ -45,7 +45,7 @@ export default class SingleProduct extends Component{
     this.setState({modalIsOpen: false});
   }
   componentDidMount(){
-    fetch('http://localhost:1337/posts/595b0da940eabbd0213d6fa7')
+    fetch('http://localhost:1339/posts/595b0da940eabbd0213d6fa7')
     .then((response) => {
       if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' +
@@ -69,16 +69,17 @@ export default class SingleProduct extends Component{
     return(
       <div className="container single-desktop">
         <div className="row product">
+          <h1>{this.props.products}</h1>
           <div className="col-md-12 title-single ">
             <h1>{this.state.data.nombre}</h1>
           </div>
           <div className="col-md-8 col-xs-12 padding-sigle">
             <div className="row">
               <div className="col-md-3 most-images">
-                <div className="margin-item-img"><img src="images/single-mesa-1.png"/></div>
-                <div><img src="images/single-mesa-2.png"/></div>
+                <div className="margin-item-img"><img src="images/single-mesa-1.png" alt=""/></div>
+                <div><img src="images/single-mesa-2.png" alt=""/></div>
               </div>
-              <div className="col-md-9"><img src="images/mesa1.png"/></div>
+              <div className="col-md-9"><img src="images/mesa1.png" alt=""/></div>
             </div>
           </div>
           <div className="col-md-4 col-xs-12 padding-sigle-description ">
@@ -114,7 +115,7 @@ export default class SingleProduct extends Component{
                 >
                   <div className="container-fluid">
                   <div className="row modal-center">
-                    <div className="close-icon" onClick={this.closeModal}><img src="/images/x-icon.svg"/></div>
+                    <div className="close-icon" onClick={this.closeModal}><img src="/images/x-icon.svg" alt="cerrar "/></div>
                     <div className="col-md-12">
                       <h1>Contáctanos</h1>
                     </div>

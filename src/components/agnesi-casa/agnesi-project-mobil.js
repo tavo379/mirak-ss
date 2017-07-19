@@ -1,17 +1,16 @@
 import React from 'react'
 /*import laoyut components*/
-import Header from '../home//header'
+
 import SliderAgnesi from '../agnesi-casa/slider-agnesi'
 import AgnesiDes from '../agnesi-casa/description-agnesi'
 import Social from '../home/social'
-import Footer from '../home/footer'
-import HeaderMobil from "../Mobile/header-mobil"
+
 
 
 function MobilAgnesi() {
 	return (
 		<main className="agnesi agnesi-mobil">
-      <div className="back-single"><img src="/images/back.svg"/><span>agnesi casa</span></div>
+      <div className="back-single"><img src="/images/back.svg" alt="volver"/><span>agnesi casa</span></div>
       <div className="col-md-12 title-single ">
         <h1>Proyecto n°4</h1>
       </div>

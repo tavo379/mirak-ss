@@ -38,15 +38,15 @@ const AppRoutes = () =>
   <Switch>
     <Route path="/products" component={ Products }/>
     <Route path="/single" component={ SinglePage }/>
-    <PrivateRoute path="/admin-products" component={ ProductForm }/>
-    <PrivateRoute path="/admin-category" component={ AdminCategory }/>
-    <PrivateRoute path="/admin-anuncios" component={ AnuncioForm }/>
+    <Route path="/admin-products" component={ ProductForm }/>
+    <Route path="/admin-category" component={ AdminCategory }/>
+    <Route path="/admin-anuncios" component={ AnuncioForm }/>
     <Route path="/admin-login" component={ AdminLogin }/>
     <PrivateRoute path="/admin-menu" component={ AdminMenu }/>
-    <PrivateRoute path="/admin-slider" component={ SliderForm }/>
-    <PrivateRoute path="/admin-user-add" component={ AdminUserAdd }/>
-    <PrivateRoute path="/admin-users" component={ AdminUsers }/>
-    <PrivateRoute path="/admin-agnesi" component={ AgnesiAdmin }/>
+    <Route path="/admin-slider" component={ SliderForm }/>
+    <Route path="/admin-user-add" component={ AdminUserAdd }/>
+    <Route path="/admin-users" component={ AdminUsers }/>
+    <Route path="/admin-agnesi" component={ AgnesiAdmin }/>
     <Route path="/agnesi-casa" component={ AgnesiCasa }/>
     <Route path="/agnesi-project" component={ AgnesiProject }/>
     <Route path="/" component={ HomePage }/>

@@ -2,7 +2,6 @@
 
 import fetch from 'isomorphic-fetch'
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 // import axios from 'axios'
 
@@ -41,10 +40,10 @@ export default class Header extends Component{
     return(
       <div className="container-fluid mobile-feed-page">
         <div className="row header">
-          <div className="col-md-2 flex syslogo"><Link to="/"><img style={imgLogoStyle} src="images/syslogowhite.png" /></Link></div>
+          <div className="col-md-2 flex syslogo"><Link to="/"><img style={imgLogoStyle} src="images/syslogowhite.png" alt="inicio"/></Link></div>
           <div className="col-md-10">
             <div className="row">
-            <div className="col-md-12 col-xs-12 text-md-right agnesi"><Link to="/agnesi-project"><img style={agnesiStyle} src="images/agnesiwhiteh.png" /></Link></div>
+            <div className="col-md-12 col-xs-12 text-md-right agnesi"><Link to="/agnesi-project"><img style={agnesiStyle} src="images/agnesiwhiteh.png" alt="agnesi casa" /></Link></div>
             <div className="col-md-12 col-xs-12">
               <ul className="ListMenu">
                 {this.state.data.map((categoria)=>

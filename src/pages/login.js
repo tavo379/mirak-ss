@@ -24,7 +24,7 @@ class Login extends Component {
         console.log(res)
         this.props.url.replaceTo('/agnesi-dmin')
       })
-      .catch(e => console.log(e))  // you would show/hide error messages with component state here 
+      .catch(e => console.log(e))  // you would show/hide error messages with component state here
   }
 
   render () {

@@ -55,6 +55,20 @@ const getProductsByCategory = (id) => {
       console.log(err);
     })
 }
+
+const getPost = (id) => {
+    return fetch(`${URL}/posts/${id}`, {
+      method: "GET",
+      headers: new Headers(),
+      body: null,
+    })
+    .then( (r) => {
+      return r.json();
+    } )
+    .catch ( (err) => {
+      console.log(err);
+    })
+}
 //CREANDO SLIDER
 const createSlider = (data, url) => {
 
@@ -175,6 +189,7 @@ export {
   createUser,
   createSlider,
   getProductsByCategory,
+  getPost,
   login,
   signUp
 }

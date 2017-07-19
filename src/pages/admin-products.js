@@ -61,7 +61,7 @@ export default class ProductForm extends Component {
             <div className="col-md-3 back-page">
               <div className="back">
                 <Link to="/admin-menu">
-                  <img src="images/back.svg" />
+                  <img src="images/back.svg" alt="volver"/>
                   <span>atrás</span>
                 </Link>
               </div>

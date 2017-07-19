@@ -47,7 +47,7 @@ export default class AgnesiDes extends Component{
     return(
       <div className="container">
         <div className="row Promo">
-          <div className="col-md-6 "><img src="static/agnesi-black.png"/></div>
+          <div className="col-md-6 "><img src="static/agnesi-black.png" alt="agnesi casa"/></div>
           <div className="col-md-6 col-xs-12 padding-sigle-description ">
             <div className="description-agnesi">
 
@@ -66,7 +66,7 @@ export default class AgnesiDes extends Component{
           </div>
           <div className="col-md-12">
             <div className="proyectos">
-              <span>Proyectos</span><img src="/images/next-black.svg"/>
+              <span>Proyectos</span><img src="/images/next-black.svg" alt="proyectos"/>
             </div>
             <div className="order">
               <Button onClick={this.openModal}>Cotiza tu proyecto</Button>
@@ -79,7 +79,7 @@ export default class AgnesiDes extends Component{
                 >
                   <div className="container-fluid">
                   <div className="row modal-center">
-                    <div className="close-icon" onClick={this.closeModal}><img src="/images/x-icon.svg"/></div>
+                    <div className="close-icon" onClick={this.closeModal}><img src="/images/x-icon.svg" alt="cerrar"/></div>
                     <div className="col-md-12">
                       <h1>Contáctanos</h1>
                     </div>

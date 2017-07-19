@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
 /*import laoyut components*/
-import Header from '../components/home//header'
 import SliderAgnesi from '../components/agnesi-casa/slider-agnesi'
 import AgnesiDes from '../components/agnesi-casa/description-agnesi'
 import Social from '../components/home/social'
 import Footer from '../components/home/footer'
 import HeaderMobil from "../components/Mobile/header-mobil"
 
-
-function AgnesiCasa() {
-	return (
+export default class AgnesiCasa extends Component {
+	componentDidMount() {
+      document.title = "Agnesi casa";
+  	}
+	render(){
+		return(
 		<main className="agnesi">
 			<HeaderMobil/>
 			<SliderAgnesi/>
@@ -21,7 +23,6 @@ function AgnesiCasa() {
 			<Social />
 			<Footer />
 		</main>
-	);
+		)
+	}
 }
-
-export default AgnesiCasa;

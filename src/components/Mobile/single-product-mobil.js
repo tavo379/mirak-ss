@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Modal from 'react-modal'
-import Slider from '../home/slider'
 import { Carousel } from 'react-responsive-carousel'
 
 
@@ -59,10 +58,10 @@ export default class SingleProductMobil extends Component{
             <Carousel showArrows={false} showStatus={false} showThumbs={false} infiniteLoop={true}  emulateTouch={true}>
 
               <div className="prueba-slider">
-                <img src="/images/single-mesa-1.png" />
+                <img src="/images/single-mesa-1.png" alt="" />
               </div>
               <div>
-                <img src="/images/single-mesa-2.png" />
+                <img src="/images/single-mesa-2.png"  alt=""/>
               </div>
 
             </Carousel>
@@ -102,7 +101,7 @@ export default class SingleProductMobil extends Component{
                 >
                   <div className="container-fluid">
                   <div className="row modal-center">
-                    <div className="close-icon" onClick={this.closeModal}><img src="/images/x-icon.svg"/></div>
+                    <div className="close-icon" onClick={this.closeModal}><img src="/images/x-icon.svg" alt="cerrar"/></div>
                     <div className="col-md-12">
                       <h1>Contáctanos</h1>
                     </div>

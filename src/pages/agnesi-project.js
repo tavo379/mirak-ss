@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import Header from '../components/home/header'
 import Footer from '../components/home/footer'
 import { Carousel } from 'react-responsive-carousel'
 import MobilAgnesi from '../components/agnesi-casa/agnesi-project-mobil'
-const imgLogoStyle = {
-  width:'100%',
-};
-const agnesiStyle = {
-  width:'20%'
-}
+
 export default class AgnesiProject extends Component{
+   componentDidMount() {
+      document.title = "Agnesi casa";
+  }
   render(){
     return(
     <main className="agnesi agnesi-project">
@@ -26,9 +23,9 @@ export default class AgnesiProject extends Component{
               <button>cotiza tu proyecto</button>
               <hr/>
               <div className="icons" >
-                <img className="facebook"src="images/icon1.svg"/>
-                <img className="instagram"src="images/icon2.svg"/>
-                <img className="correo"src="images/icon3.svg"/>
+                <img className="facebook"src="images/icon1.svg" alt="facebook"/>
+                <img className="instagram"src="images/icon2.svg" alt="instagram"/>
+                <img className="correo"src="images/icon3.svg" alt="correo"/>
               </div>
 
             </div>

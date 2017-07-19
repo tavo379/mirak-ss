@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 
 import HeaderAgnesi from './headerAgnesi'
 
-const imgLogoStyle = {
-  width:'100%',
-};
+
 const agnesiStyle = {
   width:'60%'
 }
@@ -20,7 +17,7 @@ export default class SliderAgnesi extends Component{
             <div className="container">
               <div className="row agnesi-hero-content">
                 <div className="col-md-12 col-xs-12 hero">
-                  <img style={agnesiStyle} src="/images/agnesiwhiteh.png"/>
+                  <img style={agnesiStyle} src="/images/agnesiwhiteh.png" alt="agnesi casa"/>
                 </div>
               </div>
             </div>
