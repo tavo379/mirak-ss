@@ -27,51 +27,26 @@ border-style: none;
 export default class SingleProduct extends Component{
   constructor() {
     super();
-
     this.state = {
       modalIsOpen: false,
-      data: [],
     };
-
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
 
-  openModal() {
+  openModal = () => {
     this.setState({modalIsOpen: true});
   }
 
-  closeModal() {
+  closeModal = () => {
     this.setState({modalIsOpen: false});
   }
-  componentDidMount(){
-    fetch('http://localhost:1339/posts/595b0da940eabbd0213d6fa7')
-    .then((response) => {
-      if (response.status !== 200) {
-        console.log('Looks like there was a problem. Status Code: ' +
-        response.status);
-        return;
-      }
-
-      // Examine the text in the response
-      response.json().then((data) => {
-        console.log(data)
-        this.setState({data: data})
-      });
-    })
-    .catch((err) => {
-      console.log('Fetch Error :-S', err);
-    });
-
-  };
 
   render(){
+    const { product } = this.props;
     return(
       <div className="container single-desktop">
         <div className="row product">
-          <h1>{this.props.products}</h1>
           <div className="col-md-12 title-single ">
-            <h1>{this.state.data.nombre}</h1>
+            <h1>{product.nombre}</h1>
           </div>
           <div className="col-md-8 col-xs-12 padding-sigle">
             <div className="row">
@@ -86,16 +61,16 @@ export default class SingleProduct extends Component{
             <div className="description">
               <h3>Descripción</h3>
               <p>
-                {this.state.data.descripcion}
+                {product.descripcion}
               </p>
               <h3>Medidas</h3>
               <p>
-                {this.state.data.medidas}
+                {product.medidas}
               </p>
               <div className="color-group">
                 <h3>Color</h3>
                 <div className="color-swatches">
-                  <span><label style = { { background: `${this.state.data.color}` } }></label></span>
+                  <span><label style = { { background: `${product.color}` } }></label></span>
                   <span><label className="color-2"></label></span>
                   <span><label className="color-3"></label></span>
                 </div>

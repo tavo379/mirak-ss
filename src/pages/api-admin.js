@@ -14,7 +14,6 @@ function fetchStatusHandler(response) {
 
   // CREAR PRODUCTO
 const createProduct = (data, archivos) => {
-  console.log(archivos);
   let formData = new FormData();
       formData.append('nombre', data.nombre);
       formData.append('category_name', data.category_name);

@@ -13,29 +13,31 @@ class SinglePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: []
+      product: {}
     };
   }
-  omponentDidMount() {
-    this.handleProducts();
+
+  componentDidMount() {
+    this.handleProduct();
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
-      this.setState({ products: [] });
-      this.handleProducts();
+      this.setState({ product: {} });
+      this.handleProduct();
     }
   }
 
-  handleProducts = () => {
+  handleProduct = () => {
     const { id } = queryString.parse(this.props.location.search);
     getPost(id)
-      .then(products => {
-        this.setState({products});
+      .then(product => {
+        this.setState({product});
       });
   }
+
   render(){
-    console.log(this.state.products);
+    console.log(this.state.product);
     return(
       <main id="single">
         <HeaderProducts />
@@ -44,7 +46,7 @@ class SinglePage extends Component {
           <span>ATRÁS</span>
           <span className="back-line"></span>
         </div>
-        <SingleProduct products= {this.state.products} />
+        <SingleProduct product={this.state.product} />
         <SingleProductMobil/>
         <Similar />
         <Social />
