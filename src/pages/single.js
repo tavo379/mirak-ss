@@ -37,7 +37,6 @@ class SinglePage extends Component {
   }
 
   render(){
-    console.log(this.state.product);
     return(
       <main id="single">
         <HeaderProducts />

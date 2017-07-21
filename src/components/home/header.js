@@ -27,8 +27,7 @@ export default class Header extends Component{
 
       // Examine the text in the response
       response.json().then((data) => {
-        console.log('data del servicio category ',data)
-        this.setState({data: data})
+        this.setState({data})
       });
     }
   )
@@ -49,10 +48,8 @@ export default class Header extends Component{
                 {this.state.data.map((categoria)=>
                   <li  key={categoria.id}>
                   <Link to={{ pathname: '/products', search: '?id=' + categoria.id }}>
-                      <a>
-                        {categoria.name}
-                      </a>
-                    </Link>
+                    {categoria.name}
+                  </Link>
                   </li>
                 )}
               </ul>

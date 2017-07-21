@@ -31,8 +31,7 @@ export default class ProductForm extends Component {
 
         // Examine the text in the response
         response.json().then(data => {
-          console.log('data del servicio category ', data);
-          this.setState({ data: data });
+          this.setState({data});
         });
       })
       .catch(err => {

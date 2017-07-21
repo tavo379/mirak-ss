@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Modal from 'react-modal'
-
+import { API_URL } from '../../config';
 
 const customStyles = {
   content : {
@@ -54,7 +54,13 @@ export default class SingleProduct extends Component{
                 <div className="margin-item-img"><img src="images/single-mesa-1.png" alt=""/></div>
                 <div><img src="images/single-mesa-2.png" alt=""/></div>
               </div>
-              <div className="col-md-9"><img src="images/mesa1.png" alt=""/></div>
+              <div className="col-md-9">
+                {
+                  product.images ?
+                    <img src={API_URL + product.images[0]} alt=""/>
+                  : null
+                }
+              </div>
             </div>
           </div>
           <div className="col-md-4 col-xs-12 padding-sigle-description ">
