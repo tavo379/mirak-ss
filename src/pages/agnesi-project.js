@@ -18,7 +18,7 @@ export default class AgnesiProject extends Component{
           <Header/>
         <Carousel showArrows={true} showStatus={false} showThumbs={false} infiniteLoop={true}  emulateTouch={true}>
           <div className="prueba-slider">
-            <img src="/images/main-image.png" />
+            <img src="/images/main-image.png" alt=""/>
             <div className="agnesi-project">
               <button>cotiza tu proyecto</button>
               <hr/>
@@ -31,7 +31,7 @@ export default class AgnesiProject extends Component{
             </div>
           </div>
           <div>
-            <img src="/images/agnesi.png" />
+            <img src="/images/agnesi.png" alt="" />
             <p className="legend">Legend 6</p>
           </div>
         </Carousel>

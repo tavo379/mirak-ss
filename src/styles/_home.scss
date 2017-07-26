@@ -1,6 +1,29 @@
 input{
   max-width: 100%;
 }
+button:focus {outline:0;}
+
+.title-slider h1{
+  font-family: 'Didot';
+  font-weight: 200;
+}
+.ListMenu li a{
+  font-family: 'Droid';
+}
+.newsletter__form{
+  form{
+  }
+  .btn{
+    background: transparent;
+    font-weight: bold;
+    padding: 10px 0;
+    outline:0;
+    float: right;
+  }
+  .btn:focus{
+    outline:0 !important;
+  }
+}
 .project-link{
   color:#fff;
   margin-top: 90px;/*arreglar*/

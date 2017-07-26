@@ -48,7 +48,7 @@ export default class Header extends Component{
                 {this.state.data.map((categoria)=>
                   <li  key={categoria.id}>
                   <Link to={{ pathname: '/products', search: '?id=' + categoria.id }}>
-                    {categoria.name}
+                        {categoria.name}
                   </Link>
                   </li>
                 )}

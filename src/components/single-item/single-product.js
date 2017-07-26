@@ -42,6 +42,7 @@ export default class SingleProduct extends Component{
 
   render(){
     const { product } = this.props;
+    console.log(this.props);
     return(
       <div className="container single-desktop">
         <div className="row product">

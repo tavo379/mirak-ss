@@ -1,0 +1,36 @@
+.header-nosotros{
+  background-image: url("/images/nosotros.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-top: 30px;
+  h1{
+    padding: 40px;
+    padding-left: 15%;
+    color: white;
+    font-size: 3.5rem;
+  }
+}
+.container-text{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0 0 0;
+  font-family: 'Droid';
+  font-size: 19px;
+  font-weight: 600;
+  .filosofia{
+    font-family: 'Didot';
+    font-size: 20px;
+    margin:40px 0 30px 0;
+    display: block;
+  }
+  h2{
+    border:0;
+    padding: 0;
+    margin:0;
+    font-family: 'Didot';
+    text-align: center;
+    margin:40px 0 0 0;
+    font-weight: 200;
+  }
+}

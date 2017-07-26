@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 const imgLogoStyle = {
   width:'100%',
@@ -11,8 +12,8 @@ export default class Footer extends Component{
         <div className="col-md-2 logo-footer"><img style={imgLogoStyle} src="images/syslogowhite.png" alt="inicio"/></div>
         <div className="col-md-6 offset-md-1 ">
           <ul className="ListMenu_footer">
-            <li>NOSOTROS</li>
-            <li>SUCURSALES</li>
+            <li><Link to="/nosotros">NOSOTROS</Link></li>
+            <li><Link to="/sucursales">SUCURSALES</Link></li>
             <li>CONTACTO</li>
           </ul>
         </div>

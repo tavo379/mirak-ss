@@ -18,6 +18,8 @@ import AdminUsers     from './pages/admin-users';
 import AgnesiAdmin    from './pages/agnesi-admin';
 import AgnesiCasa     from './pages/agnesi-casa';
 import AgnesiProject  from './pages/agnesi-project';
+import Nosotros       from './pages/nosotros';
+import Sucursales     from './pages/sucursales';
 
 const loggedIn = () => !!localStorage.token;
 
@@ -38,6 +40,8 @@ const AppRoutes = () =>
   <Switch>
     <Route path="/products" component={ Products }/>
     <Route path="/single" component={ SinglePage }/>
+    <Route path="/nosotros" component={ Nosotros }/>
+    <Route path="/sucursales" component={ Sucursales }/>
     <Route path="/admin-products" component={ ProductForm }/>
     <Route path="/admin-category" component={ AdminCategory }/>
     <Route path="/admin-anuncios" component={ AnuncioForm }/>

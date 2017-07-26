@@ -13,7 +13,7 @@ export default class Slider extends Component{
           <div className="prueba-slider">
             <img src="images/main-image.png" alt=""/>
             <div className="row project-link ">
-              <div className="col-md-4 offset-md-7 col-xs-12">
+              <div className="col-md-4 offset-md-7 col-xs-12 title-slider">
                 <h1>New Arrivals</h1>
                 <div className="ver_group">
                   <span>ver</span>

@@ -34,14 +34,16 @@ export default class AdminCategory extends Component{
 
   }
   handleImageChange(ev){
-
+    //eslint-disable-next-line
     ev.preventDefault;
+    //eslint-disable-next-line
     let reader = new FileReader();
     let file = ev.target.files[0];
     this.image = file ;
 
   }
   subcategorieFunction(ev){
+    //eslint-disable-next-line
     ev.preventDefault;
     if(document.getElementById('hijo').checked){
       document.getElementById("select-padre").removeAttribute('disabled');
@@ -75,7 +77,7 @@ export default class AdminCategory extends Component{
         <div className="container">
   				<div className="row">
   					<div className="col-md-3 back-page">
-  						<div className="back"><Link to="/admin-menu"><img src="images/back.svg"/><span>atrás</span></Link></div>
+  						<div className="back"><Link to="/admin-menu"><img src="images/back.svg"alt="volver"/><span>atrás</span></Link></div>
   					</div>
   					<div className="col-md-12">
   						<div className="row width-slider">

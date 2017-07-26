@@ -5392,6 +5392,26 @@ a.text-danger:focus, a.text-danger:hover {
 input {
   max-width: 100%; }
 
+button:focus {
+  outline: 0; }
+
+.title-slider h1 {
+  font-family: 'Didot';
+  font-weight: 200; }
+
+.ListMenu li a {
+  font-family: 'Droid'; }
+
+.newsletter__form .btn {
+  background: transparent;
+  font-weight: bold;
+  padding: 10px 0;
+  outline: 0;
+  float: right; }
+
+.newsletter__form .btn:focus {
+  outline: 0 !important; }
+
 .project-link {
   color: #fff;
   margin-top: 90px;
@@ -5734,6 +5754,70 @@ input {
   color: #fff;
   text-align: end;
   padding-bottom: 10px; }
+
+.header-nosotros {
+  background-image: url("/images/nosotros.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-top: 30px; }
+  .header-nosotros h1 {
+    padding: 40px;
+    padding-left: 15%;
+    color: white;
+    font-size: 3.5rem; }
+
+.container-text {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0 0 0;
+  font-family: 'Droid';
+  font-size: 19px;
+  font-weight: 600; }
+  .container-text .filosofia {
+    font-family: 'Didot';
+    font-size: 20px;
+    margin: 40px 0 30px 0;
+    display: block; }
+  .container-text h2 {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-family: 'Didot';
+    text-align: center;
+    margin: 40px 0 0 0;
+    font-weight: 200; }
+
+.header-sucursales {
+  background-image: url("/images/sucursales.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-top: 30px; }
+  .header-sucursales h1 {
+    padding: 40px;
+    padding-left: 15%;
+    color: white;
+    font-size: 3.5rem; }
+
+.text-sucursales {
+  font-weight: 600; }
+  .text-sucursales h2 {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-family: 'Didot';
+    text-align: center;
+    margin: 40px 0 0 0;
+    font-weight: 200; }
+  .text-sucursales p {
+    font-family: 'Droid';
+    font-size: 19px; }
+  .text-sucursales span {
+    font-family: 'Didot';
+    font-size: 20px;
+    padding-top: 40px;
+    display: block; }
 
 .slider-agnesi {
   background-image: url("/images/agnesi.png");
@@ -6639,9 +6723,6 @@ h1 {
   font-size: 2.5em; }
 
 h2 {
-  border-top: 1px solid #999;
-  padding-top: 40px;
-  margin-top: 40px;
   font-size: 2em; }
 
 h3 {
@@ -6726,6 +6807,18 @@ h5 {
   .slider-agnesi {
     height: 400px; } }
 
+@font-face {
+  font-family: 'Didot';
+  src: url("/fonts/TheanoDidot-Regular.ttf"); }
+
+@font-face {
+  font-family: 'Droid';
+  src: url("/fonts/DroidSans.ttf"); }
+
+h1 {
+  font-family: 'Didot';
+  font-weight: 200; }
+
 body {
   background-color: #fff; }
 
@@ -6749,10 +6842,13 @@ body {
   color: #000000;
   margin: 80px 0;
   display: flex;
+  font-family: 'Didot';
   align-items: center;
   justify-content: center; }
   .banner-cotizacion h1 {
-    padding: 19px 0; }
+    padding: 19px 0;
+    font-size: 50px;
+    font-weight: 200; }
 
 .ListMenu {
   list-style: none;
@@ -6777,6 +6873,10 @@ body {
   .ListMenu_footer li {
     padding: 25px 10px 10px 15px;
     margin-right: 35px; }
+    .ListMenu_footer li a {
+      color: #fff; }
+    .ListMenu_footer li a:hover {
+      text-decoration: none; }
 
 .email-footer {
   display: flex;

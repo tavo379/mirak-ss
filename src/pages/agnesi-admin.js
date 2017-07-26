@@ -8,7 +8,7 @@ export default class AgnesiAdmin extends Component{
         <div className="container">
   				<div className="row">
   					<div className="col-md-3 back-page">
-  						 <div className="back"><Link to="/admin-menu"><img src="images/back.svg" /><span>atrás</span></Link></div>
+  						 <div className="back"><Link to="/admin-menu"><img src="images/back.svg" alt="volver"/><span>atrás</span></Link></div>
   					</div>
   					<div className="col-md-12">
   						<div className="row">

@@ -21,12 +21,34 @@ const createProduct = (data, archivos) => {
       formData.append('color', data.color);
       formData.append('user_id', '1');
       formData.append('medidas', data.medidas);
-
+  //eslint-disable-next-line
   archivos.map((f) => {
     formData.append('archivos', f);
   });
 
   return fetch(`${URL}/post`,{
+    method: "POST",
+    headers: cabecezaras,
+    body: formData
+  })
+  .then( (r) => {
+    return r.json()
+  })
+  .catch( (err) => {
+    console.log(err);
+  })
+  data.nombre = '';
+}
+
+//CREANDO ANUNCIO
+const createAnuncio = (archivos) => {
+  let formData = new FormData();
+    //eslint-disable-next-line
+  archivos.map((f) => {
+    formData.append('archivos', f);
+  });
+
+  return fetch(`${URL}/anuncios`,{
     method: "POST",
     headers: cabecezaras,
     body: formData
@@ -54,7 +76,7 @@ const getProductsByCategory = (id) => {
       console.log(err);
     })
 }
-
+// Obtener POst
 const getPost = (id) => {
     return fetch(`${URL}/posts/${id}`, {
       method: "GET",
@@ -68,15 +90,21 @@ const getPost = (id) => {
       console.log(err);
     })
 }
+
+
+// Obtener anuncios
+
 //CREANDO SLIDER
-const createSlider = (data, url) => {
+const createSlider = (data, archivos) => {
 
   let formData = new FormData();
       formData.append('titulo', data.titulo);
       formData.append('subtitulo', data.subtitulo);
       formData.append('sliderlink', data.sliderlink);
-      formData.append('url', url);
-
+  //eslint-disable-next-line
+  archivos.map((f) => {
+    formData.append('archivos', f);
+  });
   return fetch(`${URL}/sliders`,{
     method: "POST",
     headers: cabecezaras,
@@ -91,26 +119,7 @@ const createSlider = (data, url) => {
 
 }
 
-//CREANDO ANUNCIO
-const createAnuncio = (url, url2 ) => {
 
-  let formData = new FormData();
-      formData.append('url', url);
-      formData.append('url2', url2);
-
-  return fetch(`${URL}/anuncios`,{
-    method: "POST",
-    headers: cabecezaras,
-    body: formData
-  })
-  .then( (r) => {
-    return r.json()
-  })
-  .catch( (err) => {
-    console.log(err);
-  })
-
-}
 
 // CREAR CATEGORIA
 const createCategory = (data, sub) => {

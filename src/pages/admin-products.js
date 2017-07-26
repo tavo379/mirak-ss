@@ -15,6 +15,7 @@ export default class ProductForm extends Component {
       medidas: '',
       url: '',
       user_id: '1',
+      file1: "",
       data: []
     };
   }
@@ -44,10 +45,17 @@ export default class ProductForm extends Component {
     createProduct(this.state, this.files).then(r => {
       console.log(r);
     });
+    this.setState({
+      nombre : '',
+      name: '',
+      file1: '',
+    })
   }
 
   handleImageChange = (ev) => {
+    // eslint-disable-next-line
     ev.preventDefault;
+    this.setState({ file1: ev.target.value });
     const file = ev.target.files[0];
     this.files.push(file);
   }
@@ -156,6 +164,7 @@ export default class ProductForm extends Component {
                         {/* <span className="size-description">El tamaño debe ser de 1280 x 580px</span>*/}
                         <input
                           type="file"
+                          value={this.state.file1}
                           onChange={res => {
                             this.handleImageChange(res);
                           }}
