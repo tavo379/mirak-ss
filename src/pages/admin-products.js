@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import { API_URL } from '../config';
 import { createProduct } from './api-admin.js';
 
 export default class ProductForm extends Component {
@@ -21,7 +21,7 @@ export default class ProductForm extends Component {
   }
 
   componentDidMount() {
-    fetch(`${URL}/category`)
+    fetch(`${API_URL}/category`)
       .then(response => {
         if (response.status !== 200) {
           console.log(

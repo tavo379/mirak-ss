@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Modal from 'react-modal'
 import { API_URL } from '../../config';
 
+import { ReactImageMagnify } from 'react-image-magnify';
+
 const customStyles = {
   content : {
     top                   : '50%',
@@ -29,6 +31,8 @@ export default class SingleProduct extends Component{
     super();
     this.state = {
       modalIsOpen: false,
+      colorSeleccionado: 'color1',
+      imagenSeleccionada: 0
     };
   }
 
@@ -40,9 +44,32 @@ export default class SingleProduct extends Component{
     this.setState({modalIsOpen: false});
   }
 
+  /**
+   * Evento al seleccinar color
+   * 
+   * @param {String} propColor nueo color seleccionado
+   */
+  cambioColor (propColor) {
+    this.setState({
+      colorSeleccionado: propColor
+    })
+  }
+  /**
+   * Evento al seleccionar una imagen
+   * 
+   * @param {Integer} propImagen Nuevo index de la imagen seleccionada
+   */
+  cambioImagen (propImagen) {
+    this.setState({
+      imagenSeleccionada: propImagen
+    })
+  }
   render(){
     const { product } = this.props;
-    console.log(this.props);
+
+    let color = product[this.state.colorSeleccionado]
+    let urlImagen = product.images[this.state.imagenSeleccionada][this.state.colorSeleccionado]
+    
     return(
       <div className="container single-desktop">
         <div className="row product">
@@ -52,15 +79,40 @@ export default class SingleProduct extends Component{
           <div className="col-md-8 col-xs-12 padding-sigle">
             <div className="row">
               <div className="col-md-3 most-images">
-                <div className="margin-item-img"><img src="images/single-mesa-1.png" alt=""/></div>
-                <div><img src="images/single-mesa-2.png" alt=""/></div>
+                {/* Motrar las imagenes en miniatura, no la seleccionada */}
+                {product.images.map((image, index) => {
+                  if (this.state.imagenSeleccionada === index) {
+                    return null
+                  }
+                  let url = image[this.state.colorSeleccionado]
+                  return (
+                    <div className="margin-item-img"><img key={'imagen-'+index} src={url} onClick={this.cambioImagen.bind(this, index)} /></div>
+                  )
+                })}
               </div>
-              <div className="col-md-9">
-                {
-                  product.images ?
-                    <img src={API_URL + product.images[0]} alt=""/>
-                  : null
-                }
+              <div className="col-md-9">                
+
+                {/* Foto principal */}
+                <div className="pointer">
+                  {/* Titulo */}
+                  <div className="pointer__instructions">
+                    <span style={{width:'100%', textAlign: 'center'}}>{d.titulo}</span>
+                  </div>
+                  <ReactImageMagnify {...{
+                      largeImage: {
+                          alt: '',
+                          src: urlImagen,
+                          width: 800,
+                          height: 800
+                      },
+                      smallImage: {
+                          alt: 'Wristwatch by Ted Baker London',
+                          src: urlImagen,
+                          width: 300,
+                          height: 300
+                      }
+                  }} />
+                </div>
               </div>
             </div>
           </div>
@@ -77,9 +129,9 @@ export default class SingleProduct extends Component{
               <div className="color-group">
                 <h3>Color</h3>
                 <div className="color-swatches">
-                  <span><label style = { { background: `${product.color}` } }></label></span>
-                  <span><label className="color-2"></label></span>
-                  <span><label className="color-3"></label></span>
+                  <span><label style = { { background: `${product.color1}` } } onClick={this.cambioColor.bind(this, 'color1')}></label></span>
+                  <span><label style = { { background: `${product.color2}` } } onClick={this.cambioColor.bind(this, 'color2')}></label></span>
+                  <span><label style = { { background: `${product.color3}` } } onClick={this.cambioColor.bind(this, 'color3')}></label></span>
                 </div>
               </div>
             </div>
