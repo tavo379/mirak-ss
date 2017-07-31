@@ -70,12 +70,12 @@ export default class ProductForm extends Component {
     })
   }
 
-  handleImageChangeColor = (ev, index, archivoColor) => {
+  handleImageChangeColor = (ev, index, indexColor, archivoColor) => {
     // eslint-disable-next-line
     ev.preventDefault;
     this.state.files[index] = ev.target.value
     this.setState({ files: this.state.files });
-    this.archivos[archivoColor][index] = ev.target.value
+    this.archivos[archivoColor][indexColor] = ev.target.value
     // const file = ev.target.files[0];
     // this.files.push(file);
   }
@@ -203,7 +203,7 @@ export default class ProductForm extends Component {
                           type="file"
                           value={this.state.files[0]}
                           onChange={res => {
-                            this.handleImageChangeColor(res, 0, 'archivosColor1');
+                            this.handleImageChangeColor(res, 0, 0, 'archivosColor1');
                           }}
                         />
                         {/* Urls color 2 */}
@@ -211,7 +211,7 @@ export default class ProductForm extends Component {
                           type="file"
                           value={this.state.files[1]}
                           onChange={res => {
-                            this.handleImageChangeColor(res, 0, 'archivosColor2');
+                            this.handleImageChangeColor(res, 1, 0, 'archivosColor2');
                           }}
                         />
                         {/* Urls color 3 */}
@@ -219,7 +219,7 @@ export default class ProductForm extends Component {
                           type="file"
                           value={this.state.files[2]}
                           onChange={res => {
-                            this.handleImageChangeColor(res, 0, 'archivosColor3');
+                            this.handleImageChangeColor(res, 2, 0, 'archivosColor3');
                           }}
                         />
 
@@ -229,7 +229,7 @@ export default class ProductForm extends Component {
                           type="file"
                           value={this.state.files[3]}
                           onChange={res => {
-                            this.handleImageChangeColor(res, 1, 'archivosColor1');
+                            this.handleImageChangeColor(res, 3, 1, 'archivosColor1');
                           }}
                         />
                         {/* Urls color 2 */}
@@ -237,7 +237,7 @@ export default class ProductForm extends Component {
                           type="file"
                           value={this.state.files[4]}
                           onChange={res => {
-                            this.handleImageChangeColor(res, 1, 'archivosColor2');
+                            this.handleImageChangeColor(res, 4, 1, 'archivosColor2');
                           }}
                         />
                         {/* Urls color 3 */}
@@ -245,7 +245,7 @@ export default class ProductForm extends Component {
                           type="file"
                           value={this.state.files[5]}
                           onChange={res => {
-                            this.handleImageChangeColor(res, 1, 'archivosColor3');
+                            this.handleImageChangeColor(res, 5, 1, 'archivosColor3');
                           }}
                         />
 
@@ -255,7 +255,7 @@ export default class ProductForm extends Component {
                           type="file"
                           value={this.state.files[6]}
                           onChange={res => {
-                            this.handleImageChangeColor(res, 2, 'archivosColor1');
+                            this.handleImageChangeColor(res, 6, 2, 'archivosColor1');
                           }}
                         />
                         {/* Urls color 2 */}
@@ -263,7 +263,7 @@ export default class ProductForm extends Component {
                           type="file"
                           value={this.state.files[7]}
                           onChange={res => {
-                            this.handleImageChangeColor(res, 2, 'archivosColor2');
+                            this.handleImageChangeColor(res, 7, 2, 'archivosColor2');
                           }}
                         />
                         {/* Urls color 3 */}
@@ -271,7 +271,7 @@ export default class ProductForm extends Component {
                           type="file"
                           value={this.state.files[8]}
                           onChange={res => {
-                            this.handleImageChangeColor(res, 2, 'archivosColor3');
+                            this.handleImageChangeColor(res, 8, 2, 'archivosColor3');
                           }}
                         />
                       </div>
