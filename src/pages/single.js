@@ -13,7 +13,7 @@ class SinglePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: {}
+      product: null 
     };
   }
 
@@ -50,7 +50,7 @@ class SinglePage extends Component {
         {this.state.product
         ?
           <SingleProduct product={this.state.product} />
-        :null}        
+        :null}
         <SingleProductMobil/>
         <Similar />
         <Social />
