@@ -26,7 +26,8 @@ export default class ProductForm extends Component {
       medidas: '',
       url: '',
       user_id: '1',
-      files: files
+      files: files,
+      data: []
     };
   }
 
