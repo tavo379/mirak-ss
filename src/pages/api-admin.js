@@ -1,6 +1,7 @@
 // import axios from 'axios';
 
-const URL = `http://localhost:1337`;
+// const URL = `http://localhost:1337`;
+import { API_URL } from '../config';
 
 var cabecezaras = new Headers();
 
@@ -21,13 +22,14 @@ const createProduct = (data, archivos) => {
       formData.append('color1', data.color1);
       formData.append('color2', data.color2);
       formData.append('color3', data.color3);
-      formData.append('archivosColor1', JSON.stringify(archivos.archivosColor1));
-      formData.append('archivosColor2', JSON.stringify(archivos.archivosColor2));
-      formData.append('archivosColor3', JSON.stringify(archivos.archivosColor3));
       formData.append('user_id', '1');
       formData.append('medidas', data.medidas);
 
-  return fetch(`${URL}/post`,{
+  archivos.map((f) => {
+    formData.append('archivos', f);
+  });
+
+  return fetch(`${API_URL}/post`,{
     method: "POST",
     headers: cabecezaras,
     body: formData

@@ -7,11 +7,7 @@ export default class ProductForm extends Component {
   files = [];
   constructor(props) {
     super(props);
-    this.archivos = {
-      archivosColor1: [],
-      archivosColor2: [],
-      archivosColor3: []
-    }
+    this.archivos = []
     let files = []
     for (var i = 0; i < 9; i++) {
       files[i] = ''  
@@ -80,7 +76,7 @@ export default class ProductForm extends Component {
     ev.preventDefault;
     this.state.files[index] = ev.target.value
     this.setState({ files: this.state.files });
-    this.archivos[archivoColor][indexColor] = ev.target.value
+    this.archivos[index] = ev.target.files[0] // ev.target.value
     // const file = ev.target.files[0];
     // this.files.push(file);
   }
