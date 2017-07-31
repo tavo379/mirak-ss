@@ -7,6 +7,15 @@ export default class ProductForm extends Component {
   files = [];
   constructor(props) {
     super(props);
+    this.archivos = {
+      archivosColor1: [],
+      archivosColor2: [],
+      archivosColor3: []
+    }
+    let files = []
+    for (var i = 0; i < 9; i++) {
+      files[i] = ''  
+    }
     this.state = {
       category_name: '',
       nombre: '',
@@ -17,10 +26,7 @@ export default class ProductForm extends Component {
       medidas: '',
       url: '',
       user_id: '1',
-      file1: "",
-      file2: "",
-      file3: "",
-      data: []
+      files: files
     };
   }
 
@@ -46,41 +52,31 @@ export default class ProductForm extends Component {
 
   handleSubmit = (ev) => {
     ev.preventDefault();
-    createProduct(this.state, this.files).then(r => {
+    createProduct(this.state, this.archivos).then(r => {
       console.log(r);
     });
+    let files = []
+    for (var i = 0; i < 9; i++) {
+      files[i] = ''  
+    }
     this.setState({
       nombre : '',
       name: '',
-      file1: '',
-      file2: '',
-      file3: '',
+      color1: '',
+      color2: '',
+      color3: '',
+      files: files
     })
   }
 
-  handleImageChangeColor1 = (ev) => {
+  handleImageChangeColor = (ev, index, archivoColor) => {
     // eslint-disable-next-line
     ev.preventDefault;
-    this.setState({ file1: ev.target.value });
+    this.state.files[index] = ev.target.value
+    this.setState({ files: this.state.files });
+    this.archivos[archivoColor][index] = ev.target.value
     // const file = ev.target.files[0];
     // this.files.push(file);
-    this.filesColor1 = ev.target.files;
-  }
-  handleImageChangeColor2 = (ev) => {
-    // eslint-disable-next-line
-    ev.preventDefault;
-    this.setState({ file2: ev.target.value });
-    // const file = ev.target.files[0];
-    // this.files.push(file);
-    this.filesColor2 = ev.target.files;
-  }
-  handleImageChangeColor3 = (ev) => {
-    // eslint-disable-next-line
-    ev.preventDefault;
-    this.setState({ file3: ev.target.value });
-    // const file = ev.target.files[0];
-    // this.files.push(file);
-    this.filesColor3 = ev.target.files;
   }
   render() {
     return (
@@ -196,73 +192,83 @@ export default class ProductForm extends Component {
                           />
                         </div>
                         <h2>Imagen </h2>
+                        {/* Primer grupo de inputs */}
+                        {/* Urls color 1 */}
                         <input
                           type="file"
-                          value={this.state.file1}
+                          value={this.state.files[0]}
                           onChange={res => {
-                            this.handleImageChangeColor1(res);
-                          }}
-                        />
-                        {/* Urls color 3 */}
-                        <input
-                          type="file"
-                          onChange={res => {
-                            this.handleImageChangeColor2(res);
+                            this.handleImageChangeColor(res, 0, 'archivosColor1');
                           }}
                         />
                         {/* Urls color 2 */}
                         <input
                           type="file"
+                          value={this.state.files[1]}
                           onChange={res => {
-                            this.handleImageChangeColor3(res);
+                            this.handleImageChangeColor(res, 0, 'archivosColor2');
+                          }}
+                        />
+                        {/* Urls color 3 */}
+                        <input
+                          type="file"
+                          value={this.state.files[2]}
+                          onChange={res => {
+                            this.handleImageChangeColor(res, 0, 'archivosColor3');
                           }}
                         />
 
                         {/* Segundo grupo de inputs */}
-
+                        {/* Urls color 1 */}
                         <input
                           type="file"
+                          value={this.state.files[3]}
                           value={this.state.file1}
                           onChange={res => {
-                            this.handleImageChangeColor1(res);
-                          }}
-                        />
-                        {/* Urls color 3 */}
-                        <input
-                          type="file"
-                          onChange={res => {
-                            this.handleImageChangeColor2(res);
+                            this.handleImageChangeColor(res, 1, 'archivosColor1');
                           }}
                         />
                         {/* Urls color 2 */}
                         <input
                           type="file"
+                          value={this.state.files[4]}
                           onChange={res => {
-                            this.handleImageChangeColor3(res);
+                            this.handleImageChangeColor(res, 1, 'archivosColor2');
+                          }}
+                        />
+                        {/* Urls color 3 */}
+                        <input
+                          type="file"
+                          value={this.state.files[5]}
+                          onChange={res => {
+                            this.handleImageChangeColor(res, 1, 'archivosColor3');
                           }}
                         />
 
                         {/* Tercer grupo de inputs */}
-
+                        {/* Urls color 1 */}
                         <input
                           type="file"
+                          value={this.state.files[6]}
                           value={this.state.file1}
                           onChange={res => {
-                            this.handleImageChangeColor1(res);
-                          }}
-                        />
-                        {/* Urls color 3 */}
-                        <input
-                          type="file"
-                          onChange={res => {
-                            this.handleImageChangeColor2(res);
+                            this.handleImageChangeColor(res, 2, 'archivosColor1');
                           }}
                         />
                         {/* Urls color 2 */}
                         <input
                           type="file"
+                          value={this.state.files[7]}
                           onChange={res => {
-                            this.handleImageChangeColor3(res);
+                            this.handleImageChangeColor(res, 2, 'archivosColor2');
+                          }}
+                        />
+                        {/* Urls color 3 */}
+                        <input
+                          type="file"
+                          value={this.state.files[8]}
+                          onChange={res => {
+                            this.handleImageChangeColor(res, 2, 'archivosColor3');
                           }}
                         />
                       </div>
