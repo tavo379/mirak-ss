@@ -11,7 +11,7 @@ const ProductFeed = ({ products }) => (
       return (
         <div key = { product.id } className="col-md-6 col-xs-6 feed-box">
           <div>
-          <img src={API_URL + images[0]} alt=""/>
+          <img src={API_URL + images[0].color1} alt=""/>
           </div>
           <div className="feed-description"><span>{ product.nombre }</span><hr/></div>
           <div className="feed-single-redirection">
@@ -24,7 +24,7 @@ const ProductFeed = ({ products }) => (
           </div>
         </div>
       )
-     
+
     })}
     </div>
   </div>
