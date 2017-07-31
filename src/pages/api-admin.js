@@ -22,11 +22,18 @@ const createProduct = (data, archivos) => {
       formData.append('color1', data.color1);
       formData.append('color2', data.color2);
       formData.append('color3', data.color3);
-      formData.append('archivosColor1', archivos.archivosColor1);
-      formData.append('archivosColor2', archivos.archivosColor2);
-      formData.append('archivosColor3', archivos.archivosColor3);
       formData.append('user_id', '1');
       formData.append('medidas', data.medidas);
+
+  archivos.archivosColor1.map((f) => {
+    formData.append('archivosColor1', f);
+  });
+  archivos.archivosColor2.map((f) => {
+    formData.append('archivosColor2', f);
+  });
+  archivos.archivosColor3.map((f) => {
+    formData.append('archivosColor3', f);
+  });
 
   return fetch(`${API_URL}/post`,{
     method: "POST",
