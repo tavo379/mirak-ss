@@ -18,7 +18,9 @@ const createProduct = (data, archivos) => {
       formData.append('nombre', data.nombre);
       formData.append('category_name', data.category_name);
       formData.append('descripcion', data.descripcion);
-      formData.append('color', data.color);
+      formData.append('color1', data.color1);
+      formData.append('color2', data.color2);
+      formData.append('color3', data.color3);
       formData.append('user_id', '1');
       formData.append('medidas', data.medidas);
   //eslint-disable-next-line

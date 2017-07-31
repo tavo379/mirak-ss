@@ -10,12 +10,16 @@ export default class ProductForm extends Component {
     this.state = {
       category_name: '',
       nombre: '',
-      color: '',
+      color1: '',
+      color2: '',
+      color3: '',
       descripcion: '',
       medidas: '',
       url: '',
       user_id: '1',
       file1: "",
+      file2: "",
+      file3: "",
       data: []
     };
   }
@@ -49,17 +53,35 @@ export default class ProductForm extends Component {
       nombre : '',
       name: '',
       file1: '',
+      file2: '',
+      file3: '',
     })
   }
 
-  handleImageChange = (ev) => {
+  handleImageChangeColor1 = (ev) => {
     // eslint-disable-next-line
     ev.preventDefault;
     this.setState({ file1: ev.target.value });
-    const file = ev.target.files[0];
-    this.files.push(file);
+    // const file = ev.target.files[0];
+    // this.files.push(file);
+    this.filesColor1 = ev.target.files;
   }
-
+  handleImageChangeColor2 = (ev) => {
+    // eslint-disable-next-line
+    ev.preventDefault;
+    this.setState({ file2: ev.target.value });
+    // const file = ev.target.files[0];
+    // this.files.push(file);
+    this.filesColor2 = ev.target.files;
+  }
+  handleImageChangeColor3 = (ev) => {
+    // eslint-disable-next-line
+    ev.preventDefault;
+    this.setState({ file3: ev.target.value });
+    // const file = ev.target.files[0];
+    // this.files.push(file);
+    this.filesColor3 = ev.target.files;
+  }
   render() {
     return (
       <main id="admin-anuncios">
@@ -153,31 +175,96 @@ export default class ProductForm extends Component {
                           <input
                             type="text"
                             onChange={res => {
-                              this.setState({ color: res.target.value });
+                              this.setState({ color1 : res.target.value });
+                            }}
+                          />
+                        </div>
+                        <div className="inputs-group">
+                          <input
+                            type="text"
+                            onChange={res => {
+                              this.setState({ color2 : res.target.value });
+                            }}
+                          />
+                        </div>
+                        <div className="inputs-group">
+                          <input
+                            type="text"
+                            onChange={res => {
+                              this.setState({ color3 : res.target.value });
                             }}
                           />
                         </div>
                         <h2>Imagen </h2>
-                        <button>
-                          Seleccionar archivo
-                        </button>
-                        {/* <span className="size-description">El tamaño debe ser de 1280 x 580px</span>*/}
-                        {/* Urls color 1 */}
                         <input
                           type="file"
                           value={this.state.file1}
                           onChange={res => {
-                            this.handleImageChange(res);
+                            this.handleImageChangeColor1(res);
                           }}
                         />
                         {/* Urls color 3 */}
                         <input
                           type="file"
                           onChange={res => {
-                            this.handleImageChange(res);
+                            this.handleImageChangeColor2(res);
                           }}
                         />
                         {/* Urls color 2 */}
+                        <input
+                          type="file"
+                          onChange={res => {
+                            this.handleImageChangeColor3(res);
+                          }}
+                        />
+
+                        {/* Segundo grupo de inputs */}
+
+                        <input
+                          type="file"
+                          value={this.state.file1}
+                          onChange={res => {
+                            this.handleImageChangeColor1(res);
+                          }}
+                        />
+                        {/* Urls color 3 */}
+                        <input
+                          type="file"
+                          onChange={res => {
+                            this.handleImageChangeColor2(res);
+                          }}
+                        />
+                        {/* Urls color 2 */}
+                        <input
+                          type="file"
+                          onChange={res => {
+                            this.handleImageChangeColor3(res);
+                          }}
+                        />
+
+                        {/* Tercer grupo de inputs */}
+
+                        <input
+                          type="file"
+                          value={this.state.file1}
+                          onChange={res => {
+                            this.handleImageChangeColor1(res);
+                          }}
+                        />
+                        {/* Urls color 3 */}
+                        <input
+                          type="file"
+                          onChange={res => {
+                            this.handleImageChangeColor2(res);
+                          }}
+                        />
+                        {/* Urls color 2 */}
+                        <input
+                          type="file"
+                          onChange={res => {
+                            this.handleImageChangeColor3(res);
+                          }}
+                        />
                       </div>
                     </div>
                   </div>

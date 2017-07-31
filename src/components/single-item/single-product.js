@@ -46,7 +46,7 @@ export default class SingleProduct extends Component{
 
   /**
    * Evento al seleccinar color
-   * 
+   *
    * @param {String} propColor nueo color seleccionado
    */
   cambioColor (propColor) {
@@ -56,7 +56,7 @@ export default class SingleProduct extends Component{
   }
   /**
    * Evento al seleccionar una imagen
-   * 
+   *
    * @param {Integer} propImagen Nuevo index de la imagen seleccionada
    */
   cambioImagen (propImagen) {
@@ -69,7 +69,7 @@ export default class SingleProduct extends Component{
 
     let color = product[this.state.colorSeleccionado]
     let urlImagen = product.images[this.state.imagenSeleccionada][this.state.colorSeleccionado]
-    
+
     return(
       <div className="container single-desktop">
         <div className="row product">
@@ -90,13 +90,13 @@ export default class SingleProduct extends Component{
                   )
                 })}
               </div>
-              <div className="col-md-9">                
+              <div className="col-md-9">
 
                 {/* Foto principal */}
                 <div className="pointer">
                   {/* Titulo */}
                   <div className="pointer__instructions">
-                    <span style={{width:'100%', textAlign: 'center'}}>{d.titulo}</span>
+                    <span style={{width:'100%', textAlign: 'center'}}>{product.titulo}</span>
                   </div>
                   <ReactImageMagnify {...{
                       largeImage: {
