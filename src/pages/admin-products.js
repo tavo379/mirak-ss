@@ -228,7 +228,6 @@ export default class ProductForm extends Component {
                         <input
                           type="file"
                           value={this.state.files[3]}
-                          value={this.state.file1}
                           onChange={res => {
                             this.handleImageChangeColor(res, 1, 'archivosColor1');
                           }}
@@ -255,7 +254,6 @@ export default class ProductForm extends Component {
                         <input
                           type="file"
                           value={this.state.files[6]}
-                          value={this.state.file1}
                           onChange={res => {
                             this.handleImageChangeColor(res, 2, 'archivosColor1');
                           }}
