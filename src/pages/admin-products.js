@@ -7,11 +7,7 @@ export default class ProductForm extends Component {
   files = [];
   constructor(props) {
     super(props);
-    this.archivos = {
-      archivosColor1: [],
-      archivosColor2: [],
-      archivosColor3: []
-    }
+    this.archivos = []
     let files = []
     for (var i = 0; i < 9; i++) {
       files[i] = ''  
