@@ -32,6 +32,8 @@ class SinglePage extends Component {
     const { id } = queryString.parse(this.props.location.search);
     getPost(id)
       .then(product => {
+        // Aqui se hace la otra magia pokemón
+        product.images = JSON.parse(product.images)
         this.setState({product});
       });
   }
