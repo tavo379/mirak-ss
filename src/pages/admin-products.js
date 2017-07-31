@@ -79,6 +79,10 @@ export default class ProductForm extends Component {
     // this.files.push(file);
   }
   render() {
+    let data = this.state.data
+    if (!data) {
+      data = []
+    }
     return (
       <main id="admin-anuncios">
         <div className="container">
