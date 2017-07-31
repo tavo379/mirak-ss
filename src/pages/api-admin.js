@@ -1,6 +1,6 @@
 // import axios from 'axios';
 
-const URL = `http://localhost:1337`;
+// const URL = `http://localhost:1337`;
 
 var cabecezaras = new Headers();
 

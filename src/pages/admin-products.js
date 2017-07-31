@@ -21,7 +21,7 @@ export default class ProductForm extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:1337/category')
+    fetch(`${URL}/category`)
       .then(response => {
         if (response.status !== 200) {
           console.log(
@@ -162,6 +162,7 @@ export default class ProductForm extends Component {
                           Seleccionar archivo
                         </button>
                         {/* <span className="size-description">El tamaño debe ser de 1280 x 580px</span>*/}
+                        {/* Urls color 1 */}
                         <input
                           type="file"
                           value={this.state.file1}
@@ -169,12 +170,14 @@ export default class ProductForm extends Component {
                             this.handleImageChange(res);
                           }}
                         />
+                        {/* Urls color 3 */}
                         <input
                           type="file"
                           onChange={res => {
                             this.handleImageChange(res);
                           }}
                         />
+                        {/* Urls color 2 */}
                       </div>
                     </div>
                   </div>

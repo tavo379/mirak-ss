@@ -8,6 +8,12 @@ import AppRoutes from './routes';
 import './styles/main.css';
 import registerServiceWorker from './registerServiceWorker';
 
+var URL = '138.68.49.219'
+if (window.location.href.indexOf('localhost') === -1 ) {
+  URL = 'http://localhost:1337'
+}
+
+ 
 ReactDOM.render(
   <Router>
     <AppRoutes />
