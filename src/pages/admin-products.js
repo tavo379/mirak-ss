@@ -80,7 +80,7 @@ export default class ProductForm extends Component {
     ev.preventDefault;
     this.state.files[index] = ev.target.value
     this.setState({ files: this.state.files });
-    this.archivos[archivoColor][indexColor] = ev.target.value
+    this.archivos[archivoColor][indexColor] = ev.target.files // ev.target.value
     // const file = ev.target.files[0];
     // this.files.push(file);
   }
