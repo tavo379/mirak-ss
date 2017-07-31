@@ -1,6 +1,7 @@
 // import axios from 'axios';
 
 // const URL = `http://localhost:1337`;
+import { API_URL } from '../config';
 
 var cabecezaras = new Headers();
 
@@ -27,7 +28,7 @@ const createProduct = (data, archivos) => {
       formData.append('user_id', '1');
       formData.append('medidas', data.medidas);
 
-  return fetch(`${URL}/post`,{
+  return fetch(`${API_URL}/post`,{
     method: "POST",
     headers: cabecezaras,
     body: formData
