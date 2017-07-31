@@ -60,7 +60,6 @@ const createAnuncio = (archivos) => {
   .catch( (err) => {
     console.log(err);
   })
-
 }
 
   // LISTA DE PRODUCTOS POR CATEGORIA
@@ -201,5 +200,5 @@ export {
   getProductsByCategory,
   getPost,
   login,
-  signUp
+  signUp,
 }
