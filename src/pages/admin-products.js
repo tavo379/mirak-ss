@@ -61,12 +61,17 @@ export default class ProductForm extends Component {
       files[i] = ''  
     }
     this.setState({
-      nombre : '',
-      name: '',
+      category_name: '',
+      nombre: '',
       color1: '',
       color2: '',
       color3: '',
-      files: files
+      descripcion: '',
+      medidas: '',
+      url: '',
+      user_id: '1',
+      files: files,
+      data: []
     })
   }
 
