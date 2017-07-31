@@ -62,7 +62,6 @@ const createAnuncio = (archivos) => {
   .catch( (err) => {
     console.log(err);
   })
-
 }
 
   // LISTA DE PRODUCTOS POR CATEGORIA
@@ -125,12 +124,13 @@ const createSlider = (data, archivos) => {
 
 
 // CREAR CATEGORIA
-const createCategory = (data, sub) => {
+const createCategory = (data) => {
 
   let formData = new FormData();
 
   formData.append('name', data.name);
   formData.append('sub', data.sub);
+  formData.append('image', data.image);
 
   return fetch(`${URL}/category`, {
     method: "POST",
@@ -202,5 +202,5 @@ export {
   getProductsByCategory,
   getPost,
   login,
-  signUp
+  signUp,
 }

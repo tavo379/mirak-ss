@@ -7,41 +7,33 @@ export default class AdminCategory extends Component{
 
   constructor(props){
     super(props);
-    this.state = {data: [],
+    this.state = {
+      data: [],
       name: '',
-      subcategoria: ''
-  };
+      subcategoria: '',
+      image: ''
+    };
   }
-  image = ''
-
 
   handleSubmit(ev){
     ev.preventDefault();
-
     if(document.getElementById('hijo').checked){
-      createCategory( {name: this.state.subcategoria , sub:this.state.name})
+      createCategory( {name: this.state.subcategoria , sub:this.state.name, image: this.state.image})
         .then( (r) =>{
           console.log(r);
         });
     }else{
-      createCategory( {name: this.state.name , sub:null})
+      createCategory( {name: this.state.name , sub:null, image: this.state.image})
         .then( (r) =>{
           console.log(r);
         });
     }
-
-
-
   }
   handleImageChange(ev){
-    //eslint-disable-next-line
     ev.preventDefault;
-    //eslint-disable-next-line
-    let reader = new FileReader();
-    let file = ev.target.files[0];
-    this.image = file ;
-
+    this.setState({ image: ev.target.files[0] });
   }
+
   subcategorieFunction(ev){
     //eslint-disable-next-line
     ev.preventDefault;
