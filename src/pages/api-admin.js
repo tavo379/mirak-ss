@@ -1,6 +1,6 @@
 // import axios from 'axios';
 
-// const URL = `http://localhost:1337`;
+const URL = `http://localhost:1337`;
 
 var cabecezaras = new Headers();
 
@@ -123,12 +123,13 @@ const createSlider = (data, archivos) => {
 
 
 // CREAR CATEGORIA
-const createCategory = (data, sub) => {
+const createCategory = (data) => {
 
   let formData = new FormData();
 
   formData.append('name', data.name);
   formData.append('sub', data.sub);
+  formData.append('image', data.image);
 
   return fetch(`${URL}/category`, {
     method: "POST",
