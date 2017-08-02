@@ -1,6 +1,6 @@
 // import axios from 'axios';
 
-// const URL = `http://localhost:1337`;
+// const API_URL = `http://localhost:1337`;
 import { API_URL } from '../config';
 
 var cabecezaras = new Headers();
@@ -51,7 +51,7 @@ const createAnuncio = (archivos) => {
     formData.append('archivos', f);
   });
 
-  return fetch(`${URL}/anuncios`,{
+  return fetch(`${API_URL}/anuncios`,{
     method: "POST",
     headers: cabecezaras,
     body: formData
@@ -66,7 +66,7 @@ const createAnuncio = (archivos) => {
 
   // LISTA DE PRODUCTOS POR CATEGORIA
 const getProductsByCategory = (id) => {
-    return fetch(`${URL}/posts/category/${id}`, {
+    return fetch(`${API_URL}/posts/category/${id}`, {
       method: "GET",
       headers: new Headers(),
       body: null,
@@ -80,7 +80,7 @@ const getProductsByCategory = (id) => {
 }
 // Obtener POst
 const getPost = (id) => {
-    return fetch(`${URL}/posts/${id}`, {
+    return fetch(`${API_URL}/posts/${id}`, {
       method: "GET",
       headers: new Headers(),
       body: null,
@@ -107,7 +107,7 @@ const createSlider = (data, archivos) => {
   archivos.map((f) => {
     formData.append('archivos', f);
   });
-  return fetch(`${URL}/sliders`,{
+  return fetch(`${API_URL}/sliders`,{
     method: "POST",
     headers: cabecezaras,
     body: formData
@@ -132,7 +132,7 @@ const createCategory = (data) => {
   formData.append('sub', data.sub);
   formData.append('image', data.image);
 
-  return fetch(`${URL}/category`, {
+  return fetch(`${API_URL}/category`, {
     method: "POST",
     headers: cabecezaras,
     body: formData
@@ -151,7 +151,7 @@ const createUser = (data) => {
       formData.append('email', data.email);
       formData.append('password', data.password);
 
-  return fetch(`${URL}/signup`, {
+  return fetch(`${API_URL}/signup`, {
     method: "POST",
     headers: cabecezaras,
     body: formData
@@ -163,7 +163,7 @@ const createUser = (data) => {
 }
 // LOGIN
 const login = (data, history) => {
-  return fetch(`${URL}/login`, {
+  return fetch(`${API_URL}/login`, {
     method: "POST",
     headers: cabecezaras,
     body: JSON.stringify(data)
@@ -180,7 +180,7 @@ const login = (data, history) => {
 
 // LOGIN
 const signUp = (data) => {
-  return fetch(`${URL}/signup`,{
+  return fetch(`${API_URL}/signup`,{
     method: "POST",
     headers: cabecezaras,
     body: JSON.stringify(data)
