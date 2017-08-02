@@ -68,7 +68,8 @@ export default class SingleProduct extends Component{
     const { product } = this.props;
 
     let color = product[this.state.colorSeleccionado]
-    let urlImagen = product.images[this.state.imagenSeleccionada][this.state.colorSeleccionado]
+    let urlImagen = API_URL+product.images[this.state.imagenSeleccionada][this.state.colorSeleccionado]
+    console.log(urlImagen);
 
     return(
       <div className="container single-desktop">
@@ -86,7 +87,7 @@ export default class SingleProduct extends Component{
                   }
                   let url = image[this.state.colorSeleccionado]
                   return (
-                    <div className="margin-item-img"><img key={'imagen-'+index} src={url} onClick={this.cambioImagen.bind(this, index)} /></div>
+                    <div key={'imagen-'+index} className="margin-item-img"><img  src={API_URL+ url} onClick={this.cambioImagen.bind(this, index)} /></div>
                   )
                 })}
               </div>

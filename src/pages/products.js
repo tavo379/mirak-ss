@@ -25,7 +25,7 @@ class Products extends Component {
       this.handleProducts();
     }
   }
-  
+
   handleProducts = () => {
     const { id } = queryString.parse(this.props.location.search);
 		getProductsByCategory(id)
