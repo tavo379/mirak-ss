@@ -47,6 +47,17 @@ const createProduct = (data, archivos) => {
 const createAnuncio = (archivos) => {
   let formData = new FormData();
     //eslint-disable-next-line
+  if (archivos[0]) {
+    formData.append('image1','Y');
+  } else {
+    formData.append('image1','N');
+  }
+  if (archivos[1]) {
+    formData.append('image2','Y');
+  } else {
+    formData.append('image3','N');
+  }
+  
   archivos.map((f) => {
     formData.append('archivos', f);
   });
