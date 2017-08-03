@@ -55,7 +55,7 @@ const createAnuncio = (archivos) => {
   if (archivos[1]) {
     formData.append('image2','Y');
   } else {
-    formData.append('image3','N');
+    formData.append('image2','N');
   }
   
   archivos.map((f) => {
