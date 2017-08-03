@@ -14,11 +14,11 @@ export default class AnuncioForm extends Component{
     });
   }
 
-  handleImageChange = (ev) => {
+  handleImageChange = (ev, index) => {
     // eslint-disable-next-line
     ev.preventDefault;
     const file = ev.target.files[0];
-    this.files.push(file);
+    this.files[index] = file;
   }
 
   render(){
@@ -45,7 +45,7 @@ export default class AnuncioForm extends Component{
                        <input
                          type="file"
                          onChange={res => {
-                           this.handleImageChange(res);
+                           this.handleImageChange(res, 0);
                          }}
                        />
                        <span className="size-description">El tamaño debe ser de 1270 x 870px</span>
@@ -56,7 +56,7 @@ export default class AnuncioForm extends Component{
                        <input
                          type="file"
                          onChange={res => {
-                           this.handleImageChange(res);
+                           this.handleImageChange(res, 1);
                          }}
                        />
                        <span className="size-description">El tamaño debe ser de 1480 x 1016px</span>
