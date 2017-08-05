@@ -120,18 +120,40 @@ const deleteUser = (id) => {
 }
 
 const getCategory = (id) => {
-    return fetch(`${API_URL}/category/${id}`, {
-      method: "GET",
-      headers: new Headers(),
-      body: null,
-      timeout: 2000
+    // return fetch(`${API_URL}/category/${id}`, {
+    //   method: "GET",
+    //   headers: new Headers(),
+    //   body: null
+    // })
+    // .then( (r) => {
+    //   return r.json();
+    // } )
+    // .catch ( (err) => {
+    //   getCategory(id)
+    // })
+
+    let timeout = new Promise((resolve, reject) => {
+      setTimeout(reject, 2000, 'request timed out');
     })
-    .then( (r) => {
-      return r.json();
-    } )
-    .catch ( (err) => {
-      getCategory(id)
+    let fetch = new Promise((resolve, reject) => {
+      fetch(`${API_URL}/category/${id}`, {
+        method: "GET",
+        headers: new Headers(),
+        body: null
+      })
+      .then(response => response.json())
+      .then( (r) => {
+        return r.json();
+      } )
+      .catch ( (err) => {
+        getCategory(id)
+      })
     })
+    return Promise
+      .race([timeout, fetch])
+      .then(json => {return json})
+      .catch(err => dispatch( getCategory(id) ))
+
 }
 // Obtener anuncios
 
