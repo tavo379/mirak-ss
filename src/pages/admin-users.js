@@ -28,8 +28,20 @@ export default class AdminUsers extends Component{
       console.log('Fetch Error :-S', err);
     });
   }
-  handleDelete() {
-    console.log("perro");
+  handleDelete(user_id) {
+    deleteUser(user_id)
+      .then(()=> {
+        for( var i = 0 ; i < this.state.data.length; i++) {
+          if( user_id == this.state.data[i].id) {
+            this.state.data.splice(i, 1)
+            break;
+          }
+        };
+        this.setState({
+          data: this.state.data
+        })
+
+      })
   }
   render(){
     return(
@@ -47,7 +59,7 @@ export default class AdminUsers extends Component{
                   <nav className="nav-admin">
                     <ul>
                       {this.state.data.map((usuario)=>
-                        <li  key={usuario.id}><div className="delete-icon" ><img src="images/x-icon.svg" alt="cerrar"/></div>{usuario.email}</li>
+                        <li  key={usuario.id}><div className="delete-icon" onClick={ this.handleDelete.bind(this, usuario.id) }><img src="images/x-icon.svg" alt="cerrar"/></div>{usuario.email}</li>
                       )}
                     </ul>
                   </nav>
