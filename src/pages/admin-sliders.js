@@ -10,16 +10,16 @@ export default class SliderForm extends Component{
       this.files[i] = null
     }
     this.state = {
-      titulo1 : '',
-      sliderlink1: '',
-      titulo2 : '',
-      sliderlink2: '',
-      titulo3 : '',
-      sliderlink3: '',
-      titulo4 : '',
-      sliderlink4: '',
-      titulo5 : '',
-      sliderlink5: ''
+      titulo1 : 'hola',
+      sliderlink1: 'hola',
+      titulo2 : 'hola',
+      sliderlink2: 'hola',
+      titulo3 : 'hola',
+      sliderlink3: 'hola',
+      titulo4 : 'hola',
+      sliderlink4: 'hola',
+      titulo5 : 'hola',
+      sliderlink5: 'hola'
     };
   }
   componentDidMount() {
@@ -65,6 +65,7 @@ export default class SliderForm extends Component{
                         <div className="inputs-group">
                         <input
                           type="text"
+                          defaultValue = {this.state.titulo1}
                           onChange={res => {
                             this.setState({ titulo1: res.target.value });
                           }}
@@ -76,6 +77,7 @@ export default class SliderForm extends Component{
                         <div className="inputs-group">
                         <input
                           type="text"
+                          defaultValue = {this.state.sliderlink1}
                           onChange={res => {
                             this.setState({ sliderlink1: res.target.value });
                           }}
@@ -88,6 +90,7 @@ export default class SliderForm extends Component{
                         <h2>Imagen slider</h2>
                         <input
                           type="file"
+
                           onChange={res => {
                             this.handleImageChange(res, 0);
                           }}
@@ -102,6 +105,7 @@ export default class SliderForm extends Component{
                         <div className="inputs-group">
                         <input
                           type="text"
+                          defaultValue = {this.state.titulo2}
                           onChange={res => {
                             this.setState({ titulo2: res.target.value });
                           }}
@@ -113,6 +117,7 @@ export default class SliderForm extends Component{
                         <div className="inputs-group">
                         <input
                           type="text"
+                          defaultValue = {this.state.sliderlink2}
                           onChange={res => {
                             this.setState({ sliderlink2: res.target.value });
                           }}
@@ -139,6 +144,7 @@ export default class SliderForm extends Component{
                         <div className="inputs-group">
                         <input
                           type="text"
+                          defaultValue = {this.state.titulo3}
                           onChange={res => {
                             this.setState({ titulo3: res.target.value });
                           }}
@@ -150,6 +156,7 @@ export default class SliderForm extends Component{
                         <div className="inputs-group">
                         <input
                           type="text"
+                          defaultValue = {this.state.sliderlink3}
                           onChange={res => {
                             this.setState({ sliderlink3: res.target.value });
                           }}
@@ -176,6 +183,7 @@ export default class SliderForm extends Component{
                         <div className="inputs-group">
                         <input
                           type="text"
+                          defaultValue = {this.state.titulo4}
                           onChange={res => {
                             this.setState({ titulo4: res.target.value });
                           }}
@@ -187,6 +195,7 @@ export default class SliderForm extends Component{
                         <div className="inputs-group">
                         <input
                           type="text"
+                          defaultValue = {this.state.sliderlink4}
                           onChange={res => {
                             this.setState({ sliderlink4: res.target.value });
                           }}
@@ -213,6 +222,7 @@ export default class SliderForm extends Component{
                         <div className="inputs-group">
                         <input
                           type="text"
+                          defaultValue = {this.state.titulo5}
                           onChange={res => {
                             this.setState({ titulo5: res.target.value });
                           }}
@@ -224,6 +234,7 @@ export default class SliderForm extends Component{
                         <div className="inputs-group">
                         <input
                           type="text"
+                          defaultValue = {this.state.sliderlink5}
                           onChange={res => {
                             this.setState({ sliderlink5: res.target.value });
                           }}
