@@ -6,10 +6,20 @@ export default class SliderForm extends Component{
   files = [];
   constructor(props) {
     super(props);
+    for (var i = 0; i < 5; i++) {
+      this.files[i] = null
+    }
     this.state = {
-      titulo : '',
-      subtitulo: '',
-      sliderlink: ''
+      titulo1 : '',
+      sliderlink1: '',
+      titulo2 : '',
+      sliderlink2: '',
+      titulo3 : '',
+      sliderlink3: '',
+      titulo4 : '',
+      sliderlink4: '',
+      titulo5 : '',
+      sliderlink5: ''
     };
   }
 
@@ -21,11 +31,11 @@ export default class SliderForm extends Component{
     });
   }
 
-  handleImageChange = (ev) => {
+  handleImageChange = (ev, index) => {
     // eslint-disable-next-line
     ev.preventDefault;
     const file = ev.target.files[0];
-    this.files.push(file);
+    this.files[index] = file
   }
 
   render(){
@@ -54,7 +64,7 @@ export default class SliderForm extends Component{
                         <input
                           type="text"
                           onChange={res => {
-                            this.setState({ titulo: res.target.value });
+                            this.setState({ titulo1: res.target.value });
                           }}
                         /><span> Max. 30 caracteres</span>
                         </div>
@@ -65,7 +75,7 @@ export default class SliderForm extends Component{
                         <input
                           type="text"
                           onChange={res => {
-                            this.setState({ sliderlink: res.target.value });
+                            this.setState({ sliderlink1: res.target.value });
                           }}
                         />
                         </div>
@@ -77,7 +87,7 @@ export default class SliderForm extends Component{
                         <input
                           type="file"
                           onChange={res => {
-                            this.handleImageChange(res);
+                            this.handleImageChange(res, 0);
                           }}
                         />
                         <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
@@ -91,7 +101,7 @@ export default class SliderForm extends Component{
                         <input
                           type="text"
                           onChange={res => {
-                            this.setState({ titulo: res.target.value });
+                            this.setState({ titulo2: res.target.value });
                           }}
                         /><span> Max. 30 caracteres</span>
                         </div>
@@ -102,7 +112,7 @@ export default class SliderForm extends Component{
                         <input
                           type="text"
                           onChange={res => {
-                            this.setState({ sliderlink: res.target.value });
+                            this.setState({ sliderlink2: res.target.value });
                           }}
                         />
                         </div>
@@ -114,7 +124,7 @@ export default class SliderForm extends Component{
                         <input
                           type="file"
                           onChange={res => {
-                            this.handleImageChange(res);
+                            this.handleImageChange(res, 1);
                           }}
                         />
                         <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
@@ -128,7 +138,7 @@ export default class SliderForm extends Component{
                         <input
                           type="text"
                           onChange={res => {
-                            this.setState({ titulo: res.target.value });
+                            this.setState({ titulo3: res.target.value });
                           }}
                         /><span> Max. 30 caracteres</span>
                         </div>
@@ -139,7 +149,7 @@ export default class SliderForm extends Component{
                         <input
                           type="text"
                           onChange={res => {
-                            this.setState({ sliderlink: res.target.value });
+                            this.setState({ sliderlink3: res.target.value });
                           }}
                         />
                         </div>
@@ -151,7 +161,7 @@ export default class SliderForm extends Component{
                         <input
                           type="file"
                           onChange={res => {
-                            this.handleImageChange(res);
+                            this.handleImageChange(res, 2);
                           }}
                         />
                         <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
@@ -165,7 +175,7 @@ export default class SliderForm extends Component{
                         <input
                           type="text"
                           onChange={res => {
-                            this.setState({ titulo: res.target.value });
+                            this.setState({ titulo4: res.target.value });
                           }}
                         /><span> Max. 30 caracteres</span>
                         </div>
@@ -176,7 +186,7 @@ export default class SliderForm extends Component{
                         <input
                           type="text"
                           onChange={res => {
-                            this.setState({ sliderlink: res.target.value });
+                            this.setState({ sliderlink4: res.target.value });
                           }}
                         />
                         </div>
@@ -188,7 +198,7 @@ export default class SliderForm extends Component{
                         <input
                           type="file"
                           onChange={res => {
-                            this.handleImageChange(res);
+                            this.handleImageChange(res, 3);
                           }}
                         />
                         <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
@@ -202,7 +212,7 @@ export default class SliderForm extends Component{
                         <input
                           type="text"
                           onChange={res => {
-                            this.setState({ titulo: res.target.value });
+                            this.setState({ titulo5: res.target.value });
                           }}
                         /><span> Max. 30 caracteres</span>
                         </div>
@@ -213,7 +223,7 @@ export default class SliderForm extends Component{
                         <input
                           type="text"
                           onChange={res => {
-                            this.setState({ sliderlink: res.target.value });
+                            this.setState({ sliderlink5: res.target.value });
                           }}
                         />
                         </div>
@@ -225,7 +235,7 @@ export default class SliderForm extends Component{
                         <input
                           type="file"
                           onChange={res => {
-                            this.handleImageChange(res);
+                            this.handleImageChange(res, 4);
                           }}
                         />
                         <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
