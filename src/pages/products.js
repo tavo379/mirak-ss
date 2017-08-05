@@ -6,23 +6,28 @@ import ProductFeed from '../components/category-products/productFeed';
 import Social from '../components/home/social';
 import Footer from '../components/home/footer';
 import { getProductsByCategory } from './api-admin';
+import { getCategory } from './api-admin';
 
 class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: []
+      products: [],
+      category: null
     };
 	}
 
 	componentDidMount() {
     this.handleProducts();
+    this.handleCategory();
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
       this.setState({ products: [] });
       this.handleProducts();
+      this.setState({ category: {} });
+      this.handleCategory();
     }
   }
 
@@ -31,14 +36,31 @@ class Products extends Component {
 		getProductsByCategory(id)
 			.then(products => {
 				this.setState({products});
-			});
+		});
+
+  }
+  handleCategory() {
+    const { id } = queryString.parse(this.props.location.search);
+    getCategory(id)
+      .then(category => {
+        this.setState({category});
+    });
   }
 
   render() {
     return (
       <main className="products">
-        <HeaderProducts />
-        <ProductFeed products={this.state.products} />
+      {this.state.category
+        ?
+      <HeaderProducts category={this.state.category} />
+        :null}
+
+        {this.state.products
+          ?
+            <ProductFeed products={this.state.products} />
+          :null}
+
+
         <Social />
         <Footer />
       </main>

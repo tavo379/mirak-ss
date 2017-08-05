@@ -57,7 +57,7 @@ const createAnuncio = (archivos) => {
   } else {
     formData.append('image2','N');
   }
-  
+
   archivos.map((f) => {
     formData.append('archivos', f);
   });
@@ -74,7 +74,6 @@ const createAnuncio = (archivos) => {
     console.log(err);
   })
 }
-
   // LISTA DE PRODUCTOS POR CATEGORIA
 const getProductsByCategory = (id) => {
     return fetch(`${API_URL}/posts/category/${id}`, {
@@ -104,7 +103,34 @@ const getPost = (id) => {
     })
 }
 
+// delete user
+const deleteUser = (id) => {
+    return fetch(`${API_URL}/users/${id}`, {
+      method: "DELETE",
+      headers: new Headers(),
+      body: null,
+    })
+    .then( (r) => {
+      return r.json();
+    } )
+    .catch ( (err) => {
+      console.log(err);
+    })
+}
 
+const getCategory = (id) => {
+    return fetch(`${API_URL}/category/${id}`, {
+      method: "GET",
+      headers: new Headers(),
+      body: null,
+    })
+    .then( (r) => {
+      return r.json();
+    } )
+    .catch ( (err) => {
+      console.log(err);
+    })
+}
 // Obtener anuncios
 
 //CREANDO SLIDER
@@ -211,7 +237,9 @@ export {
   createUser,
   createSlider,
   getProductsByCategory,
+  getCategory,
   getPost,
   login,
   signUp,
+  deleteUser
 }
