@@ -152,9 +152,9 @@ const createSlider = (data, archivos) => {
   let index = 1
   archivos.map((f) => {
     if (f === null) {
-      formData.append('image'+index, 'N');
+      formData.append('image'+index, 'NONE');
     } else {
-      formData.append('image'+index, 'Y');
+      formData.append('image'+index, 'YES');
       formData.append('archivos', f);
     }
     index+=1
