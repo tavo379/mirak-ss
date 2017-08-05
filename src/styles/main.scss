@@ -14,6 +14,20 @@
 @import 'slick-theme';
 @import 'agnesi-responsive';
 
+//loader css
+
+@import 'loaders.css/src/animations/ball-pulse.scss';
+
+.loader-hidden {
+  display: none;
+}
+.loader-active {
+  display: block;
+}
+.ball-pulse > div{
+  background-color:#3b3c3b
+}
+
 @font-face {
   font-family: 'Didot';
   src:  url('/fonts/TheanoDidot-Regular.ttf');
