@@ -7,6 +7,7 @@ import Social from '../components/home/social';
 import Footer from '../components/home/footer';
 import { getProductsByCategory } from './api-admin';
 import { getCategory } from './api-admin';
+import { Loader } from 'react-loaders';
 
 class Products extends Component {
   constructor(props) {
@@ -50,14 +51,16 @@ class Products extends Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <main className="products">
+
         {this.state.category
         ? <HeaderProducts category={this.state.category} />
-        :null}
+        :<Loader type="ball-pulse" />}
         {this.state.products
         ? <ProductFeed products={this.state.products} />
-        :null}
+        :<Loader type="ball-pulse" />}
         <Social />
         <Footer />
       </main>
