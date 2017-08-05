@@ -80,12 +80,13 @@ const getProductsByCategory = (id) => {
       method: "GET",
       headers: new Headers(),
       body: null,
+      timeout: 2000
     })
     .then( (r) => {
       return r.json();
     } )
     .catch ( (err) => {
-      console.log(err);
+      getProductsByCategory(id)
     })
 }
 // Obtener POst
@@ -123,12 +124,13 @@ const getCategory = (id) => {
       method: "GET",
       headers: new Headers(),
       body: null,
+      timeout: 2000
     })
     .then( (r) => {
       return r.json();
     } )
     .catch ( (err) => {
-      console.log(err);
+      getCategory(id)
     })
 }
 // Obtener anuncios
