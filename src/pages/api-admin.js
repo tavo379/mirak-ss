@@ -152,7 +152,7 @@ const getCategory = (id) => {
     return Promise
       .race([timeout, fetch])
       .then(json => {return json})
-      .catch(err => dispatch( getCategory(id) ))
+      .catch(err => {}) 
 
 }
 // Obtener anuncios
