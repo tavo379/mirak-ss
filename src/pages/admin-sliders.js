@@ -22,7 +22,9 @@ export default class SliderForm extends Component{
       sliderlink5: ''
     };
   }
-
+  componentDidMount() {
+    // this.getSliders();
+  }
 
   handleSubmit = (ev) => {
     ev.preventDefault();
