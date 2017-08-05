@@ -19,16 +19,21 @@ class Products extends Component {
 	}
 
 	componentDidMount() {
-    this.handleProducts();
     this.handleCategory();
+    let that = this
+    setTimeout(function() {
+      that.handleProducts();
+    }, 100)
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
-      this.setState({ products: [] });
-      this.handleProducts();
-      this.setState({ category: {} });
+      this.setState({ products: [], category: {} });
       this.handleCategory();
+      let that = this
+      setTimeout(function() {
+        that.handleProducts();
+      }, 100)
     }
   }
 
