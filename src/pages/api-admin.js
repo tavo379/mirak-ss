@@ -137,12 +137,25 @@ const getCategory = (id) => {
 const createSlider = (data, archivos) => {
 
   let formData = new FormData();
-      formData.append('titulo', data.titulo);
-      formData.append('subtitulo', data.subtitulo);
-      formData.append('sliderlink', data.sliderlink);
+  formData.append('titulo1', data.titulo);
+  formData.append('sliderlink1', data.sliderlink);
+  formData.append('titulo2', data.titulo);
+  formData.append('sliderlink2', data.sliderlink);
+  formData.append('titulo3', data.titulo);
+  formData.append('sliderlink3', data.sliderlink);
+  formData.append('titulo4', data.titulo);
+  formData.append('sliderlink4', data.sliderlink);
+  formData.append('titulo5', data.titulo);
+  formData.append('sliderlink5', data.sliderlink);
+
   //eslint-disable-next-line
   archivos.map((f) => {
-    formData.append('archivos', f);
+    if (f === null) {
+      formData.append('archivosIndex', 'N');
+    } else {
+      formData.append('archivosIndex', 'Y');
+      formData.append('archivos', f);
+    }    
   });
   return fetch(`${API_URL}/sliders`,{
     method: "POST",
