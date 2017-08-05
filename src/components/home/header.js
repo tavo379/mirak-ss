@@ -4,7 +4,7 @@ import fetch from 'isomorphic-fetch'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 // import axios from 'axios'
-
+import { API_URL } from '../../config'
 const imgLogoStyle = {
   width:'100%',
 };
@@ -17,7 +17,7 @@ export default class Header extends Component{
     this.state = {data: []};
   }
   componentDidMount(){
-    fetch('http://localhost:1337/category')
+    fetch(`${API_URL}/category`)
     .then((response) => {
       if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' +
@@ -47,9 +47,9 @@ export default class Header extends Component{
               <ul className="ListMenu">
                 {this.state.data.map((categoria)=>
                   <li  key={categoria.id}>
-                  <Link to={{ pathname: '/products', search: '?id=' + categoria.id }}>
-                        {categoria.name}
-                  </Link>
+                    <Link to={{ pathname: '/products', search: '?id=' + categoria.id }}>
+                          {categoria.name}
+                    </Link>
                   </li>
                 )}
               </ul>

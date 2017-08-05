@@ -10,16 +10,16 @@ export default class SliderForm extends Component{
       this.files[i] = null
     }
     this.state = {
-      titulo1 : 'hola',
-      sliderlink1: 'hola',
-      titulo2 : 'hola',
-      sliderlink2: 'hola',
-      titulo3 : 'hola',
-      sliderlink3: 'hola',
-      titulo4 : 'hola',
-      sliderlink4: 'hola',
-      titulo5 : 'hola',
-      sliderlink5: 'hola'
+      titulo1 : '',
+      sliderlink1: '',
+      titulo2 : '',
+      sliderlink2: '',
+      titulo3 : '',
+      sliderlink3: '',
+      titulo4 : '',
+      sliderlink4: '',
+      titulo5 : '',
+      sliderlink5: ''
     };
   }
   componentDidMount() {
