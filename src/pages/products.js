@@ -35,6 +35,7 @@ class Products extends Component {
   handleProducts = () => {
     this.setState({products: null});
     const { id } = queryString.parse(this.props.location.search);
+    console.log(id);
 		getProductsByCategory(id)
 			.then(products => {
 				this.setState({products});
@@ -44,6 +45,7 @@ class Products extends Component {
   handleCategory() {
     this.setState({category: null});
     const { id } = queryString.parse(this.props.location.search);
+    console.log(id);
     getCategory(id)
       .then(category => {
         this.setState({category});

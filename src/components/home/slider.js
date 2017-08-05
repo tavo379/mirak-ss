@@ -1,8 +1,32 @@
 import React, { Component } from 'react'
 import Header from './header'
 import { Carousel } from 'react-responsive-carousel'
+import { API_URL } from '../../config'
 
-export default class Slider extends Component{
+export default class Slider extends Component {
+  constructor(props){
+    super(props);
+    this.state = {data: []};
+  }
+  componentDidMount(){
+    fetch(`${API_URL}/sliders`)
+    .then((response) => {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+        response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then((data) => {
+        this.setState({data})
+      });
+    }
+  )
+  .catch((err) => {
+    console.log('Fetch Error :-S', err);
+  });
+  }
   render(){
     return(
       <div className="total-slider">
@@ -10,21 +34,24 @@ export default class Slider extends Component{
         <div className="opacity"></div>
           <Header/>
         <Carousel showArrows={false} showStatus={false} showThumbs={false} infiniteLoop={true}  emulateTouch={true}>
-          <div className="prueba-slider">
-            <img src="images/main-image.png" alt=""/>
-            <div className="row project-link ">
-              <div className="col-md-4 offset-md-7 col-xs-12 title-slider">
-                <h1>New Arrivals</h1>
-                <div className="ver_group">
-                  <span>ver</span>
+            {this.state.data.map((slider)=>
+              <div className="prueba-slider">
+                {
+                  slider.images.length ?
+                    <img src={API_URL + slider.images[0]} alt=""/>
+                    : null
+                  }
+                <div className="row project-link ">
+                <div className="col-md-4 offset-md-7 col-xs-12 title-slider">
+                  <h1>{slider.titulo}</h1>
+                  <div className="ver_group">
+                    <span>ver</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div>
-            <img src="images/agnesi.png" alt="title"/>
-            <p className="legend">Legend 6</p>
-          </div>
+              </div>
+            )}
+
         </Carousel>
       </div>
     </div>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { API_URL } from '../config';
+import { deleteUser } from './api-admin.js';
 
 export default class AdminUsers extends Component{
   constructor(props){
@@ -7,7 +9,7 @@ export default class AdminUsers extends Component{
     this.state = {data: []};
   }
   componentDidMount(){
-    fetch('http://localhost:1337/users')
+    fetch(`${API_URL}/users`)
     .then((response) => {
       if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' +
@@ -26,6 +28,9 @@ export default class AdminUsers extends Component{
       console.log('Fetch Error :-S', err);
     });
   }
+  handleDelete() {
+    console.log("perro");
+  }
   render(){
     return(
       <main id="admin-user">
@@ -38,11 +43,11 @@ export default class AdminUsers extends Component{
               <div className="row">
                 <div className="col-md-10 menu-admin">
                   <h1 className="title-admin-menu">Usuarios</h1>
-                  <div className="add-user"><span className="add-user-icon">Agregar usuario</span><Link to="/admin-user-add"><img src="images/add.svg" alt="agregar"/></Link></div>
+                  <div className="add-user"><Link to="/admin-user-add"><img src="images/add.svg" alt="agregar"/><span className="add-user-icon">Agregar usuario</span></Link></div>
                   <nav className="nav-admin">
                     <ul>
                       {this.state.data.map((usuario)=>
-                        <li  key={usuario.id}><div className="delete-icon"><img src="images/x-icon.svg" alt="cerrar"/></div>{usuario.email}</li>
+                        <li  key={usuario.id}><div className="delete-icon" ><img src="images/x-icon.svg" alt="cerrar"/></div>{usuario.email}</li>
                       )}
                     </ul>
                   </nav>
