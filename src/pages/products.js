@@ -12,7 +12,7 @@ class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: [],
+      products: null,
       category: null
     };
 	}
@@ -32,6 +32,7 @@ class Products extends Component {
   }
 
   handleProducts = () => {
+    this.setState({products: null});
     const { id } = queryString.parse(this.props.location.search);
 		getProductsByCategory(id)
 			.then(products => {
@@ -40,6 +41,7 @@ class Products extends Component {
 
   }
   handleCategory() {
+    this.setState({category: null});
     const { id } = queryString.parse(this.props.location.search);
     getCategory(id)
       .then(category => {
@@ -50,17 +52,12 @@ class Products extends Component {
   render() {
     return (
       <main className="products">
-      {this.state.category
-        ?
-      <HeaderProducts category={this.state.category} />
+        {this.state.category
+        ? <HeaderProducts category={this.state.category} />
         :null}
-
         {this.state.products
-          ?
-            <ProductFeed products={this.state.products} />
-          :null}
-
-
+        ? <ProductFeed products={this.state.products} />
+        :null}
         <Social />
         <Footer />
       </main>
