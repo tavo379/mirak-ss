@@ -137,16 +137,16 @@ const getCategory = (id) => {
 const createSlider = (data, archivos) => {
 
   let formData = new FormData();
-  formData.append('titulo1', data.titulo);
-  formData.append('sliderlink1', data.sliderlink);
-  formData.append('titulo2', data.titulo);
-  formData.append('sliderlink2', data.sliderlink);
-  formData.append('titulo3', data.titulo);
-  formData.append('sliderlink3', data.sliderlink);
-  formData.append('titulo4', data.titulo);
-  formData.append('sliderlink4', data.sliderlink);
-  formData.append('titulo5', data.titulo);
-  formData.append('sliderlink5', data.sliderlink);
+  formData.append('titulo1', data.titulo1);
+  formData.append('sliderlink1', data.sliderlink1);
+  formData.append('titulo2', data.titulo2);
+  formData.append('sliderlink2', data.sliderlink2);
+  formData.append('titulo3', data.titulo3);
+  formData.append('sliderlink3', data.sliderlink3);
+  formData.append('titulo4', data.titulo4);
+  formData.append('sliderlink4', data.sliderlink4);
+  formData.append('titulo5', data.titulo5);
+  formData.append('sliderlink5', data.sliderlink5);
 
   //eslint-disable-next-line
   archivos.map((f) => {
