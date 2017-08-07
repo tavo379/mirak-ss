@@ -185,9 +185,9 @@ const createSlider = (data, archivos) => {
 
   //eslint-disable-next-line
 
-  
+
   archivos.map((f) => {
-    if (f === null) {
+    if (f !== null) {
       formData.append('archivos', f);
     }
   });

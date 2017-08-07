@@ -68,7 +68,7 @@ class Products extends Component {
     this.setState({category})
   }
   handleCategoryError (data) {
-    let that = this 
+    let that = this
     setTimeout( function(){
       that.handleCategory()
     }, 2000)
