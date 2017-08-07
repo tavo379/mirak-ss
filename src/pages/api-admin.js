@@ -170,16 +170,21 @@ const createSlider = (data, archivos) => {
   formData.append('sliderlink5', data.sliderlink5);
 
   //eslint-disable-next-line
-  let index = 1
+  let images = []
   archivos.map((f) => {
     if (f === null) {
-      formData.append('image'+index, 'NONE');
+      images.push('NONE')
     } else {
-      formData.append('image'+index, 'YES');
+      images.push('YES')
       formData.append('archivos', f);
     }
-    index+=1
   });
+  formData.append('image1', images[0]);
+  formData.append('image2', images[1]);
+  formData.append('image3', images[2]);
+  formData.append('image4', images[3]);
+  formData.append('image5', images[4]);
+
   return fetch(`${API_URL}/sliders`,{
     method: "POST",
     headers: cabecezaras,
