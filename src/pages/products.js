@@ -64,10 +64,11 @@ class Products extends Component {
       timeout: 5000
     })
   }
-  handleCategorySuccess (data) {
-    console.log(data)
+  handleCategorySuccess (category) {
+    this.setState({category})
   }
   handleCategoryError (data) {
+    console.log('handleCategoryError')
     console.log(data)
     this.handleCategory()
   }

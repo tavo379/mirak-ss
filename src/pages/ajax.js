@@ -30,6 +30,7 @@ export default {
       },
       error: function (xhr, ajaxOptions, thrownError) {
         // obj.error({message: RemoveTag.errorAjax(xhr.responseText), xhr: xhr, ajaxOptions: ajaxOptions, thrownError: thrownError})
+        obj.error({message: xhr.responseText, xhr: xhr, ajaxOptions: ajaxOptions, thrownError: thrownError})
       }
     })
   },
