@@ -18,7 +18,6 @@ export default {
       timeout: null
     }
     let obj = jQuery.extend({}, defaults, data)
-    obj.data.jwt = Params.getTokenChronos()
     jQuery.ajax({
       headers: obj.headers,
       url: API_URL + obj.url,
@@ -30,7 +29,7 @@ export default {
         obj.success(r)
       },
       error: function (xhr, ajaxOptions, thrownError) {
-        obj.error({message: RemoveTag.errorAjax(xhr.responseText), xhr: xhr, ajaxOptions: ajaxOptions, thrownError: thrownError})
+        // obj.error({message: RemoveTag.errorAjax(xhr.responseText), xhr: xhr, ajaxOptions: ajaxOptions, thrownError: thrownError})
       }
     })
   },
@@ -40,7 +39,7 @@ export default {
   _successE: function (data) {
     console.log(data)
   },
-  _error: function (data) { 
+  _error: function (data) {
     console.log(data)
   }
 }
