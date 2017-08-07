@@ -7,10 +7,10 @@ export default {
   lastIndexCallback: 0,
   send: function (data) {
     var defaults = {
-      headers: new Headers(),
+      // headers: new Headers(),
       url: 'null',
-      type: 'GET',
-      dataType: 'json',
+      method: 'GET',
+      // dataType: 'json',
       body: null,
       success: this._success,
       successE: this._successE,
@@ -19,9 +19,9 @@ export default {
     }
     let obj = jQuery.extend({}, defaults, data)
     jQuery.ajax({
-      headers: obj.headers,
+      // headers: obj.headers,
       url: API_URL + obj.url,
-      type: obj.type,
+      method: obj.method,
       dataType: obj.dataType,
       body: obj.body,
       timeout: obj.timeout,

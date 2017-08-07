@@ -1,6 +1,3 @@
-// import axios from 'axios';
-
-// const API_URL = `http://localhost:1337`;
 import { API_URL } from '../config';
 
 var cabecezaras = new Headers();
@@ -152,7 +149,7 @@ const getCategory = (id) => {
     return Promise
       .race([timeout, fetch])
       .then(json => {return json})
-      .catch(err => {}) 
+      .catch(err => {})
 
 }
 // Obtener anuncios

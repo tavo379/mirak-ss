@@ -70,7 +70,7 @@ class Products extends Component {
   handleCategoryError (data) {
     console.log('handleCategoryError')
     console.log(data)
-    this.handleCategory()
+    // this.handleCategory()
   }
   render() {
     console.log(this.state);
