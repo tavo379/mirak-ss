@@ -169,14 +169,12 @@ const createSlider = (data, archivos) => {
   formData.append('titulo5', data.titulo5);
   formData.append('sliderlink5', data.sliderlink5);
 
-  //eslint-disable-next-line
   let images = []
   archivos.map((f) => {
     if (f === null) {
       images.push('NONE')
     } else {
       images.push('YES')
-      formData.append('archivos', f);
     }
   });
   formData.append('image1', images[0]);
@@ -184,6 +182,15 @@ const createSlider = (data, archivos) => {
   formData.append('image3', images[2]);
   formData.append('image4', images[3]);
   formData.append('image5', images[4]);
+
+  //eslint-disable-next-line
+
+  
+  archivos.map((f) => {
+    if (f === null) {
+      formData.append('archivos', f);
+    }
+  });
 
   return fetch(`${API_URL}/sliders`,{
     method: "POST",
