@@ -8,6 +8,7 @@ import Footer from '../components/home/footer';
 import { getProductsByCategory } from './api-admin';
 import { getCategory } from './api-admin';
 import { Loader } from 'react-loaders';
+import Ajax from './ajax'
 
 class Products extends Component {
   constructor(props) {
@@ -50,13 +51,26 @@ class Products extends Component {
   handleCategory() {
     this.setState({category: null});
     const { id } = queryString.parse(this.props.location.search);
-    console.log(id);
-    getCategory(id)
-      .then(category => {
-        this.setState({category});
-    });
+    // console.log(id);
+    // getCategory(id)
+    //   .then(category => {
+    //     this.setState({category});
+    // });
+    Ajax.send({
+      url: `/category/${id}`,
+      success: this.handleCategorySuccess.bind(this),
+      successE: this.handleCategoryError.bind(this),
+      error: this.handleCategoryError.bind(this),
+      timeout: 5000
+    })
   }
-
+  handleCategorySuccess (data) {
+    console.log(data)
+  }
+  handleCategoryError (data) {
+    console.log(data)
+    this.handleCategory()
+  }
   render() {
     console.log(this.state);
     return (
