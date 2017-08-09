@@ -1,6 +1,3 @@
-// import axios from 'axios';
-
-// const API_URL = `http://localhost:1337`;
 import { API_URL } from '../config';
 
 var cabecezaras = new Headers();
@@ -120,39 +117,39 @@ const deleteUser = (id) => {
 }
 
 const getCategory = (id) => {
-    // return fetch(`${API_URL}/category/${id}`, {
-    //   method: "GET",
-    //   headers: new Headers(),
-    //   body: null
-    // })
-    // .then( (r) => {
-    //   return r.json();
-    // } )
-    // .catch ( (err) => {
-    //   getCategory(id)
-    // })
+    return fetch(`${API_URL}/category/${id}`, {
+      method: "GET",
+      headers: new Headers(),
+      body: null
+    })
+    .then( (r) => {
+      return r.json();
+    } )
+    .catch ( (err) => {
+      getCategory(id)
+    })
 
-    let timeout = new Promise((resolve, reject) => {
-      setTimeout(reject, 2000, 'request timed out');
-    })
-    let fetch = new Promise((resolve, reject) => {
-      fetch(`${API_URL}/category/${id}`, {
-        method: "GET",
-        headers: new Headers(),
-        body: null
-      })
-      .then(response => response.json())
-      .then( (r) => {
-        return r.json();
-      } )
-      .catch ( (err) => {
-        getCategory(id)
-      })
-    })
-    return Promise
-      .race([timeout, fetch])
-      .then(json => {return json})
-      .catch(err => {}) 
+    // let timeout = new Promise((resolve, reject) => {
+    //   setTimeout(reject, 2000, 'request timed out');
+    // })
+    // let fetch = new Promise((resolve, reject) => {
+    //   fetch(`${API_URL}/category/${id}`, {
+    //     method: "GET",
+    //     headers: new Headers(),
+    //     body: null
+    //   })
+    //   .then(response => response.json())
+    //   .then( (r) => {
+    //     return r.json();
+    //   } )
+    //   .catch ( (err) => {
+    //     getCategory(id)
+    //   })
+    // })
+    // return Promise
+    //   .race([timeout, fetch])
+    //   .then(json => {return json})
+    //   .catch(err => {})
 
 }
 // Obtener anuncios
@@ -172,17 +169,29 @@ const createSlider = (data, archivos) => {
   formData.append('titulo5', data.titulo5);
   formData.append('sliderlink5', data.sliderlink5);
 
-  //eslint-disable-next-line
-  let index = 1
+  let images = []
   archivos.map((f) => {
     if (f === null) {
-      formData.append('image'+index, 'NONE');
+      images.push('NONE')
     } else {
-      formData.append('image'+index, 'YES');
+      images.push('YES')
+    }
+  });
+  formData.append('image1', images[0]);
+  formData.append('image2', images[1]);
+  formData.append('image3', images[2]);
+  formData.append('image4', images[3]);
+  formData.append('image5', images[4]);
+
+  //eslint-disable-next-line
+
+
+  archivos.map((f) => {
+    if (f !== null) {
       formData.append('archivos', f);
     }
-    index+=1
   });
+
   return fetch(`${API_URL}/sliders`,{
     method: "POST",
     headers: cabecezaras,
