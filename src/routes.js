@@ -20,6 +20,8 @@ import AgnesiCasa     from './pages/agnesi-casa';
 import AgnesiProject  from './pages/agnesi-project';
 import Nosotros       from './pages/nosotros';
 import Sucursales     from './pages/sucursales';
+import ProductList    from './pages/admin-products-list';
+import CategoryList   from './pages/admin-category-list';
 
 const loggedIn = () => !!localStorage.token;
 
@@ -42,11 +44,13 @@ const AppRoutes = () =>
     <Route path="/single" component={ SinglePage }/>
     <Route path="/nosotros" component={ Nosotros }/>
     <Route path="/sucursales" component={ Sucursales }/>
-    <Route path="/admin-products" component={ ProductForm }/>
+    <Route path="/product-list" component= { ProductList }/>
+    <Route path="/category-list" component= { CategoryList }/>
+    <PrivateRoute path="/admin-products" component={ ProductForm }/>
     <Route path="/admin-category" component={ AdminCategory }/>
     <Route path="/admin-anuncios" component={ AnuncioForm }/>
     <Route path="/admin-login" component={ AdminLogin }/>
-    <PrivateRoute path="/admin-menu" component={ AdminMenu }/>
+    <Route path="/admin-menu" component={ AdminMenu }/>
     <Route path="/admin-slider" component={ SliderForm }/>
     <Route path="/admin-user-add" component={ AdminUserAdd }/>
     <Route path="/admin-users" component={ AdminUsers }/>

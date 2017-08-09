@@ -32,7 +32,7 @@ export default class AdminUsers extends Component{
     deleteUser(user_id)
       .then(()=> {
         for( var i = 0 ; i < this.state.data.length; i++) {
-          if( user_id == this.state.data[i].id) {
+          if( user_id === this.state.data[i].id) {
             this.state.data.splice(i, 1)
             break;
           }

@@ -17,7 +17,10 @@ export default class AdminUserAdd extends Component{
     .then( (r) =>{
       console.log(r);
     });
-
+    this.setState({
+      email: '',
+      password: '',
+    })
   }
   render(){
     return(
@@ -25,14 +28,14 @@ export default class AdminUserAdd extends Component{
         <div className="container">
   				<div className="row">
   					<div className="col-md-3 back-page">
-  					  <div className="back"><Link to="/admin-menu"><img src="images/back.svg" alt="volver"/><span>atrás</span></Link></div>
+  					  <div className="back"><Link to="/admin-users"><img src="images/back.svg" alt="volver"/><span>atrás</span></Link></div>
   					</div>
   					<div className="col-md-12">
   						<div className="row width-slider">
                 <div className="col-md-12"><h1 className="title-admin-menu">Agregar Usuario</h1></div>
                 <form className="col-md-12" onSubmit={ (ev) => { this.handleSubmit(ev) }}>
                   <div className="row">
-                    <div className="col-md-12">
+                    <div className="col-md-5 offset-md-4">
                       <div className="inputs">
                         <span className="inputs-title">Correo</span><br/>
                         <div className="inputs-group">

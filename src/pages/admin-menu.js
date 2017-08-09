@@ -17,8 +17,8 @@ class AdminMenu extends Component {
                     <nav className="nav-admin">
     		         			<ul>
     										<li><Link to="/admin-users">Usuarios</Link></li>
-    										<li><Link to="/admin-category">Categorias</Link></li>
-    										<li><Link to="/admin-products">Muebles</Link></li>
+    										<li><Link to="/category-list">Categorias</Link></li>
+    										<li><Link to="/product-list">Muebles</Link></li>
     										<li><Link to="/admin-slider">Sliders</Link></li>
     										<li><Link to="/admin-anuncios">Anuncios</Link></li>
     										<li><Link to="/admin-agnesi">Agnesi casa</Link></li>

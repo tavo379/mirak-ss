@@ -13,7 +13,7 @@ class SinglePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: null 
+      product: null
     };
   }
 
@@ -48,11 +48,14 @@ class SinglePage extends Component {
           <span className="back-line"></span>
         </div>
         {this.state.product
-        ?
+          ?
           <SingleProduct product={this.state.product} />
-        :null}
+          :null}
         <SingleProductMobil/>
         <Similar />
+        <div className="col-md-12 redes">
+          <h2>Síguenos en nuestras redes sociales</h2>
+        </div>
         <Social />
         <Footer />
       </main>

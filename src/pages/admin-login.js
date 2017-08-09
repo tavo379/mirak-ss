@@ -26,11 +26,11 @@ class AdminLogin extends Component {
 		              <h1>Administrador</h1>
 		              <form onSubmit={ (ev) => this.handleSubmit(ev) }>
 		                <div>
-		                  <span>Correo</span><br/>
+		                  <span>CORREO</span><br/>
 		                  <input type="text" onChange={e => this.setState({email: e.target.value})} />
 		                </div>
 		                <div>
-		                  <span>Contraseña</span><br/>
+		                  <span>CONTRASEÑA</span><br/>
 		                  <input type="password" onChange={e => this.setState({password: e.target.value})} />
 		                </div>
 		                <button>Entrar</button>

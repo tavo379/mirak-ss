@@ -6,6 +6,7 @@ import Recommended from "../components/home/recommended"
 import Social from "../components/home/social"
 import Footer from "../components/home/footer"
 import HeaderMobil from "../components/Mobile/header-mobil"
+import { API_URL } from '../config'
 
 export default class HomePage extends Component {
   constructor(props){
@@ -13,7 +14,7 @@ export default class HomePage extends Component {
     this.state = {data: ''};
   }
   componentDidMount(){
-    fetch('http://localhost:1337/anuncios')
+    fetch(`${API_URL}/anuncios`)
     .then((response) => {
       if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' +

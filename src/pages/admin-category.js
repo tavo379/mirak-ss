@@ -30,7 +30,9 @@ export default class AdminCategory extends Component{
     }
   }
   handleImageChange(ev){
+    // eslint-disable-next-line
     ev.preventDefault;
+    // eslint-disable-next-line
     this.setState({ image: ev.target.files[0] });
   }
 
@@ -77,7 +79,6 @@ export default class AdminCategory extends Component{
                 <form className="col-md-12" onSubmit={ (ev) => { this.handleSubmit(ev) }}>
                   <div className="row">
                     <div className="col-md-6">
-                      <span className="number-anuncio">1</span>
                       <div className="inputs">
                         <span className="inputs-title">Nombre</span><br/>
                         <div className="inputs-group">
@@ -101,14 +102,15 @@ export default class AdminCategory extends Component{
                           <span> Max. 30 caracteres</span>
                         </div>
                         <span className="inputs-title">Archivo</span><br/>
-                        <div className="inputs-group">
+                        <div className="inputs-group button-input">
+                          Selecionar archivo
                           <input type="file" onChange={ (res) => { this.handleImageChange(res) }} />
                         </div>
 
                       </div>
                     </div>
                   </div>
-                  <button className="save" type="submit">Guardar</button>
+                  <button className="save" type="submit">Crear</button>
                 </form>
 
                 {/* <input value="Guardar" type="submit" /> */}

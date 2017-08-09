@@ -43,7 +43,7 @@ class Sucursales extends Component {
         <div className="container text-sucursales">
           <div className="row">
             <div className="col-md-6">
-              <span>Guadalajara</span><br/><br/>
+              <span>Guadalajara</span>
               <p>
                 López Mateos Norte No.33<br/>
                 Guadalajara, Jalisco, Mex.<br/><br/>
@@ -54,7 +54,7 @@ class Sucursales extends Component {
               </p>
             </div>
             <div className="col-md-6">
-              <span>Puerto Vallarta</span><br/><br/>
+              <span>Puerto Vallarta</span>
               <p>
                 Blvd. Francisco Medina Ascencio km. 7.5, Plaza Neptuno<br/>
                 Local A3 y A20<br/>
@@ -65,7 +65,7 @@ class Sucursales extends Component {
                 Sábado de 10 a 14 horas
               </p>
             </div>
-            <div className="col-md-12">
+            <div className="col-md-12 ">
               <h2>Síguenos en nuestras redes sociales</h2>
             </div>
           </div>
