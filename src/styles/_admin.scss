@@ -193,3 +193,28 @@
   font-weight: 700;
   color:#000000;
 }
+
+.product-list {
+  li {
+    display: flex;
+  }
+
+  .name {
+    margin-right: 10px;
+  }
+  
+  span {
+    color: #0275d8;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      color: #014c8c;
+      text-decoration: underline;
+    }
+  }
+
+  span, a {
+    margin-right: 5px;
+  }
+}

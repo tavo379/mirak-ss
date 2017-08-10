@@ -6417,6 +6417,23 @@ button:focus {
   font-weight: 700;
   color: #000000; }
 
+.product-list li {
+  display: flex; }
+
+.product-list .name {
+  margin-right: 10px; }
+
+.product-list span {
+  color: #0275d8;
+  text-decoration: none; }
+  .product-list span:hover {
+    cursor: pointer;
+    color: #014c8c;
+    text-decoration: underline; }
+
+.product-list span, .product-list a {
+  margin-right: 5px; }
+
 .agnesi-admin-images {
   align-items: flex-start !important;
   padding-top: 0 !important; }

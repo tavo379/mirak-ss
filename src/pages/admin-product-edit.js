@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import queryString from 'query-string';
 import { API_URL } from '../config';
-import { createProduct } from './api-admin.js';
+import { getPost, editProduct } from './api-admin.js';
 
 export default class ProductForm extends Component {
   files = [];
@@ -28,6 +29,7 @@ export default class ProductForm extends Component {
   }
 
   componentDidMount() {
+    this.handleProduct();
     fetch(`${API_URL}/category`)
       .then(response => {
         if (response.status !== 200) {
@@ -46,10 +48,30 @@ export default class ProductForm extends Component {
         console.log('Fetch Error :-S', err);
       });
   }
+  
+  handleProduct = () => {
+    const { id } = queryString.parse(this.props.location.search);
+    getPost(id)
+      .then(product => {
+        // Aqui se hace la otra magia pokemón
+        product.images = JSON.parse(product.images)
+        this.setState({
+          product,
+          nombre: product.nombre,
+          category_name: product._category.name,
+          color1: product.color1,
+          color2: product.color2,
+          color3: product.color3,
+          descripcion: product.descripcion,
+          medidas: product.medidas,
+        });
+      });
+  }
 
   handleSubmit = (ev) => {
     ev.preventDefault();
-    createProduct(this.state, this.archivos).then(r => {
+    const { id } = queryString.parse(this.props.location.search);
+    editProduct(id, this.state, this.archivos).then(r => {
       console.log(r);
     });
     let files = []
@@ -101,7 +123,7 @@ export default class ProductForm extends Component {
             <div className="col-md-12">
               <div className="row width-slider">
                 <div className="col-md-12">
-                  <h1 className="title-admin-menu">AGREGAR MUEBLE</h1>
+                  <h1 className="title-admin-menu">EDITAR MUEBLE</h1>
                 </div>
                 <form
                   className="col-md-12"
@@ -117,7 +139,7 @@ export default class ProductForm extends Component {
                         <div className="inputs-group">
                           <input
                             type="text"
-                            value={this.state.name}
+                            value={this.state.nombre}
                             onChange={res => {
                               this.setState({ nombre: res.target.value });
                             }}
@@ -151,6 +173,7 @@ export default class ProductForm extends Component {
                         <div className="inputs-group">
                           <textarea
                             type="text"
+                            value={this.state.descripcion}
                             onChange={res => {
                               this.setState({ descripcion: res.target.value });
                             }}
@@ -162,6 +185,7 @@ export default class ProductForm extends Component {
                         <div className="inputs-group">
                           <textarea
                             type="text"
+                            value={this.state.medidas}
                             onChange={res => {
                               this.setState({ medidas: res.target.value });
                             }}
@@ -176,6 +200,7 @@ export default class ProductForm extends Component {
                         <div className="inputs-group">
                           <input
                             type="text"
+                            value={this.state.color1}
                             onChange={res => {
                               this.setState({ color1 : res.target.value });
                             }}
@@ -214,6 +239,7 @@ export default class ProductForm extends Component {
                         <div className="inputs-group">
                           <input
                             type="text"
+                            value={this.state.color2}
                             onChange={res => {
                               this.setState({ color2 : res.target.value });
                             }}
@@ -250,6 +276,7 @@ export default class ProductForm extends Component {
                         <div className="inputs-group">
                           <input
                             type="text"
+                            value={this.state.color3}
                             onChange={res => {
                               this.setState({ color3 : res.target.value });
                             }}

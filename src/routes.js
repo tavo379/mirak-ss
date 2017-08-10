@@ -22,6 +22,7 @@ import Nosotros       from './pages/nosotros';
 import Sucursales     from './pages/sucursales';
 import ProductList    from './pages/admin-products-list';
 import CategoryList   from './pages/admin-category-list';
+import ProductEdit    from './pages/admin-product-edit';
 
 const loggedIn = () => !!localStorage.token;
 
@@ -57,6 +58,7 @@ const AppRoutes = () =>
     <Route path="/admin-agnesi" component={ AgnesiAdmin }/>
     <Route path="/agnesi-casa" component={ AgnesiCasa }/>
     <Route path="/agnesi-project" component={ AgnesiProject }/>
+    <Route path="/product-edit" component={ ProductEdit }/>
     <Route path="/" component={ HomePage }/>
   </Switch>
 

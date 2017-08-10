@@ -40,6 +40,53 @@ const createProduct = (data, archivos) => {
   data.nombre = '';
 }
 
+const deleteProduct = (id) => {
+    return fetch(`${API_URL}/posts/${id}`, {
+      method: "DELETE",
+      headers: new Headers(),
+      body: null,
+    })
+    .then( (r) => {
+      return r.json();
+    } )
+    .catch ( (err) => {
+      console.log(err);
+    })
+}
+
+const editProduct = (id, data, archivos) => {
+  let formData = new FormData();
+      formData.append('nombre', data.nombre);
+      formData.append('category_name', data.category_name);
+      formData.append('descripcion', data.descripcion);
+      formData.append('color1', data.color1);
+      formData.append('color2', data.color2);
+      formData.append('color3', data.color3);
+      formData.append('user_id', '1');
+      formData.append('medidas', data.medidas);
+
+  if (archivos && archivos.length > 0) {
+    archivos.map((f) => {
+      formData.append('archivos', f);
+    });
+  } else {
+    formData.append('images', JSON.stringify(data.product.images));
+  }
+
+  return fetch(`${API_URL}/post/${id}`,{
+    method: "PUT",
+    headers: cabecezaras,
+    body: formData
+  })
+  .then( (r) => {
+    return r.json()
+  })
+  .catch( (err) => {
+    console.log(err);
+  })
+  data.nombre = '';
+}
+
 //CREANDO ANUNCIO
 const createAnuncio = (archivos) => {
   let formData = new FormData();
@@ -280,6 +327,8 @@ const signUp = (data) => {
 
 export {
   createProduct,
+  deleteProduct,
+  editProduct,
   createCategory,
   createAnuncio,
   createUser,

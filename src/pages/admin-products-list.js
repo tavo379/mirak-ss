@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { API_URL } from '../config';
+import { deleteProduct } from './api-admin';
 
 export default class ProductList extends Component {
   constructor(props) {
@@ -49,6 +50,15 @@ export default class ProductList extends Component {
       });
   }
 
+  handleDeleteProduct = (id) => {
+    const dataPost = this.state.dataPost.filter(post => post.id !== id);
+    deleteProduct(id)
+      .then(() => {
+        alert('Product delete ok');
+        this.setState({ dataPost });
+      });
+  }
+
   render() {
     return (
       <main id="admin-anuncios">
@@ -94,7 +104,9 @@ export default class ProductList extends Component {
               <ul>
                 {this.state.dataPost.map(post =>
                   <li key={post.id}>
-                    {post.nombre}
+                    <div className="name">{post.nombre}</div>
+                    <Link to={{ pathname: '/product-edit', search: '?id=' + post.id }}>edit</Link>
+                    <span onClick={() => this.handleDeleteProduct(post.id)}>delete</span>
                   </li>
                 )}
               </ul>
