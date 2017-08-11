@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { createProjects } from './api-admin.js'
 
 export default class AgnesiAdmin extends Component{
-  filesProject = [];  
+  filesProject = [];
   constructor(props){
     super(props);
     this.state = {
@@ -14,7 +14,7 @@ export default class AgnesiAdmin extends Component{
       titulo4: '',
       titulo5: ''
     };
-    for (var i = 0; i < array.length; i++) {
+    for (var i = 0; i < 30; i++) {
       this.filesProject[i] = null;
     }
   }
@@ -24,7 +24,16 @@ export default class AgnesiAdmin extends Component{
     const file = ev.target.files[0];
     this.filesProject[index] = file;
   }
-  render(){
+
+  handleSubmit = (ev) => {
+    ev.preventDefault();
+    createProjects(this.state, this.files).then(r => {
+      console.log(r);
+    });
+  }
+  render() {
+    let self = this;
+
     return(
       <main id="admin-anuncios">
         <div className="container">
@@ -41,7 +50,7 @@ export default class AgnesiAdmin extends Component{
                       <input
                         type="text"
                         defaultValue = {this.state.titulo1}
-                        onChangeAgnesi={res => {
+                        onChange={res => {
                           this.setState({ titulo1: res.target.value });
                         }}
                       />
@@ -52,14 +61,14 @@ export default class AgnesiAdmin extends Component{
   					       <div className="new-item-anuncio  agnesi-admin-images">
                     <h2>Imagenes principales agnesi</h2>
                     <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
-                    {[0,1,2,3,4].map((index)=>{
+                    {[0,1,2,3,4].map(function(index) {
                       return (
                         <div className="button-input" key={'image-agnesi-'+index}>
                           Selecionar archivo
                           <input
                             type="file"
                             onChange={res => {
-                              this.handleImageChange(res, index);
+                              self.handleImageChange(res, index);
                             }}
                           />
                         </div>
@@ -76,7 +85,7 @@ export default class AgnesiAdmin extends Component{
                         <input
                           type="text"
                           defaultValue = {this.state.titulo2}
-                          onChangeAgnesi={res => {
+                          onChange={res => {
                             this.setState({ titulo2: res.target.value });
                           }}
                         /><span> Max. 30 caracteres</span>
@@ -94,7 +103,7 @@ export default class AgnesiAdmin extends Component{
                             <input
                               type="file"
                               onChange={res => {
-                                this.handleImageChange(res, index);
+                                self.handleImageChange(res, index);
                               }}
                             />
                           </div>
@@ -110,7 +119,7 @@ export default class AgnesiAdmin extends Component{
                         <input
                           type="text"
                           defaultValue = {this.state.titulo3}
-                          onChangeAgnesi={res => {
+                          onChange={res => {
                             this.setState({ titulo3: res.target.value });
                           }}
                         /><span> Max. 30 caracteres</span>
@@ -128,7 +137,7 @@ export default class AgnesiAdmin extends Component{
                             <input
                               type="file"
                               onChange={res => {
-                                this.handleImageChange(res, index);
+                                self.handleImageChange(res, index);
                               }}
                             />
                           </div>
@@ -144,7 +153,7 @@ export default class AgnesiAdmin extends Component{
                         <input
                           type="text"
                           defaultValue = {this.state.titulo4}
-                          onChangeAgnesi={res => {
+                          onChange={res => {
                             this.setState({ titulo4: res.target.value });
                           }}
                         /><span> Max. 30 caracteres</span>
@@ -162,7 +171,7 @@ export default class AgnesiAdmin extends Component{
                             <input
                               type="file"
                               onChange={res => {
-                                this.handleImageChange(res, index);
+                                self.handleImageChange(res, index);
                               }}
                             />
                           </div>
@@ -178,7 +187,7 @@ export default class AgnesiAdmin extends Component{
                         <input
                           type="text"
                           defaultValue = {this.state.titulo5}
-                          onChangeAgnesi={res => {
+                          onChange={res => {
                             this.setState({ titulo5: res.target.value });
                           }}
                         /><span> Max. 30 caracteres</span>
@@ -196,7 +205,7 @@ export default class AgnesiAdmin extends Component{
                             <input
                               type="file"
                               onChange={res => {
-                                this.handleImageChange(res, index);
+                                self.handleImageChange(res, index);
                               }}
                             />
                           </div>
@@ -212,7 +221,7 @@ export default class AgnesiAdmin extends Component{
                         <input
                           type="text"
                           defaultValue = {this.state.titulo6}
-                          onChangeAgnesi={res => {
+                          onChange={res => {
                             this.setState({ titulo6: res.target.value });
                           }}
                         /><span> Max. 30 caracteres</span>
@@ -230,7 +239,7 @@ export default class AgnesiAdmin extends Component{
                             <input
                               type="file"
                               onChange={res => {
-                                this.handleImageChange(res, index);
+                                self.handleImageChange(res, index);
                               }}
                             />
                           </div>
@@ -238,7 +247,7 @@ export default class AgnesiAdmin extends Component{
                       })}
                      </div>
                   </div>
-                <button className="save">Guardar</button>
+                <button className="save" onClick={ this.handleSubmit.bind(this) }>Guardar</button>
   						</div>
   					</div>
   				</div>

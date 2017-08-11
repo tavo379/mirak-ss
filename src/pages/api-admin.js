@@ -286,7 +286,7 @@ const createProjects = (data, archivos) => {
   })
   .catch( (err) => {
     console.log(err);
-  })  
+  })
 }
 
 
@@ -364,6 +364,7 @@ export {
   createProduct,
   deleteProduct,
   editProduct,
+  createProjects,
   createCategory,
   createAnuncio,
   createUser,
