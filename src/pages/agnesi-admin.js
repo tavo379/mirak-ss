@@ -1,7 +1,29 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+import { createProjects } from './api-admin.js'
+
 export default class AgnesiAdmin extends Component{
+  filesProject = [];  
+  constructor(props){
+    super(props);
+    this.state = {
+      titulo1: '',
+      titulo2: '',
+      titulo3: '',
+      titulo4: '',
+      titulo5: ''
+    };
+    for (var i = 0; i < array.length; i++) {
+      this.filesProject[i] = null;
+    }
+  }
+  handleImageChange = (ev, index) => {
+    // eslint-disable-next-line
+    ev.preventDefault;
+    const file = ev.target.files[0];
+    this.filesProject[index] = file;
+  }
   render(){
     return(
       <main id="admin-anuncios">
@@ -15,24 +37,35 @@ export default class AgnesiAdmin extends Component{
                 <div className="col-md-12"><h1 className="title-admin-menu agnesi-menu">Agnesi casa</h1></div>
                 <div className="col-md-5 offset-md-1">
                     <div className="agnesi-description-area">
-                      <h3>descripcion</h3><span>max. 140 caracteres</span>
-
+                      <h3>titulo</h3><span>max. 140 caracteres</span>
+                      <input
+                        type="text"
+                        defaultValue = {this.state.titulo1}
+                        onChangeAgnesi={res => {
+                          this.setState({ titulo1: res.target.value });
+                        }}
+                      />
                     </div>
                     <textarea></textarea>
                 </div>
   							<div className="col-md-5 offset-md-1">
-
   					       <div className="new-item-anuncio  agnesi-admin-images">
-
-                     <h2>Imagenes principales agnesi</h2>
-                     <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
-                     <button>Seleccionar archivo</button>
-                     <button>Seleccionar archivo</button>
-                     <button>Seleccionar archivo</button>
-                     <button>Seleccionar archivo</button>
-                     <button>Seleccionar archivo</button>
+                    <h2>Imagenes principales agnesi</h2>
+                    <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
+                    {[0,1,2,3,4].map((index)=>{
+                      return (
+                        <div className="button-input" key={'image-agnesi-'+index}>
+                          Selecionar archivo
+                          <input
+                            type="file"
+                            onChange={res => {
+                              this.handleImageChange(res, index);
+                            }}
+                          />
+                        </div>
+                      )
+                    })}
                    </div>
-
   							</div>
                 <div className="col-md-12"><h2 className="title-admin-menu agnesi-menu subtitle">proyectos</h2></div>
                   <div className="col-md-5 offset-md-1">
@@ -40,123 +73,171 @@ export default class AgnesiAdmin extends Component{
                       <div className="agnesi-description-area agnesi-projects">
                         <span>Nombre proyecto</span>
                         <div className="inputs-group">
-                          <input type="text"></input><span> Max. 30 caracteres</span>
+                        <input
+                          type="text"
+                          defaultValue = {this.state.titulo2}
+                          onChangeAgnesi={res => {
+                            this.setState({ titulo2: res.target.value });
+                          }}
+                        /><span> Max. 30 caracteres</span>
                         </div>
                       </div>
                   </div>
     							<div className="col-md-5 offset-md-1 projects-images">
-
-    					       <div className="new-item-anuncio  agnesi-admin-images">
-
-                       <h2>Imagenes principales agnesi</h2>
-                       <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                     </div>
-
-
+    					      <div className="new-item-anuncio  agnesi-admin-images">
+                      <h2>Imagenes principales agnesi</h2>
+                      <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
+                      {[5,6,7,8,9].map((index)=>{
+                        return (
+                          <div className="button-input" key={'image-agnesi-'+index}>
+                            Selecionar archivo
+                            <input
+                              type="file"
+                              onChange={res => {
+                                this.handleImageChange(res, index);
+                              }}
+                            />
+                          </div>
+                        )
+                      })}
+                    </div>
                   </div>
                   <div className="col-md-5 offset-md-1">
                       <span className="number-anuncio">2</span>
                       <div className="agnesi-description-area agnesi-projects">
                         <span>Nombre proyecto</span>
                         <div className="inputs-group">
-                          <input type="text"></input><span> Max. 30 caracteres</span>
+                        <input
+                          type="text"
+                          defaultValue = {this.state.titulo3}
+                          onChangeAgnesi={res => {
+                            this.setState({ titulo3: res.target.value });
+                          }}
+                        /><span> Max. 30 caracteres</span>
                         </div>
                       </div>
                   </div>
                   <div className="col-md-5 offset-md-1 projects-images">
-
-                     <div className="new-item-anuncio  agnesi-admin-images">
-
-                       <h2>Imagenes principales agnesi</h2>
-                       <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                     </div>
-
-
+                    <div className="new-item-anuncio  agnesi-admin-images">
+                      <h2>Imagenes principales agnesi</h2>
+                      <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
+                      {[10,11,12,13,14].map((index)=>{
+                        return (
+                          <div className="button-input" key={'image-agnesi-'+index}>
+                            Selecionar archivo
+                            <input
+                              type="file"
+                              onChange={res => {
+                                this.handleImageChange(res, index);
+                              }}
+                            />
+                          </div>
+                        )
+                      })}
+                    </div>
                   </div>
                   <div className="col-md-5 offset-md-1">
                       <span className="number-anuncio">3</span>
                       <div className="agnesi-description-area agnesi-projects">
                         <span>Nombre proyecto</span>
                         <div className="inputs-group">
-                          <input type="text"></input><span> Max. 30 caracteres</span>
+                        <input
+                          type="text"
+                          defaultValue = {this.state.titulo4}
+                          onChangeAgnesi={res => {
+                            this.setState({ titulo4: res.target.value });
+                          }}
+                        /><span> Max. 30 caracteres</span>
                         </div>
                       </div>
                   </div>
     							<div className="col-md-5 offset-md-1 projects-images">
-
-    					       <div className="new-item-anuncio  agnesi-admin-images">
-
-                       <h2>Imagenes principales agnesi</h2>
-                       <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                     </div>
-
-
+    					      <div className="new-item-anuncio  agnesi-admin-images">
+                      <h2>Imagenes principales agnesi</h2>
+                      <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
+                      {[15,16,17,18,19].map((index)=>{
+                        return (
+                          <div className="button-input" key={'image-agnesi-'+index}>
+                            Selecionar archivo
+                            <input
+                              type="file"
+                              onChange={res => {
+                                this.handleImageChange(res, index);
+                              }}
+                            />
+                          </div>
+                        )
+                      })}
+                    </div>
                   </div>
                   <div className="col-md-5 offset-md-1">
                       <span className="number-anuncio">4</span>
                       <div className="agnesi-description-area agnesi-projects">
                         <span>Nombre proyecto</span>
                         <div className="inputs-group">
-                          <input type="text"></input><span> Max. 30 caracteres</span>
+                        <input
+                          type="text"
+                          defaultValue = {this.state.titulo5}
+                          onChangeAgnesi={res => {
+                            this.setState({ titulo5: res.target.value });
+                          }}
+                        /><span> Max. 30 caracteres</span>
                         </div>
                       </div>
                   </div>
     							<div className="col-md-5 offset-md-1 projects-images">
-
-    					       <div className="new-item-anuncio  agnesi-admin-images">
-
-                       <h2>Imagenes principales agnesi</h2>
-                       <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                     </div>
-
-
+    					      <div className="new-item-anuncio  agnesi-admin-images">
+                      <h2>Imagenes principales agnesi</h2>
+                      <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
+                      {[20,21,22,23,24].map((index)=>{
+                        return (
+                          <div className="button-input" key={'image-agnesi-'+index}>
+                            Selecionar archivo
+                            <input
+                              type="file"
+                              onChange={res => {
+                                this.handleImageChange(res, index);
+                              }}
+                            />
+                          </div>
+                        )
+                      })}
+                    </div>
                   </div>
                   <div className="col-md-5 offset-md-1">
                       <span className="number-anuncio">5</span>
                       <div className="agnesi-description-area agnesi-projects">
                         <span>Nombre proyecto</span>
                         <div className="inputs-group">
-                          <input type="text"></input><span> Max. 30 caracteres</span>
+                        <input
+                          type="text"
+                          defaultValue = {this.state.titulo6}
+                          onChangeAgnesi={res => {
+                            this.setState({ titulo6: res.target.value });
+                          }}
+                        /><span> Max. 30 caracteres</span>
                         </div>
                       </div>
                   </div>
     							<div className="col-md-5 offset-md-1 projects-images">
-
-    					       <div className="new-item-anuncio  agnesi-admin-images">
-
-                       <h2>Imagenes principales agnesi</h2>
-                       <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
-                       <button>Seleccionar archivo</button>
+    					      <div className="new-item-anuncio  agnesi-admin-images">
+                      <h2>Imagenes principales agnesi</h2>
+                      <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
+                      {[25,26,27,28,29].map((index) => {
+                        return (
+                          <div className="button-input" key={'image-agnesi-6-'+index}>
+                            Selecionar archivo
+                            <input
+                              type="file"
+                              onChange={res => {
+                                this.handleImageChange(res, index);
+                              }}
+                            />
+                          </div>
+                        )
+                      })}
                      </div>
-
-
                   </div>
-
-
                 <button className="save">Guardar</button>
   						</div>
   					</div>
