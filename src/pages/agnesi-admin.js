@@ -58,7 +58,104 @@ export default class AgnesiAdmin extends Component{
                      </div>
 
 
-                </div>
+                  </div>
+                  <div className="col-md-5 offset-md-1">
+                      <span className="number-anuncio">2</span>
+                      <div className="agnesi-description-area agnesi-projects">
+                        <span>Nombre proyecto</span>
+                        <div className="inputs-group">
+                          <input type="text"></input><span> Max. 30 caracteres</span>
+                        </div>
+                      </div>
+                  </div>
+                  <div className="col-md-5 offset-md-1 projects-images">
+
+                     <div className="new-item-anuncio  agnesi-admin-images">
+
+                       <h2>Imagenes principales agnesi</h2>
+                       <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                     </div>
+
+
+                  </div>
+                  <div className="col-md-5 offset-md-1">
+                      <span className="number-anuncio">3</span>
+                      <div className="agnesi-description-area agnesi-projects">
+                        <span>Nombre proyecto</span>
+                        <div className="inputs-group">
+                          <input type="text"></input><span> Max. 30 caracteres</span>
+                        </div>
+                      </div>
+                  </div>
+    							<div className="col-md-5 offset-md-1 projects-images">
+
+    					       <div className="new-item-anuncio  agnesi-admin-images">
+
+                       <h2>Imagenes principales agnesi</h2>
+                       <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                     </div>
+
+
+                  </div>
+                  <div className="col-md-5 offset-md-1">
+                      <span className="number-anuncio">4</span>
+                      <div className="agnesi-description-area agnesi-projects">
+                        <span>Nombre proyecto</span>
+                        <div className="inputs-group">
+                          <input type="text"></input><span> Max. 30 caracteres</span>
+                        </div>
+                      </div>
+                  </div>
+    							<div className="col-md-5 offset-md-1 projects-images">
+
+    					       <div className="new-item-anuncio  agnesi-admin-images">
+
+                       <h2>Imagenes principales agnesi</h2>
+                       <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                     </div>
+
+
+                  </div>
+                  <div className="col-md-5 offset-md-1">
+                      <span className="number-anuncio">5</span>
+                      <div className="agnesi-description-area agnesi-projects">
+                        <span>Nombre proyecto</span>
+                        <div className="inputs-group">
+                          <input type="text"></input><span> Max. 30 caracteres</span>
+                        </div>
+                      </div>
+                  </div>
+    							<div className="col-md-5 offset-md-1 projects-images">
+
+    					       <div className="new-item-anuncio  agnesi-admin-images">
+
+                       <h2>Imagenes principales agnesi</h2>
+                       <span className="size-description">El tamaño debe ser de 1280 x 580px</span>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                       <button>Seleccionar archivo</button>
+                     </div>
+
+
+                  </div>
+
 
                 <button className="save">Guardar</button>
   						</div>
