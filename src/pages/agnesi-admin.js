@@ -27,7 +27,7 @@ export default class AgnesiAdmin extends Component{
 
   handleSubmit = (ev) => {
     ev.preventDefault();
-    createProjects(this.state, this.files).then(r => {
+    createProjects(this.state, this.filesProject).then(r => {
       console.log(r);
     });
   }

@@ -28,7 +28,7 @@ export default class SliderForm extends Component{
 
   handleSubmit = (ev) => {
     ev.preventDefault();
-    createSlider(this.state, this.files).then(r => {
+    createSlider(this.state, this.filesProject).then(r => {
       console.log(r);
     });
   }

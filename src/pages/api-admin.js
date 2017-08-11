@@ -262,6 +262,7 @@ const createProjects = (data, archivos) => {
   formData.append('titulo6', data.titulo6);
 
   let images = []
+  console.log(archivos);
   archivos.map((f) => {
     if (f === null) {
       formData.append('updates', 'NONE');
