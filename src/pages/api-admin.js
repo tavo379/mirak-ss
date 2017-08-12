@@ -250,9 +250,45 @@ const createSlider = (data, archivos) => {
   .catch( (err) => {
     console.log(err);
   })
-
 }
 
+const createProjects = (data, archivos) => {
+  let formData = new FormData();
+  formData.append('titulo1', data.titulo1);
+  formData.append('titulo2', data.titulo2);
+  formData.append('titulo3', data.titulo3);
+  formData.append('titulo4', data.titulo4);
+  formData.append('titulo5', data.titulo5);
+  formData.append('titulo6', data.titulo6);
+
+  let images = []
+  console.log(archivos);
+  archivos.map((f) => {
+    if (f === null) {
+      formData.append('updates', 'NONE');
+    } else {
+      formData.append('updates', 'YES');
+    }
+  });
+
+  archivos.map((f) => {
+    if (f !== null) {
+      formData.append('archivos', f);
+    }
+  });
+
+  return fetch(`${API_URL}/projects`,{
+    method: "POST",
+    headers: cabecezaras,
+    body: formData
+  })
+  .then( (r) => {
+    return r.json()
+  })
+  .catch( (err) => {
+    console.log(err);
+  })
+}
 
 
 // CREAR CATEGORIA
@@ -329,6 +365,7 @@ export {
   createProduct,
   deleteProduct,
   editProduct,
+  createProjects,
   createCategory,
   createAnuncio,
   createUser,

@@ -72,19 +72,17 @@ export default class CategoryList extends Component {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
         <div className="container-fluid list-container">
           <div className="row container-list">
             <div className="col-md-3 category-list">
-                <h2>CATEGORÍAS PADRE</h2>
-                <ul>
-                  {this.state.data.map((category)=>
-                    <li  key={category.id}>{category.name}</li>
-                  )}
-                </ul>
-    
+              <h2>CATEGORÍAS PADRE</h2>
+              <ul>
+                {this.state.data.map((category)=>
+                  <li key={category.id}>{category.name}</li>
+                )}
+              </ul>    
             </div>
             <div className="col-md-9 product-list">
               <h2>CATEGORÍAS HIJO</h2>
