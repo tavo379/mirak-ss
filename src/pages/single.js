@@ -33,7 +33,7 @@ class SinglePage extends Component {
     getPost(id)
       .then(product => {
         // Aqui se hace la otra magia pokemón
-        product.images = JSON.parse(product.images)
+        product.images = JSON.parse(product.images);
         this.setState({product});
       });
   }
@@ -41,7 +41,11 @@ class SinglePage extends Component {
   render(){
     return(
       <main id="single">
-        <HeaderProducts />
+      {this.state.product
+        ?
+        <HeaderProducts category={this.state.product._category} />
+        : null
+      }
         <div className="back-single"><img src="back.svg" alt="volver"/><span>Mesas</span></div>
         <div className="back-single-desktop">
           <span>ATRÁS</span>

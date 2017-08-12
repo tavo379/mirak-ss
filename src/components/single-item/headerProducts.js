@@ -5,7 +5,6 @@ import Header from '../home/header'
 export default class HeaderProducts extends Component{
   render(){
     const { category } = this.props;
-    console.log(category);
     return(
       <div className="container-fluid">
         <span className="icon-back-white"><img src="/images/back-icon-white.svg" alt="volver"/></span>
@@ -17,7 +16,6 @@ export default class HeaderProducts extends Component{
             <h1>{category.name}</h1>
           </div>
         </div>
-
       </div>
     )
   }
