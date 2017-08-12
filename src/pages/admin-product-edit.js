@@ -72,25 +72,19 @@ export default class ProductForm extends Component {
     ev.preventDefault();
     const { id } = queryString.parse(this.props.location.search);
     editProduct(id, this.state, this.archivos).then(r => {
-      console.log(r);
+      const product = r[0];
+      product.images = JSON.parse(product.images)
+      this.setState({
+        product,
+        nombre: product.nombre,
+        category_name: product._category.name,
+        color1: product.color1,
+        color2: product.color2,
+        color3: product.color3,
+        descripcion: product.descripcion,
+        medidas: product.medidas,
+      });
     });
-    let files = []
-    for (var i = 0; i < 9; i++) {
-      files[i] = ''
-    }
-    this.setState({
-      category_name: '',
-      nombre: '',
-      color1: '',
-      color2: '',
-      color3: '',
-      descripcion: '',
-      medidas: '',
-      url: '',
-      user_id: '1',
-      files: files,
-      data: []
-    })
   }
 
   handleImageChangeColor = (ev, index, indexColor, archivoColor) => {
