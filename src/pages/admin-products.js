@@ -28,7 +28,7 @@ export default class ProductForm extends Component {
   }
 
   componentDidMount() {
-    fetch(`${API_URL}/category`)
+    fetch(`${API_URL}/subcategories`)
       .then(response => {
         if (response.status !== 200) {
           console.log(
@@ -67,7 +67,7 @@ export default class ProductForm extends Component {
       url: '',
       user_id: '1',
       files: files,
-      data: []
+
     })
   }
 
@@ -139,9 +139,9 @@ export default class ProductForm extends Component {
                             <option selected hidden>
                               Seleccionar categoría padre
                             </option>
-                            {this.state.data.map(categoria =>
-                              <option key={categoria.id} value={categoria.name}>
-                                {categoria.name}
+                            {this.state.data.map((categoria, index) =>
+                              <option key={`categoria${index}`} value={categoria}>
+                                {categoria}
                               </option>
                             )}
                           </select>
