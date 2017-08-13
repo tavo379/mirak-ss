@@ -39,7 +39,11 @@ export default class ProductForm extends Component {
 
         // Examine the text in the response
         response.json().then(data => {
-          this.setState({data});
+          let category_name = ''
+          if (data.length > 0) {
+            category_name = data[0]
+          }
+          this.setState({data: data, category_name: category_name});
         });
       })
       .catch(err => {
