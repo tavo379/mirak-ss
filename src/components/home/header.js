@@ -42,7 +42,7 @@ export default class Header extends Component{
           <div className="col-md-2 flex syslogo"><Link to="/"><img style={imgLogoStyle} src="images/syslogowhite.png" alt="inicio"/></Link></div>
           <div className="col-md-10">
             <div className="row">
-            <div className="col-md-12 col-xs-12 text-md-right agnesi"><Link to="/agnesi-project"><img style={agnesiStyle} src="images/agnesiwhiteh.png" alt="agnesi casa" /></Link></div>
+            <div className="col-md-12 col-xs-12 text-md-right agnesi"><Link to="/agnesi-casa"><img style={agnesiStyle} src="images/agnesiwhiteh.png" alt="agnesi casa" /></Link></div>
             <div className="col-md-12 col-xs-12">
               <ul className="ListMenu">
                 {this.state.data.map((categoria)=>

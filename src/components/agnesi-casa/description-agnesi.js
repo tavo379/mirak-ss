@@ -44,24 +44,16 @@ export default class AgnesiDes extends Component{
   }
 
   render(){
+
+    let description = this.props.agnesi.descripcion;
+
     return(
       <div className="container">
         <div className="row Promo">
-          <div className="col-md-6 "><img src="static/agnesi-black.png" alt="agnesi casa"/></div>
+          <div className="col-md-6 "><img src="images/agnesi-black.png" alt="agnesi casa"/></div>
           <div className="col-md-6 col-xs-12 padding-sigle-description ">
             <div className="description-agnesi">
-
-              <p>
-                Un equipo completo en asesoría en diseño de interior,
-                elaboración de muebles, paquetes de decoración y una línea
-                exclusiva de diseño interior.
-              </p>
-
-              <p>
-                Somos proveedores número uno de telas nacionales e importadas de distintos
-                lugares del mundo -España, Bélgica e Italia, entre algunos- con los diseños más
-                innocadores y la mejor calidad.
-              </p>
+              { description }
             </div>
           </div>
           <div className="col-md-12">

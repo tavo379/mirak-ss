@@ -131,6 +131,7 @@ export default class ProductForm extends Component {
                             required
                             value={this.state.category_name}
                             onChange={res => {
+                              console.log(res.target.value);
                               this.setState({
                                 category_name: res.target.value
                               });
