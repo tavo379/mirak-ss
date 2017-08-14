@@ -60,19 +60,18 @@ export default class ProductForm extends Component {
     for (var i = 0; i < 9; i++) {
       files[i] = ''
     }
-    this.setState({
-      category_name: '',
-      nombre: '',
-      color1: '',
-      color2: '',
-      color3: '',
-      descripcion: '',
-      medidas: '',
-      url: '',
-      user_id: '1',
-      files: files,
-
-    })
+    // this.setState({
+    //   nombre: '',
+    //   color1: '',
+    //   color2: '',
+    //   color3: '',
+    //   descripcion: '',
+    //   medidas: '',
+    //   url: '',
+    //   user_id: '1',
+    //   files: files,
+    //
+    // })
   }
 
   handleImageChangeColor = (ev, index, indexColor, archivoColor) => {
@@ -141,9 +140,7 @@ export default class ProductForm extends Component {
                               });
                             }}
                           >
-                            <option selected hidden>
-                              Seleccionar categoría padre
-                            </option>
+
                             {this.state.data.map((categoria, index) =>
                               <option key={`categoria${index}`} value={categoria}>
                                 {categoria}

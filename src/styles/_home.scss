@@ -156,3 +156,26 @@ button:focus {outline:0;}
 .agnesi-mobil{
   display: none;
 }
+
+/*Libreria dropdown*/
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown__content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    li{
+      a{
+        color: #000 !important;
+        font-size: 12px;
+        text-transform: capitalize !important;
+      }
+    }
+}
+
+.dropdown--active .dropdown__content {
+    display: block;
+}

@@ -133,6 +133,21 @@ const getProductsByCategory = (id) => {
       getProductsByCategory(id)
     })
 }
+//Obtener products by subcategorie
+const getProductsBySubCategory = (id, subcategoria) => {
+    return fetch(`${API_URL}/products/subcategoria/${id}/${subcategoria}`, {
+      method: "GET",
+      headers: new Headers(),
+      body: null,
+      timeout: 2000
+    })
+    .then( (r) => {
+      return r.json();
+    } )
+    .catch ( (err) => {
+      getProductsByCategory(id)
+    })
+}
 // Obtener POst
 const getPost = (id) => {
     return fetch(`${API_URL}/posts/${id}`, {
@@ -147,6 +162,7 @@ const getPost = (id) => {
       console.log(err);
     })
 }
+
 
 // delete user
 const deleteUser = (id) => {
@@ -371,6 +387,7 @@ export {
   createUser,
   createSlider,
   getProductsByCategory,
+  getProductsBySubCategory,
   getCategory,
   getPost,
   login,

@@ -56,7 +56,11 @@ class SinglePage extends Component {
           <SingleProduct product={this.state.product} />
           :null}
         <SingleProductMobil/>
-        <Similar />
+        {this.state.product
+          ?
+          <Similar product={this.state.product} />
+          :null}
+
         <div className="col-md-12 redes">
           <h2>Síguenos en nuestras redes sociales</h2>
         </div>

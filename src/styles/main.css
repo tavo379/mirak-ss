@@ -5528,6 +5528,22 @@ button:focus {
 .agnesi-mobil {
   display: none; }
 
+/*Libreria dropdown*/
+.dropdown {
+  display: inline-block; }
+
+.dropdown__content {
+  display: none;
+  position: absolute;
+  background: #fff; }
+  .dropdown__content li a {
+    color: #000 !important;
+    font-size: 12px;
+    text-transform: capitalize !important; }
+
+.dropdown--active .dropdown__content {
+  display: block; }
+
 .header-products {
   background-image: url("/images/headerfeed.png");
   background-size: 100% 100%;

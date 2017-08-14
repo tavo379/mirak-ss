@@ -41,7 +41,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 const AppRoutes = () =>
   <Switch>
-    <Route path="/products" component={ Products }/>
+    <Route path="/products/subcategoria/:id/:subcategoria" component={ Products }/>
     <Route path="/single" component={ SinglePage }/>
     <Route path="/nosotros" component={ Nosotros }/>
     <Route path="/sucursales" component={ Sucursales }/>

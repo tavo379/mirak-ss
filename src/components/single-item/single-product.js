@@ -66,11 +66,17 @@ export default class SingleProduct extends Component{
   }
   render(){
     const { product } = this.props;
-
+    if(!product) {
+      return null;
+    }
     let color = product[this.state.colorSeleccionado]
+    if(!color) {
+      return null;
+    }
     let urlImagen = API_URL+product.images[this.state.imagenSeleccionada][this.state.colorSeleccionado]
-    console.log(urlImagen);
-
+    if(!urlImagen) {
+      return null;
+    }
     return(
       <div className="container single-desktop">
         <div className="row product">

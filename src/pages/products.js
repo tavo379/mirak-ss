@@ -6,6 +6,7 @@ import ProductFeed from '../components/category-products/productFeed';
 import Social from '../components/home/social';
 import Footer from '../components/home/footer';
 import { getProductsByCategory } from './api-admin';
+import { getProductsBySubCategory } from './api-admin';
 import { getCategory } from './api-admin';
 
 class Products extends Component {
@@ -32,15 +33,16 @@ class Products extends Component {
   }
 
   handleProducts = () => {
-    const { id } = queryString.parse(this.props.location.search);
-		getProductsByCategory(id)
+    let id = this.props.match.params.id;
+    let subcategoria = this.props.match.params.subcategoria;
+    getProductsBySubCategory(id, subcategoria)
 			.then(products => {
 				this.setState({products});
 		});
 
   }
   handleCategory() {
-    const { id } = queryString.parse(this.props.location.search);
+    let id = this.props.match.params.id;
     getCategory(id)
       .then(category => {
         this.setState({category});

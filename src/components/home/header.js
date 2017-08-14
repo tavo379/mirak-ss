@@ -3,8 +3,15 @@
 import fetch from 'isomorphic-fetch'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+// import { DropdownTrigger, DropdownContent }  from 'react-simple-dropdown'
+
+import Dropdown from '../Dropdown.js';
+import DropdownContent from '../DropdownContent.js';
+import DropdownTrigger from '../DropdownTrigger.js';
+
 // import axios from 'axios'
 import { API_URL } from '../../config'
+
 const imgLogoStyle = {
   width:'100%',
 };
@@ -45,13 +52,33 @@ export default class Header extends Component{
             <div className="col-md-12 col-xs-12 text-md-right agnesi"><Link to="/agnesi-casa"><img style={agnesiStyle} src="images/agnesiwhiteh.png" alt="agnesi casa" /></Link></div>
             <div className="col-md-12 col-xs-12">
               <ul className="ListMenu">
-                {this.state.data.map((categoria)=>
-                  <li  key={categoria.id}>
-                    <Link to={{ pathname: '/products', search: '?id=' + categoria.id }}>
+                {this.state.data.map((categoria, index1)=>
+                  <li  key={categoria.id+index1}>
+                    {/*<Link to={{ pathname: '/products', search: '?id=' + categoria.id }}>
                           {categoria.name}
-                    </Link>
+                    </Link>*/}
+                    <Dropdown>
+                      <DropdownTrigger>{categoria.name}</DropdownTrigger>
+                      <DropdownContent>
+                        <ul>
+                          { categoria.subcategorie ?
+                            categoria.subcategorie.map((subcategorie, index2) => {
+                              return(
+                                <li key={categoria.id+subcategorie+index1+index2}>
+                                  <Link to={{ pathname: '/products/subcategoria/'+ categoria.id+`/${subcategorie} ` }}>
+                                        {subcategorie}
+                                  </Link>
+                                </li>
+                              )
+                            })
+                            : null
+                          }
+                        </ul>
+                      </DropdownContent>
+                    </Dropdown>
                   </li>
                 )}
+
               </ul>
             </div>
           </div>

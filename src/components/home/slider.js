@@ -35,7 +35,7 @@ export default class Slider extends Component {
           <Header/>
         <Carousel showArrows={false} showStatus={false} showThumbs={false} infiniteLoop={true}  emulateTouch={true}>
             {this.state.data.map((slider)=>
-              <div className="prueba-slider">
+              <div className="prueba-slider" key={slider.id}>
                 {
                   slider.images.length ?
                     <img src={API_URL + slider.images[0]} alt=""/>
